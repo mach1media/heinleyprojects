@@ -1,0 +1,169 @@
+/**
+ * B FLAT DUELING PIANOS WEBSITE
+ * 
+ * Roger Glenn
+ * roger@mach1media.com
+ * Created: JAN 2022
+ *
+ * Compiled using Gulp
+ */
+
+// 
+// Bootstrap v4.5
+//
+// Theming documentation:
+// https://getbootstrap.com/docs/4.5/getting-started/theming/
+// 
+// getting values from the color maps:
+// 
+// @function color($key: "blue") {
+//   @return map-get($colors, $key);
+// }
+// @function theme-color($key: "primary") {
+//   @return map-get($theme-colors, $key);
+// }
+// @function gray($key: "100") { //100-900
+//   @return map-get($grays, $key);
+// }
+// 
+// usage:
+// .custom-element {
+//   color: gray("100");
+//   background-color: theme-color("dark");
+// }
+//
+// import ALL Bootstrap components
+// @import "vendor/bootstrap/scss/bootstrap";
+//
+// or cherry pick which Bootstrap components we actually need...
+// 
+
+// required
+@import "vendor/bootstrap/scss/functions";
+
+//
+// OVERRIDE SOME OF BOOTSTRAP'S BASE VARIABLES
+//
+
+// typography
+$font-stack-helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font: "Poppins", $font-stack-helvetica;
+$font-family-sans-serif: $base-font;
+
+// reset base border radius
+$border-radius:               0;
+$border-radius-lg:            0;
+$border-radius-sm:            0;
+
+// buttons
+$btn-font-weight:             700;
+
+// get bootstrap's variables
+@import "vendor/bootstrap/scss/variables";
+
+// box shadow
+$box-shadow:                  0 2px 6px rgba(#333, .10);
+$box-shadow-lg:               0 2px 10px rgba(#333, .15);
+
+// import project variables
+@import "modules/variables";
+
+
+// getting values from the color maps:
+// 
+// @function color($key: "blue") {
+//   @return map-get($colors, $key);
+// }
+// @function theme-color($key: "primary") {
+//   @return map-get($theme-colors, $key);
+// }
+// @function gray($key: "100") { //100-900
+//   @return map-get($grays, $key);
+// }
+// 
+// usage:
+// .custom-element {
+//   color: gray("100");
+//   background-color: theme-color("dark");
+// }
+$theme-colors: map-merge(
+  (
+    "silver":     $color-silver,
+    "gray":       $color-gray,
+    "gray-light": $color-gray-light,
+    "gray-dark":  $color-gray-dark,
+    "blue":       $color-blue,
+    "navy":       $color-navy,
+    "pewter":     $color-pewter,
+    "midnight":   $color-midnight,
+    "primary":    $color-blue,
+    "secondary":  $color-navy,
+  ),
+  $theme-colors
+);
+
+
+@import "vendor/bootstrap/scss/mixins";
+
+// optional
+@import "vendor/bootstrap/scss/root";
+@import "vendor/bootstrap/scss/reboot";
+@import "vendor/bootstrap/scss/type";
+@import "vendor/bootstrap/scss/images";
+//@import "vendor/bootstrap/scss/code";
+@import "vendor/bootstrap/scss/grid";
+@import "vendor/bootstrap/scss/tables";
+@import "vendor/bootstrap/scss/forms";
+@import "vendor/bootstrap/scss/buttons";
+@import "vendor/bootstrap/scss/transitions";
+//@import "vendor/bootstrap/scss/dropdown";
+//@import "vendor/bootstrap/scss/button-group";
+//@import "vendor/bootstrap/scss/input-group";
+//@import "vendor/bootstrap/scss/custom-forms";
+//@import "vendor/bootstrap/scss/nav";
+//@import "vendor/bootstrap/scss/navbar";
+//@import "vendor/bootstrap/scss/card";
+//@import "vendor/bootstrap/scss/breadcrumb";
+@import "vendor/bootstrap/scss/pagination";
+@import "vendor/bootstrap/scss/badge";
+//@import "vendor/bootstrap/scss/jumbotron";
+@import "vendor/bootstrap/scss/alert";
+//@import "vendor/bootstrap/scss/progress";
+//@import "vendor/bootstrap/scss/media";
+@import "vendor/bootstrap/scss/list-group";
+//@import "vendor/bootstrap/scss/close";
+//@import "vendor/bootstrap/scss/toasts";
+//@import "vendor/bootstrap/scss/modal";
+//@import "vendor/bootstrap/scss/tooltip";
+//@import "vendor/bootstrap/scss/popover";
+//@import "vendor/bootstrap/scss/carousel";
+//@import "vendor/bootstrap/scss/spinners";
+@import "vendor/bootstrap/scss/utilities";
+//@import "vendor/bootstrap/scss/print";
+
+// vendor libraries
+@import "vendor/bem-constructor/dist/bem-constructor";
+
+//@import "/assets/vendor/fontawesome/css/all.css";
+@import "/assets/vendor/fontawesome/css/fontawesome.css";
+@import "/assets/vendor/fontawesome/css/brands.css";
+@import "/assets/vendor/fontawesome/css/regular.css";
+//@import "/assets/vendor/fontawesome/css/light.css";
+//@import "/assets/vendor/fontawesome/css/solid.css";
+//@import "/assets/vendor/fontawesome/css/duotone.css";
+
+//@import "/assets/vendor/remodal/remodal.css";
+//@import "/assets/vendor/remodal/remodal-default-theme.css";
+
+@import "/assets/vendor/slick/slick/slick.css";
+@import "/assets/vendor/slick/slick/slick-theme.css";
+
+@import "/assets/vendor/blueimp-gallery/css/blueimp-gallery.css";
+@import "/assets/vendor/modal-video/css/modal-video.min.css";
+
+// Modules and Variables
+@import "modules/all";
+
+// BEM Components
+@import "components/all";
+

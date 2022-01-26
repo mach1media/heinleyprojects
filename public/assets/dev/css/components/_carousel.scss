@@ -1,0 +1,114 @@
+/**
+ * CAROUSEL: BOOTSTRAP OVERRIDES
+ */
+.carousel-inner {
+	max-height: 80vh;
+}
+.carousel-item {
+	text-align: center;
+	max-height: 80vh;
+	
+	& > img {
+		max-height: 80vh;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.carousel--images {
+	.slick-dots {
+		bottom: inherit;
+	}
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	@include respond-above(sm) {
+		width: $gutter;
+		height: $gutter;
+	}
+	@include respond-below(sm) {
+		width: $gutter/2;
+		height: $gutter/2;
+	}
+}
+
+.carousel-control-prev-icon {
+	position: relative;
+	background-image: none;
+	transform: rotate(-45deg);
+	
+	&:before {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 3px;
+		background-color: white;
+		top: 3px;
+		left: 0;
+		
+		@include respond-above(sm) {
+			height: $gutter - 3;
+		}
+		@include respond-below(sm) {
+			height: $gutter/2 - 3;
+		}
+	}
+	
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		height: 3px;
+		background-color: white;
+		top: 0;
+		left: 0px;
+		
+		@include respond-above(sm) {
+			width: $gutter;
+		}
+		@include respond-below(sm) {
+			width: $gutter/2;
+		}
+	}
+}
+
+.carousel-control-next-icon {
+	position: relative;
+	background-image: none;
+	transform: rotate(45deg);
+	
+	&:before {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 3px;
+		background-color: white;
+		top: 3px;
+		right: 0;
+		
+		@include respond-above(sm) {
+			height: $gutter - 3;
+		}
+		@include respond-below(sm) {
+			height: $gutter/2 - 3;
+		}
+	}
+	
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		height: 3px;
+		background-color: white;
+		top: 0;
+		right: 0px;
+		
+		@include respond-above(sm) {
+			width: $gutter;
+		}
+		@include respond-below(sm) {
+			width: $gutter/2;
+		}
+	}
+}

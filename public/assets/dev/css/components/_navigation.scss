@@ -1,0 +1,225 @@
+/**
+ * NAVIGATION
+ */
+/*
+body.is-top .hamburger:not(.is-active) .hamburger-inner {
+	background-color: white;
+	
+	&:before,
+	&:after {
+		background-color: white;
+	}
+}
+body.is-scrolled .hamburger:not(.is-active) .hamburger-inner {
+	@include respond-below(sm) {
+		background-color: white;
+		
+		&:before,
+		&:after {
+			background-color: white;
+		}
+	}
+}
+*/
+
+@include component('navigation') {
+	$menu-bar-height: $navbar-height-desktop;
+	$menu-height: $menu-bar-height * .8;
+	$color-submenu-labels: white;
+	$color-nav-dropdown: lighten(theme-color("blue"), 5%);
+	
+	//
+	// FIXED/STICKY TOPBAR on mobile
+	//
+	position: fixed;
+	display: block;
+	width: 100vw;
+	min-height: 100vh;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(theme-color("blue"), .975);
+	text-align: left;
+	@include z-very-top;
+	
+	@include animate;
+	opacity: 0;
+	visibility: hidden;
+	
+	@include state('active') {
+		opacity: 1;
+		visibility: visible;
+		overflow: auto;
+	}
+	
+	@include element('top') {
+		position: absolute;
+		display: block;
+		right: 0;
+		left: 0;
+		top: 0;
+		@include z-very-top;
+		
+		& .container,
+		& .row,
+		& .col {
+			position: relative;
+			
+			@include respond-above(md) {
+				height: $topbar-height-desktop;
+			}
+			@include respond-below(md) {
+				height: $topbar-height-mobile;
+			}
+		}
+	}
+	
+	@include element('bottom') {
+		position: absolute;
+		display: block;
+		right: 0;
+		left: 0;
+		bottom: $gutter;
+		height: $topbar-height-mobile;
+		@include z-very-top;
+		
+		& .container,
+		& .row,
+		& .col {
+			position: relative;
+		}
+	}
+	
+	@include element('inner') {
+		width: 100vw;
+		height: 100vh;
+		@include vertically-centered;
+	}
+	
+	@include element('hamburger') {
+		position: absolute;
+		right: $gutter;
+		top: 50%;
+		transform: translate(0, -50%);
+		
+		.hamburger-inner,
+		.hamburger-inner:before,
+		.hamburger-inner:after {
+			background-color: white;
+		}
+		
+		@include respond-below(md) {
+			top: 55%;
+			
+			.hamburger-box {
+				width: 30px;
+				height: 20px;
+			}
+			
+			.hamburger-inner {
+				&,
+			  &::before,
+			  &::after {
+			    width: 30px;
+			  }
+			  
+			  &::before {
+			    top: ($hamburger-layer-spacing/2 + $hamburger-layer-height) * -1;
+			  }
+			
+			  &::after {
+			    bottom: ($hamburger-layer-spacing/2 + $hamburger-layer-height) * -1;
+			  }
+			}
+		}
+	}
+	
+	@include element('branding') {
+		@include respond-below(md) {
+			width: 100px;
+		}
+		@include respond-above(md) {
+			width: 200px;
+		}
+	}
+	
+	@include element('social') {
+		position: relative;
+		display: inline-block;
+		text-align: center;
+		color: white;
+		@include animate;
+		
+		font-size: $topbar-height-mobile/2;
+		width: $topbar-height-mobile;
+		height: $topbar-height-mobile;
+		line-height: $topbar-height-mobile;
+		
+		&:hover {
+			color: theme-color('red');
+		}
+	}
+	
+	// ------------------------------------
+	// MENU
+	// ------------------------------------
+	@include element('menu') {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
+		& > li {
+			text-align: center;
+			
+			&:not(:last-of-type) {
+				margin-bottom: 1rem;
+			}
+			
+			& > .btn {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				line-height: 1em;
+				padding-top: .5em;
+				padding-bottom: .5em;
+				color: theme-color('silver');
+				border: 1px solid theme-color('silver');
+				background-color: transparent;
+				
+				&:hover {
+					color: theme-color('navy');
+					border: 1px solid theme-color('silver');
+					background-color: rgba(theme-color('silver'), .5);
+				}
+			}
+		}
+		
+		@include respond-below(md) {
+			& > li {
+				flex: 0 0 auto;
+				margin-top: $gutter/2;
+			}
+		}
+		
+		@include respond-above(md) {
+			& > li {
+				flex: 0 0 auto;
+			}
+			
+			& > li {
+				& > .btn {
+					font-size: 25px;
+				}
+			}
+		}
+		
+		@include respond-between(md, lg) {
+			& > li {
+				& > .btn {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}

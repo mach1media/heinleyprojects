@@ -1,0 +1,31 @@
+/**
+ * BANNER
+ */
+@include component('banner') {
+	position: relative;
+	display: block;
+	
+	
+	&,
+	.container,
+	.row,
+	.col {
+		@include respond-above(sm) {
+			height: $banner-height-desktop;
+		}
+		@include respond-below(sm) {
+			height: $banner-height-mobile;
+		}
+	}
+	
+	@include element('heading') {
+		@extend h1;
+		color: white;
+		line-height: 1em;
+		text-transform: uppercase;
+		text-align: center;
+		margin: 0;
+		padding: .5em 1em;
+		background: rgba($color-black, .75);
+	}
+}

@@ -1,0 +1,320 @@
+/**
+ * MIXINS
+ */
+
+@mixin animate {
+	transition: all 0.2s ease-in-out;
+}
+@mixin animate-slow {
+	transition: all .5s ease-in-out;
+}
+
+
+@mixin vertically-centered {
+	display: flex;
+	align-items: center;
+  justify-content: center;
+  flex-direction: row;
+	
+	> :first-child {
+		flex: 1;
+	}
+}
+
+// z-indexes
+@mixin z-very-top {
+	z-index: 9989;
+}
+@mixin z-top {
+	z-index: 999;
+}
+@mixin z-middle {
+	z-index: 99;
+}
+@mixin z-bottom {
+	z-index: 0;
+}
+@mixin z-10 {
+	z-index: 1000;
+}
+@mixin z-9 {
+	z-index: 900;
+}
+@mixin z-8 {
+	z-index: 800;
+}
+@mixin z-7 {
+	z-index: 700;
+}
+@mixin z-6 {
+	z-index: 600;
+}
+@mixin z-5 {
+	z-index: 500;
+}
+@mixin z-4 {
+	z-index: 400;
+}
+@mixin z-3 {
+	z-index: 300;
+}
+@mixin z-2 {
+	z-index: 200;
+}
+@mixin z-1 {
+	z-index: 100;
+}
+
+@keyframes blur {
+  from {
+    filter: blur(0px);
+  }
+  to {
+    filter: blur(10px);
+  }
+}
+@keyframes unblur {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .5;
+  }
+}
+
+@keyframes fadeInFull {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOutFull {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+//
+// BLOCKQUOTE COLOR
+//
+@mixin blockquoteColor($bgColor: $color-primary, $textColor: $color-body-text) {
+	background-color: $bgColor;
+	color: $textColor !important;
+	strong { color: $textColor; }
+	background-image: -webkit-linear-gradient(
+		$bgColor 0%, 
+		darken($bgColor, 10%) 100%);
+}
+
+//@mixin triangle($direction, $size: 12px, $color: currentColor, $before: false) {
+@mixin triangle($direction, $size: 12px, $color: currentColor) {
+
+  $w: null;
+  $h: null;
+  $c: null;
+  $length: length($size);
+  //$pseudo: if($before, 'before', 'after');
+
+  @if $length > 2 {
+    $w: nth($size, 1);
+    $h: nth($size, 2);
+    $c: nth($size, 3);
+  } @else if $length > 1 {
+    $w: nth($size, 1);
+    $h: nth($size, 2);
+    $c: nth($size, 2);
+  } @else if $length == 1 {
+    $w: nth($size, 1);
+    $h: nth($size, 1);
+    $c: nth($size, 1);
+  } @else {
+    @error "Invalid size \"#{$size}\"";
+  }
+
+  //&:#{$pseudo} {
+  //
+  //  display: inline-block;
+  //  content: "";
+  //  width: 0;
+  //  height: 0;
+  //  vertical-align: middle;
+
+    @if $direction == 'up' {
+
+      @if ($length < 3) {
+
+        border-bottom: $h solid $color;
+        border-left: $w solid transparent;
+        border-right: $w solid transparent;
+
+      } @else {
+
+        border-bottom: $h solid $color;
+        border-left: $w solid transparent;
+        border-right: $c solid transparent;
+
+      }
+
+    } @else if $direction == 'down' {
+
+      @if ($length < 3) {
+
+        border-top: $h solid $color;
+        border-left: $w solid transparent;
+        border-right: $w solid transparent;
+
+      } @else {
+
+        border-top: $h solid $color;
+        border-left: $w solid transparent;
+        border-right: $c solid transparent;
+
+      }
+
+    } @else if $direction == 'left' {
+
+      @if ($length < 3) {
+
+        border-right: $h solid $color;
+        border-top: $w solid transparent;
+        border-bottom: $w solid transparent;
+
+      } @else {
+
+        border-right: $h solid $color;
+        border-top: $w solid transparent;
+        border-bottom: $c solid transparent;
+
+      }
+
+    } @else if $direction == 'right' {
+
+      @if ($length < 3) {
+
+        border-left: $h solid $color;
+        border-top: $w solid transparent;
+        border-bottom: $w solid transparent;
+
+      } @else {
+
+        border-left: $h solid $color;
+        border-top: $w solid transparent;
+        border-bottom: $c solid transparent;
+
+      }
+
+    //} @else {
+    //  @error "Invalid direction \"#{$direction}\"";
+    }
+
+    @content;
+
+  //}
+
+}
+
+//
+//  RESPOND ABOVE
+//  https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// @include respond-above(sm) {}
+@mixin respond-above($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+//
+//  RESPOND BELOW
+//  https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// @include respond-below(sm) {}
+@mixin respond-below($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+//
+//  RESPOND BETWEEN
+//  https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// @include respond-between(sm, md) {}
+@mixin respond-between($lower, $upper) {
+
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($grid-breakpoints, $lower) and map-has-key($grid-breakpoints, $upper) {
+
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($grid-breakpoints, $lower);
+    $upper-breakpoint: map-get($grid-breakpoints, $upper);
+
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  
+  // If one or both of the breakpoints don't exist.
+  } @else {
+
+    // If lower breakpoint is invalid.
+    @if (map-has-key($grid-breakpoints, $lower) == false) {
+
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($grid-breakpoints, $upper) == false) {
+
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}

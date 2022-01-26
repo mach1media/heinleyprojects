@@ -1,0 +1,60 @@
+
+// COLORS
+$color-body-bg:      white;
+$color-silver:       #E1EDF5;//#efefef;
+$color-gray:         #9FADBF;
+$color-gray-light:   #ccc;
+$color-gray-dark:    #333;
+$color-pewter:       #8EA3BF;
+$color-midnight:     #011526;
+$color-navy:         #022340;
+$color-blue:         #6085A6;
+
+$color-block-border: #ccc;
+$color-black:        $color-midnight;
+$color-white:        #fff;
+$color-body-text:    $color-midnight;
+
+// FONTS
+$font-stack-helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-stack-arial-narrow: "Arial Narrow", Arial, sans-serif;
+$font-stack-georgia: Georgia, Times, 'Times New Roman', serif;
+
+$base-font: "Poppins", $font-stack-helvetica;
+$font-serif: $font-stack-georgia;
+
+// boostrap overrides
+$font-size-base:              20px;
+$font-family-base:            $base-font;
+$body-color:                  $color-body-text;
+$link-color:                  $color-blue;
+$link-hover-color:            $color-pewter;
+
+// typography
+$headings-color:              $body-color;
+$headings-font-weight:        400;
+
+$h1-font-size:                $font-size-base * 2.5;  //50px;
+$h2-font-size:                $font-size-base * 2;  //40px;
+$h3-font-size:                $font-size-base * 1.5;  //30px;
+$h4-font-size:                $font-size-base * 1.22; //22px
+$h5-font-size:                $font-size-base;
+
+
+
+// PROJECT GLOBALS
+$topbar-height-desktop: 120px;
+$topbar-height-mobile: 60px;
+
+$banner-height-desktop: 600px;
+$banner-height-mobile: 200px;
+
+$logo-bar-height: 81px;
+
+$navbar-height-desktop: 80px;
+
+$play-icon-size: 70px;
+
+$gutter: $grid-gutter-width;
+
+$carousel-pagination-size: 60px;

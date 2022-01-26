@@ -1,0 +1,72 @@
+/**
+ * BOOTSTRAP BUTTON OVERRIDES
+ *
+ * Use Bootstrap's .btn class for a basic button
+ */
+.btn {
+	//@include base-font-bold;
+	text-transform: uppercase;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.btn-default {
+	background-color: $color-blue;
+	border-color: $color-blue;
+	color: white;
+	
+	&:hover {
+		color: white;
+		background-color: darken($color-blue, 10%);
+	}
+	
+	&.btn-outline {
+		background-color: transparent;
+		color: $color-blue;
+		
+		&:hover {
+			color: $color-blue;
+			background-color: rgba(white, .25);
+		}
+	}
+}
+.btn-white {
+	background-color: white;
+	border-color: white;
+	color: $color-blue !important;
+	
+	&:hover {
+		color: $color-blue !important;
+		background-color: rgba(white, .25);
+	}
+	
+	&.btn-outline {
+		background-color: transparent;
+		color: white !important;
+		
+		&:hover {
+			color: white !important;
+			background-color: rgba(white, .25);
+		}
+	}
+}
+
+.btn-pewter {
+	background-color: $color-pewter;
+	border-color: $color-pewter;
+	color: white !important;
+	
+	&:hover {
+		color: white !important;
+		background-color: darken($color-pewter, 10%);
+	}
+	
+	&.btn-outline {
+		background-color: transparent;
+		color: $color-pewter;
+		
+		&:hover {
+			color: $color-pewter;
+			background-color: rgba(white, .25);
+		}
+	}
+}

@@ -1,0 +1,66 @@
+/**
+ * ACCORDIONS
+ */
+
+@include component('accordion') {
+	position: relative;
+	display: block;
+	margin-top: $gutter !important;
+	margin-bottom: $gutter !important;
+	
+	@include element('heading') {
+		position: relative;
+		display: block;
+		line-height: 1em;
+		cursor: pointer;
+		margin: 0 0 $gutter 0;
+		@include animate;
+		color: theme-color('navy');
+		text-decoration: none;
+		text-transform: uppercase;
+		background-color: theme-color('silver');
+		
+		&:after {
+			content: "";
+			position: relative;
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			border-top: 1px solid theme-color('navy');
+			border-right: 1px solid theme-color('navy');
+			transform: translate(10px, -50%) rotate(135deg);
+			@include animate;
+		}
+		
+		&:hover {
+			opacity: .5;
+			color: theme-color('navy');
+			text-decoration: none;
+		}
+		
+		&[aria-expanded='true'] {
+			&:after {
+				transform: translate(10px, -2px) rotate(45deg);
+			}
+		}
+		
+		@include respond-above(sm) {
+			padding: $gutter/2 $gutter*4;
+		}
+		@include respond-below(sm) {
+			font-size: 18px;
+			padding: $gutter/2 $gutter;
+		}
+	}
+	
+	@include element('content') {
+		margin: 0 0 $gutter 0;
+		
+		@include respond-above(sm) {
+			padding: $gutter/2 $gutter*4;
+		}
+		@include respond-below(sm) {
+			padding: $gutter/2 $gutter;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+/**
+ * PICTURE
+ */
+@include component('picture') {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	@include clearfix;
+	
+	@include modifier('right') {
+		@include respond-above(sm) {
+			float: right;
+			max-width: 30%;
+			margin-left: $gutter*2;
+			margin-right: 0;
+		}
+		@include respond-below(sm) {
+			width: 100%;
+			margin-bottom: $gutter;
+		}
+	}
+	
+	@include modifier('left') {
+		@include respond-above(sm) {
+			float: left;
+			max-width: 30%;
+			margin-right: $gutter*2;
+			margin-left: 0;
+		}
+		@include respond-below(sm) {
+			width: 100%;
+			margin-bottom: $gutter;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+/**
+ * IMG+TEXT BLOCK
+ */
+@include component('img-text') {
+	
+	@include element('img') {
+		@include respond-below(sm) {
+			margin-bottom: $gutter;
+		}
+	}
+	
+	@include element('description') {
+		
+		dt, dd {
+			line-height: 1.2em;
+			
+			.btn {
+				margin-bottom: .5em;
+			}
+		}
+		dd {
+			margin-bottom: 1em;
+		}
+	}
+}

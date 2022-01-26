@@ -1,0 +1,58 @@
+/**
+ * UTILITIES
+ */
+
+//
+// TEXT COLORS
+//
+@include utility('color-white') {
+	color: white !important;
+}
+@include utility('color-blue') {
+	color: theme-color('blue') !important;
+}
+@include utility('color-blue-light') {
+	color: theme-color('blue-light') !important;
+}
+@include utility('color-navy') {
+	color: theme-color('navy') !important;
+}
+@include utility('color-sand') {
+	color: theme-color('sand') !important;
+}
+@include utility('color-taupe') {
+	color: theme-color('taupe') !important;
+}
+@include utility('color-silver') {
+	color: theme-color('silver') !important;
+}
+@include utility('color-gray') {
+	color: theme-color('gray') !important;
+}
+@include utility('color-gray-light') {
+	color: theme-color('gray-light') !important;
+}
+
+
+@include utility('section-heading') {
+	position: relative;
+	text-align: center;
+	margin-bottom: 1em;
+	
+	small {
+		display: block;
+		@include base-font;
+		font-size: 40%;
+		letter-spacing: .5em;
+	}
+}
+
+@include utility('hr') {
+	border-top: 1px solid theme-color('gray-light');
+	max-width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+@include utility('hr-wide') {
+	border-top: 1px solid theme-color('gray-light');
+}

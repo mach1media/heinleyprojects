@@ -1,0 +1,44 @@
+/**
+ * SPLIT BLOCK
+ */
+@include component('split') {
+	overflow: hidden;
+	
+	@include respond-between(md, lg) {
+		.container {
+			max-width: 100%;
+		}
+	}
+	@include respond-between(sm, md) {
+		.container {
+			max-width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+	
+	@include element('cell') {
+		@extend %block-padding;
+		text-align: center;
+		
+		@include respond-above(lg) {
+			&:nth-of-type(odd) {
+				padding-right: $gutter*2;
+			}
+			&:nth-of-type(even) {
+				padding-left: $gutter*2;
+			}
+		}
+		@include respond-between(md, lg) {
+			h2, p {
+				max-width: map-get($container-max-widths, sm);
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		@include respond-below(md) {
+			padding-left: $gutter*2;
+			padding-right: $gutter*2;
+		}
+	}
+}

@@ -1,0 +1,148 @@
+/**
+ * HOME HERO
+ */
+body.home {
+	padding-top: 0;
+}
+
+@include component('hero') {
+	$hero-height-desktop: 650px;
+	$hero-height-mobile:  360px;
+	$pager-size: 30px;
+	
+	position: relative;
+	display: block;
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: linear-gradient(rgba(black, .5) 0%, rgba(black, .2) 15%);
+		@include z-1;
+	}
+	
+	&,
+	.container,
+	.row {
+		@include z-1;
+		@include respond-above(md) {
+			height: $hero-height-desktop;
+		}
+		@include respond-below(md) {
+			height: $hero-height-mobile;
+		}
+		@media (max-height: 850px) {
+			height: 80vh;
+		}
+	}
+	
+	@include element('description') {
+		position: relative;
+		
+		.col {
+			margin-bottom: 3rem;
+		}
+	}
+	
+	@include element('heading') {
+		@include base-font-extrabold;
+		color: white;
+		line-height: 1em;
+		letter-spacing: -.025em;
+		margin: 0;
+		padding: 0;
+		
+		@include respond-above(md) {
+			font-size: 70px;
+			text-shadow: 0px 0px 10px rgba(black, .5);
+			max-width: 80%;
+		}
+		@include respond-below(md) {
+			font-size: 48px;
+			text-shadow: 0px 0px 6px rgba(black, .5);
+		}
+	}
+	
+	@include element('carousel') {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		
+		@include respond-above(md) {
+			height: $hero-height-desktop;
+		}
+		@include respond-below(md) {
+			height: $hero-height-mobile;
+		}
+		@media (max-height: 850px) {
+			height: 90vh;
+		}
+		
+		.slick-arrow {
+			@include z-2;
+		}
+		.slick-prev,
+		.slick-next {
+			width: $pager-size;
+			height: $pager-size;
+			padding: 0;
+		}
+		.slick-prev {
+			border-top: 2px solid white;
+			border-left: 2px solid white;
+			transform: rotate(-45deg);
+			
+			&:before {
+				display: none;
+			}
+			
+			//@include respond-above(lg) {
+			@media (min-width: 1100px) {
+				left: 5%;
+			}
+			//@include respond-below(lg) {
+			@media (max-width: 1100px) {
+				left: 100%;
+				margin-left: -($pager-size + $gutter + $gutter);
+				top: 100%;
+				margin-top: -($pager-size + $gutter);
+			}
+		}
+		.slick-next {
+			border-top: 2px solid white;
+			border-right: 2px solid white;
+			transform: rotate(45deg);
+			
+			&:before {
+				display: none;
+			}
+			
+			//@include respond-above(lg) {
+			@media (min-width: 1100px) {
+				right: 5%;
+			}
+			//@include respond-below(lg) {
+			@media (max-width: 1100px) {
+				right: $gutter;
+				top: 100%;
+				margin-top: -($pager-size + $gutter);
+			}
+		}
+	}
+	
+	@include element('carousel-slide') {
+		@include respond-above(md) {
+			height: $hero-height-desktop;
+		}
+		@include respond-below(md) {
+			height: $hero-height-mobile;
+		}
+		@media (max-height: 850px) {
+			height: 90vh;
+		}
+	}
+}

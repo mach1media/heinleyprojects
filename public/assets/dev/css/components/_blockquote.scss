@@ -1,0 +1,174 @@
+/**
+ * BLOCK: BLOCKQUOTE
+ */
+
+.blockquote {
+	@include base-font-light-italic;
+	font-size: 1.5rem;
+}
+.blockquote-footer {
+	@include base-font-bold;
+	font-size: .75rem;
+	text-transform: uppercase;
+	
+	&:before {
+		content: "";
+	}
+}
+
+@include component('blockquote') {
+	position: relative;
+	display: block;
+	
+	
+	@include element('description') {
+		@extend %first-last-child;
+		//@extend %base-list-style;
+		
+		@include respond-below(md) {
+			margin-bottom: $gutter*3;
+		}
+	}
+	
+	@include element('quote') {
+		position: relative;
+		//margin: 0;
+		@extend %first-last-child;
+		background-color: $color-silver;
+		
+		
+		blockquote {
+			@include base-font-light-italic;
+			line-height: 1.5em;
+			//margin: 0;
+			padding: $gutter;
+			
+			& > :first-child {
+				margin-top: 0;
+			}
+			& > :last-child {
+				margin-bottom: 0;
+			}
+			
+			p {
+				margin-bottom: .5em;
+			}
+			
+			cite {
+				display: block;
+				@include base-font-light;
+				text-transform: uppercase;
+				//letter-spacing: .2em;
+				line-height: 1.5em;
+			}
+			
+			@include respond-above(sm) {
+				font-size: 24px;
+				
+				cite {
+					font-size: 11px;
+				}
+			}
+			@include respond-below(sm) {
+				font-size: 18px;
+				
+				cite {
+					font-size: 10px;
+				}
+			}
+		}
+	}
+	
+	@include element('photo') {
+		position: relative;
+		display: block;
+		width: 100%;
+		padding-left: $gutter;
+		padding-right: $gutter;
+		//margin-bottom: $gutter;
+
+		img {
+			max-width: 190px;
+		}
+		
+		@include respond-above(sm) {
+			img {
+				margin-top: -$gutter*1.5;
+			}
+		}
+		@include respond-below(sm) {
+			img {
+				margin-top: -$gutter*1;
+			}
+		}
+	}
+	
+	// ----------------------------------------
+	// BACKGROUND COLORS 
+	// @include blockquoteColor($bgColor, $textColor);
+	// 
+	@include modifier('black') {
+		.c-blockquote__quote {
+			@include blockquoteColor($color-black, $color-white);
+		}
+	}
+	@include modifier('gray') {
+		.c-blockquote__quote {
+			@include blockquoteColor($color-gray, $color-white);
+		}
+	}
+	@include modifier('gray-light') {
+		.c-blockquote__quote {
+			@include blockquoteColor($color-gray-light, $color-white);
+		}
+	}
+	@include modifier('gray-dark') {
+		.c-blockquote__quote {
+			@include blockquoteColor($color-gray-dark);
+		}
+	}
+	@include modifier('silver') {
+		.c-blockquote__quote {
+			@include blockquoteColor($color-silver, $color-navy);
+		}
+	}
+	@include modifier('white') {
+		.c-blockquote__quote {
+			background-color: $color-white;
+		}
+	}
+	
+	@include modifier('primary') {
+		.c-blockquote__quote {
+			@include blockquoteColor(theme-color('primary'), $color-white);
+		}
+	}
+	@include modifier('secondary') {
+		.c-blockquote__quote {
+			@include blockquoteColor(theme-color('secondary'), $color-white);
+		}
+	}
+	@include modifier('navy') {
+		.c-blockquote__quote {
+			@include blockquoteColor($color-navy, $color-white);
+			color: white;
+		}
+	}
+	@include modifier('blue') {
+		.c-blockquote__quote {
+			@include blockquoteColor($color-blue, $color-white);
+			color: white;
+		}
+	}
+	@include modifier('pewter') {
+		.c-blockquote__quote {
+			@include blockquoteColor($color-pewter, $color-white);
+			color: white;
+		}
+	}
+	@include modifier('midnight') {
+		.c-blockquote__quote {
+			@include blockquoteColor($color-midnight, $color-navy);
+		}
+	}
+}

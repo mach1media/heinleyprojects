@@ -1,0 +1,30 @@
+/**
+ * SLICK CAROUSEL OVERRIDES
+ */
+.slick-prev, 
+.slick-next {
+	width: 40px;
+	height: 40px;
+	
+	&:before {
+		font-size: 40px;
+		color: gray('400');
+	}
+}
+.slick-prev {
+	left: -75px;
+}
+.slick-next {
+	right: -75px;
+}
+.slick-dots li {
+	width: 40px;
+	height: 40px;
+	
+	button:before {
+		font-size: 20px;
+		line-height: 40px;
+		width: 40px;
+		height: 40px;
+	}
+}

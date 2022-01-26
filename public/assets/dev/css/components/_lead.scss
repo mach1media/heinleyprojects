@@ -1,0 +1,16 @@
+/**
+ * LEAD
+ */
+@include component('lead') {
+	text-align: center;
+	//@include base-font-light;
+	
+	@include respond-above(sm) {
+		font-size: 1.5rem;
+		line-height: 1.75em;
+	}
+	@include respond-below(sm) {
+		font-size: 1.25rem;
+		line-height: 1.75em;
+	}
+}

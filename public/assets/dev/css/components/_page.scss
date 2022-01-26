@@ -1,0 +1,64 @@
+/**
+ * PAGE
+ */
+@include component('page') {
+	
+	@include element('heading') {
+		position: relative;
+		display: block;
+		text-align: center;
+			
+		@include respond-above(sm) {
+			padding-bottom: $gutter*2;
+			margin-bottom: $gutter*2;
+		}
+		@include respond-below(sm) {
+			padding-bottom: $gutter;
+			margin-bottom: $gutter;
+		}
+		
+		@include respond-above(lg) {
+			padding-left:  $gutter*8;
+			padding-right: $gutter*8;
+		}
+		@include respond-between(md, lg) {
+			padding-left:  $gutter*6;
+			padding-right: $gutter*6;
+		}
+		@include respond-between(sm, md) {
+			padding-left:  $gutter*4;
+			padding-right: $gutter*4;
+		}
+		
+		&:before {
+			content: "";
+			position: absolute;
+			display: block;
+			bottom: 0;
+			left: 50%;
+			height: 10px;
+			border-top: 1px solid theme-color("secondary");
+			border-bottom: 1px solid theme-color("secondary");
+			
+			@include respond-above(sm) {
+				left: 25%;
+				right: 25%;
+			}
+			@include respond-below(sm) {
+				left: 15%;
+				right: 15%;
+			}
+		}
+	}
+	
+	@include element('lead') {
+		text-align: center;
+		
+		@include respond-above(sm) {
+			font-size: 20px;
+		}
+		@include respond-below(sm) {
+			font-size: 18px;
+		}
+	}
+}
