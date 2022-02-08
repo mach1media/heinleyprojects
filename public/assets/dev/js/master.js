@@ -1,5 +1,5 @@
 /**
- * B FLAT DUELING PIANOS JAVASCRIPT FUNCTIONS
+ * HEINLYE PROJECTS JAVASCRIPT FUNCTIONS
  *
  * Roger Glenn
  * roger@mach1media.com
@@ -39,6 +39,22 @@ function openHamburgerNav() {
 function closeHamburgerNav() {
 	$('.js-menu-toggle').removeClass('is-active').attr('aria-expanded', 'false');
 	$('#menu').removeClass('is-active');
+	$('#page-content').css('display','block');
+	//$('#hamburger-topbar').focus();
+}
+
+//
+// OPEN/CLOSE SEARCH OVERLAY: ACCESSIBLE
+//
+function openSearch() {
+	$('.js-search-toggle').addClass('is-active').attr('aria-expanded', 'true');
+	$('#search').addClass('is-active');
+	$('#page-content').css('display','none');
+	//$('#hamburger-navigation').focus();
+}
+function closeSearch() {
+	$('.js-search-toggle').removeClass('is-active').attr('aria-expanded', 'false');
+	$('#search').removeClass('is-active');
 	$('#page-content').css('display','block');
 	//$('#hamburger-topbar').focus();
 }
@@ -97,8 +113,9 @@ jQuery(document).ready(function($) {
 		}
 	});
 	
+/*
 	// TOGGLE MOBILE MENU
-	$('.js-menu-toggle').on('click, tap', function(e){
+	$('.js-menu-toggle').on('click', function(e){
 		e.preventDefault();
 		
 		// close the menu
@@ -113,13 +130,38 @@ jQuery(document).ready(function($) {
 			$('#menu').addClass('is-active');
 		}
 	});
-	$('.js-menu-close').on('click, tap', function(e){
+	$('.js-menu-close').on('click', function(e){
 		e.preventDefault();
 		
 		// close the menu
 		$('.js-menu-toggle').removeClass('is-active');
 		$('#menu').removeClass('is-active');
 	});
+	
+	// TOGGLE SEARCH OVERLAY
+	$('.js-search-toggle').on('click', function(e){
+		e.preventDefault();
+		
+		// close the menu
+		if ($('#search').hasClass('.is-active')) {
+			$('.js-search-toggle').removeClass('is-active');
+			$('#search').removeClass('is-active');
+		}
+		
+		// open the menu
+		else {
+			$('.js-search-toggle').addClass('is-active');
+			$('#search').addClass('is-active');
+		}
+	});
+	$('.js-search-close').on('click', function(e){
+		e.preventDefault();
+		
+		// close the menu
+		$('.js-search-toggle').removeClass('is-active');
+		$('#search').removeClass('is-active');
+	});
+*/
 	
 	// SCROLL TO SAME PAGE ANCHORS ----------------------------
 	$('.js-scroll-to-section').click(function(e) {

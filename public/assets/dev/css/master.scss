@@ -1,5 +1,5 @@
 /**
- * B FLAT DUELING PIANOS WEBSITE
+ * HEINLYE PROJECTS WEBSITE
  * 
  * Roger Glenn
  * roger@mach1media.com
@@ -118,14 +118,14 @@ $theme-colors: map-merge(
 @import "vendor/bootstrap/scss/transitions";
 //@import "vendor/bootstrap/scss/dropdown";
 //@import "vendor/bootstrap/scss/button-group";
-//@import "vendor/bootstrap/scss/input-group";
+@import "vendor/bootstrap/scss/input-group";
 //@import "vendor/bootstrap/scss/custom-forms";
 //@import "vendor/bootstrap/scss/nav";
 //@import "vendor/bootstrap/scss/navbar";
 //@import "vendor/bootstrap/scss/card";
 //@import "vendor/bootstrap/scss/breadcrumb";
-@import "vendor/bootstrap/scss/pagination";
-@import "vendor/bootstrap/scss/badge";
+//@import "vendor/bootstrap/scss/pagination";
+//@import "vendor/bootstrap/scss/badge";
 //@import "vendor/bootstrap/scss/jumbotron";
 @import "vendor/bootstrap/scss/alert";
 //@import "vendor/bootstrap/scss/progress";
@@ -148,7 +148,7 @@ $theme-colors: map-merge(
 @import "/assets/vendor/fontawesome/css/fontawesome.css";
 @import "/assets/vendor/fontawesome/css/brands.css";
 @import "/assets/vendor/fontawesome/css/regular.css";
-//@import "/assets/vendor/fontawesome/css/light.css";
+@import "/assets/vendor/fontawesome/css/light.css";
 //@import "/assets/vendor/fontawesome/css/solid.css";
 //@import "/assets/vendor/fontawesome/css/duotone.css";
 

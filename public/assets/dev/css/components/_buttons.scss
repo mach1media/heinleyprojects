@@ -4,27 +4,28 @@
  * Use Bootstrap's .btn class for a basic button
  */
 .btn {
-	//@include base-font-bold;
+	@include font-heading;
 	text-transform: uppercase;
 	padding-left: 1em;
 	padding-right: 1em;
 }
-.btn-default {
-	background-color: $color-blue;
-	border-color: $color-blue;
+.btn-default,
+.btn-green {
+	background-color: $color-green;
+	border-color: $color-green;
 	color: white;
 	
 	&:hover {
 		color: white;
-		background-color: darken($color-blue, 10%);
+		background-color: darken($color-green, 10%);
 	}
 	
 	&.btn-outline {
 		background-color: transparent;
-		color: $color-blue;
+		color: $color-green;
 		
 		&:hover {
-			color: $color-blue;
+			color: $color-green;
 			background-color: rgba(white, .25);
 		}
 	}
@@ -49,23 +50,122 @@
 		}
 	}
 }
-
-.btn-pewter {
-	background-color: $color-pewter;
-	border-color: $color-pewter;
-	color: white !important;
+.btn-silver {
+	background-color: $color-silver;
+	border-color: $color-silver;
+	color: $color-body-text !important;
 	
 	&:hover {
-		color: white !important;
-		background-color: darken($color-pewter, 10%);
+		color: $color-body-text !important;
+		background-color: darken($color-silver, 10%);
 	}
 	
 	&.btn-outline {
 		background-color: transparent;
-		color: $color-pewter;
+		color: $color-silver;
 		
 		&:hover {
-			color: $color-pewter;
+			color: $color-silver;
+			background-color: rgba(white, .25);
+		}
+	}
+}
+.btn-gray-light {
+	background-color: $color-gray-light;
+	border-color: $color-gray-light;
+	color: $color-body-text !important;
+	
+	&:hover {
+		color: $color-body-text !important;
+		background-color: darken($color-gray-light, 10%);
+	}
+	
+	&.btn-outline {
+		background-color: transparent;
+		color: $color-gray-light;
+		
+		&:hover {
+			color: $color-gray-light;
+			background-color: rgba(white, .25);
+		}
+	}
+}
+.btn-gray {
+	background-color: $color-gray;
+	border-color: $color-gray;
+	color: $color-white !important;
+	
+	&:hover {
+		color: $color-white !important;
+		background-color: darken($color-gray, 10%);
+	}
+	
+	&.btn-outline {
+		background-color: transparent;
+		color: $color-gray;
+		
+		&:hover {
+			color: $color-gray;
+			background-color: rgba(white, .25);
+		}
+	}
+}
+.btn-pink {
+	background-color: $color-pink;
+	border-color: $color-pink;
+	color: white !important;
+	
+	&:hover {
+		color: white !important;
+		background-color: darken($color-pink, 10%);
+	}
+	
+	&.btn-outline {
+		background-color: transparent;
+		color: $color-pink;
+		
+		&:hover {
+			color: $color-pink;
+			background-color: rgba(white, .25);
+		}
+	}
+}
+.btn-peach {
+	background-color: $color-peach;
+	border-color: $color-peach;
+	color: white !important;
+	
+	&:hover {
+		color: white !important;
+		background-color: darken($color-peach, 10%);
+	}
+	
+	&.btn-outline {
+		background-color: transparent;
+		color: $color-peach;
+		
+		&:hover {
+			color: $color-peach;
+			background-color: rgba(white, .25);
+		}
+	}
+}
+.btn-green-light {
+	background-color: $color-green-light;
+	border-color: $color-green-light;
+	color: $color-green !important;
+	
+	&:hover {
+		color: $color-green !important;
+		background-color: darken($color-green-light, 10%);
+	}
+	
+	&.btn-outline {
+		background-color: transparent;
+		color: $color-green-light;
+		
+		&:hover {
+			color: $color-green-light;
 			background-color: rgba(white, .25);
 		}
 	}

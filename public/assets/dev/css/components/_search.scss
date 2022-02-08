@@ -1,0 +1,73 @@
+/**
+ * SEARCH
+ */
+@include component('search') {
+	$menu-bar-height: $navbar-height-desktop;
+	$menu-height: $menu-bar-height * .8;
+	$color-submenu-labels: white;
+	$color-nav-dropdown: lighten(theme-color("blue"), 5%);
+	
+	//
+	// FIXED/STICKY TOPBAR on mobile
+	//
+	position: fixed;
+	display: block;
+	width: 100vw;
+	min-height: 100vh;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba($color-pink, .975);
+	text-align: left;
+	@include z-very-top;
+	@include vertically-centered;
+	
+	@include animate;
+	opacity: 0;
+	visibility: hidden;
+	
+	@include state('active') {
+		opacity: 1;
+		visibility: visible;
+		overflow: auto;
+	}
+	
+	@include element('hamburger') {
+		position: absolute;
+		right: $gutter;
+		top: $gutter*1.5;
+		transform: translate(0, -50%);
+		
+		.hamburger-inner,
+		.hamburger-inner:before,
+		.hamburger-inner:after {
+			background-color: white;
+		}
+		
+		@include respond-below(md) {
+			//top: 55%;
+			
+			.hamburger-box {
+				width: 30px;
+				height: 20px;
+			}
+			
+			.hamburger-inner {
+				&,
+			  &::before,
+			  &::after {
+			    width: 30px;
+			  }
+			  
+			  &::before {
+			    top: ($hamburger-layer-spacing/2 + $hamburger-layer-height) * -1;
+			  }
+			
+			  &::after {
+			    bottom: ($hamburger-layer-spacing/2 + $hamburger-layer-height) * -1;
+			  }
+			}
+		}
+	}
+}

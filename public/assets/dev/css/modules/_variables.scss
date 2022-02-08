@@ -1,27 +1,33 @@
 
 // COLORS
 $color-body-bg:      white;
-$color-silver:       #E1EDF5;//#efefef;
-$color-gray:         #9FADBF;
-$color-gray-light:   #ccc;
+$color-silver:       #efefef;
+$color-gray:         #aaa;
+$color-gray-light:   #ddd;
 $color-gray-dark:    #333;
+
 $color-pewter:       #8EA3BF;
 $color-midnight:     #011526;
 $color-navy:         #022340;
 $color-blue:         #6085A6;
 
+$color-peach:        #e4ae94;
+$color-green:        #7f9e8f;
+$color-green-light:  #c9e0d4;
+$color-pink:         #ba86ad;
+
 $color-block-border: #ccc;
-$color-black:        $color-midnight;
+$color-black:        #000;
 $color-white:        #fff;
-$color-body-text:    $color-midnight;
+$color-body-text:    $color-gray-dark;
 
 // FONTS
 $font-stack-helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-stack-arial-narrow: "Arial Narrow", Arial, sans-serif;
 $font-stack-georgia: Georgia, Times, 'Times New Roman', serif;
 
-$base-font: "Poppins", $font-stack-helvetica;
-$font-serif: $font-stack-georgia;
+$base-font: "bookmania", $font-stack-georgia;
+$font-heading: "magnesium-mvb", $font-stack-helvetica;
 
 // boostrap overrides
 $font-size-base:              20px;

@@ -1,0 +1,35 @@
+/**
+ * ICON LIST
+ */
+@include component('icon-list') {
+	position: relative;
+	display: block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	
+	li {
+		position: relative;
+		display: block;
+		list-style-type: none;
+		line-height: 1.2em;
+		margin: 0 0 1em 0;
+		padding: 0 0 0 2em;
+		
+		span[class*='fa-'] {
+			position: absolute;
+			display: block;
+			width: 1.5em;
+			height: 1.5em;
+			line-height: 1.5em;
+			text-align: center;
+			top: -.2em;
+			left: 0;
+			transform: scale(1.5);
+		}
+	}
+	
+	@include element('social') {
+		font-size: 150%;
+	}
+}

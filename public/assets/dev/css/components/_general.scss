@@ -79,18 +79,32 @@
 			color: $color-black;
 		}
 	}
-	@include modifier('text-navy') {
-		color: $color-navy;
+	@include modifier('text-green') {
+		color: $color-green;
 		
 		h1, h2, h3, h4, .u-section-heading {
-			color: $color-navy;
+			color: $color-green;
 		}
 	}
-	@include modifier('text-midnight') {
-		color: $color-midnight;
+	@include modifier('text-green-light') {
+		color: $color-green-light;
 		
 		h1, h2, h3, h4, .u-section-heading {
-			color: $color-midnight;
+			color: $color-green-light;
+		}
+	}
+	@include modifier('text-peach') {
+		color: $color-peach;
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: $color-peach;
+		}
+	}
+	@include modifier('text-pink') {
+		color: $color-pink;
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: $color-pink;
 		}
 	}
 	
@@ -142,8 +156,8 @@
 			color: $color-white;
 		}
 	}
-	@include modifier('blue') {
-		background-color: $color-blue;
+	@include modifier('green') {
+		background-color: $color-green;
 		color: $color-white;
 		
 		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
@@ -152,8 +166,8 @@
 			color: $color-white;
 		}
 	}
-	@include modifier('navy') {
-		background-color: $color-navy;
+	@include modifier('green-light') {
+		background-color: $color-green-light;
 		color: $color-white;
 		
 		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
@@ -162,8 +176,8 @@
 			color: $color-white;
 		}
 	}
-	@include modifier('midnight') {
-		background-color: $color-midnight;
+	@include modifier('peach') {
+		background-color: $color-peach;
 		color: $color-white;
 		
 		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
@@ -172,8 +186,8 @@
 			color: $color-white;
 		}
 	}
-	@include modifier('pewter') {
-		background-color: $color-pewter;
+	@include modifier('pink') {
+		background-color: $color-pink;
 		color: $color-white;
 		
 		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,

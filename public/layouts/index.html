@@ -1,6 +1,165 @@
-@@include('_document-head.html')
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Viewport params (for iOS) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<!-- Meta Data -->
+<title>Heinley Projects</title>
+<link rel="canonical" href="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+ 
+<!-- Facebook OG -->
+<meta property="og:title" content="Heinley Projects">
+<meta property="og:type" content="article">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="Heinley Projects"> 
+<meta property="og:description" content="">
+
+<!-- Preload Web Fonts, CSS, and JS -->
+<link rel="preload" href="/assets/css/master.css" as="style">
+<link rel="preload" href="/assets/js/master.min.js" as="script">
+
+<!-- Favicon
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+-->
+
+<!-- CSS Styles -->
+<link rel="stylesheet" href="https://use.typekit.net/xzn5cmc.css">
+<link rel="stylesheet" href="/assets/css/master.css?v=20220126.1">
+</head>
+
 <body class="is-top home has-page-header">
-@@include('_masthead.html')
+<!-- TOP BAR -->
+<div class="c-topbar">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<a href="index.html" class="c-topbar__branding">
+					<img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="Heinley Projects" />
+				</a>
+				
+				<ul class="c-topbar__nav">
+					<li><a href="work.html">Work</a></li>
+					<li><a href="approach.html">Approach</a></li>
+					<li><a href="about.html">About</a></li>
+					<li>
+						<a href="#search" class="js-search-toggle" onclick="openSearch()" aria-role="button" aria-label="search">
+							<span class="far fa-search" aria-hidden="true"></span>
+						</a>
+					</li>
+				</ul>
+				
+				<button class="hamburger hamburger--squeeze c-topbar__hamburger js-menu-toggle" type="button" id="hamburger-topbar" onclick="openHamburgerNav()" aria-label="open navigation menu" aria-expanded="false">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- NAVIGATION MENU -->
+<nav id="menu" class="c-navigation">
+	<div class="c-navigation__top">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<a href="index.html" class="c-topbar__branding">
+						<img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="Heinley Projects" />
+					</a>
+					
+					<button class="hamburger hamburger--squeeze c-navigation__hamburger js-menu-toggle" type="button" id="hamburger-navigation" onclick="closeHamburgerNav()" aria-label="close navigation menu" aria-expanded="false">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="c-navigation__inner">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<ul class="c-navigation__menu d-flex flex-column justify-content-center align-items-center align-content-start">
+						<li><a href="work.html" class="btn">Work</a></li>
+						<li><a href="approach.html" class="btn">Approach</a></li>
+						<li><a href="about.html" class="btn">About</a></li>
+						<li><a href="kitchen-sink.html" class="btn">Kitchen Sink</a></li>
+					</ul>
+					
+					<form>
+						<div class="input-group mb-2">
+							<label for="search-input-mobile" class="sr-only">Search</label>
+							<input id="search-input-mobile" type="search" class="form-control" placeholder="search">
+							<div class="input-group-append">
+								<button type="submit" class="btn btn-default btn-block mb-2" aria-labelledby="button-label">
+									<span id="button-label" hidden>search</span>
+									<span class="far fa-search" aria-hidden="true" focusable="false"></span>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<!-- SEARCH OVERLAY -->
+<nav id="search" class="c-search">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+				<form>
+					<div class="input-group mb-2">
+						<label for="search-input" class="sr-only">Search</label>
+						<input id="search-input" type="search" class="form-control" placeholder="search">
+						<div class="input-group-append">
+							<button type="submit" class="btn btn-default btn-block mb-2">
+								<span id="button-label" hidden>search</span>
+								<span class="far fa-search" aria-hidden="true" focusable="false"></span>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<button class="hamburger hamburger--squeeze c-search__hamburger js-search-toggle" type="button" id="hamburger-navigation" onclick="closeSearch()" aria-label="close search overlay" aria-expanded="false">
+		<span class="hamburger-box">
+			<span class="hamburger-inner"></span>
+		</span>
+	</button>
+</nav>
+
 
 <main class="c-main">
 
@@ -274,9 +433,75 @@
 
 </main>
 
-@@include('_footer.html')
+<!-- GLOBAL FOOTER -->
+<footer id="contact" class="c-footer">
+	<div class="container c-footer__top">
+		<!--
+		<div class="row">
+			<div class="col-12 text-center">
+				<p><a href="#top" class="js-scroll-to-anchor"><img class="c-footer__branding" src="/assets/img/logo-white.svg" alt="Shoe Box Books logo" /></a></p>
+				
+				<p class="c-footer__social">
+					<a href="https://www.facebook.com/ShoeBoxBooksATX/" class="c-footer__social-link" title="Shoe Box Books on Facebook" target="_blank" rel="noopener"><span class="fab fa-facebook-f" aria-hidden="true"></span></a>
+					<a href="http://www.twitter.com/shoeboxbooks/" class="c-footer__social-link" title="Shoe Box Books on Facebook" target="_blank" rel="noopener"><span class="fab fa-twitter" aria-hidden="true"></span></a>
+					<a href="http://www.linkedin.com/in/ginalynd/" class="c-footer__social-link" title="Shoe Box Books on LinkedIn" target="_blank" rel="noopener"><span class="fab fa-linkedin-in" aria-hidden="true"></span></a>
+				</p>
+			</div>
+		</div>
+		-->
+		<div class="text-center">
+			<p class="c-footer__copyright">
+				&copy;2022 Heinley Projects 
+				<a href="mailto:hello@heinleyprojects.com">hello@heinleyprojects.com</a>
+				<!--<a href="tel://512-632-1110">512-632-1110</a>-->
+				<a href="https://mach1media.com" title="Small Business Websites by Mach 1 Media in Austin, Texas" target="_blank" rel="noopener">Website by Mach 1 Media</a>
+			</p>
+		</div>
+	</div>
+</footer>
 
-@@include('_blueimp-gallery-controls.html')
+
+<!-- Global Site JS -->
+<script src="/assets/js/master.min.js?v=20220207.4" type="text/javascript" charset="utf-8"></script>
+
+<!-- BLUEIMP GALLERY CONTROLS -->
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <a
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></a>
+  <a
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></a>
+  <a
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></a>
+  <a
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></a>
+  <ol class="indicator"></ol>
+</div>
 
 <!-- INIT HERO CAROUSEL -->
 <script>

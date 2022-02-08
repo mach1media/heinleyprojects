@@ -25,12 +25,12 @@ body {
 	//background-image: linear-gradient(white 0%, white 100%);
 	
 	body:not(.has-page-header) {
-		background-color: $color-navy;
+		background-color: $color-green;
 	}
 	
 	box-shadow: 0px 0px 0px transparent;
 	body.is-scrolled & {
-		box-shadow: 0px 0px 20px rgba($color-midnight, .5);
+		box-shadow: 0px 0px 20px rgba($color-black, .5);
 	}
 	
 	//
@@ -51,13 +51,13 @@ body {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background-image: linear-gradient($color-midnight 0%, rgba($color-midnight, 0) 100%);
+		background-image: linear-gradient($color-black 0%, rgba($color-black, 0) 100%);
 		z-index: -1;
 		@include animate;
 	}
 	
 	body:not(.has-page-header) &:before {
-		background-image: linear-gradient($color-navy 0%, $color-navy 100%);
+		background-image: linear-gradient($color-green 0%, $color-green 100%);
 	}
 	
 	body.is-top & {
@@ -68,10 +68,10 @@ body {
 		}
 	}
 	body.is-top:not(.has-page-header) & {
-		background-color: $color-navy;
+		background-color: $color-green;
 	}
 	body.is-scrolled & {
-		background-color: $color-navy;
+		background-color: $color-green;
 		//background-image: linear-gradient($color-blue 0%, $color-blue 100%);
 		&:before {
 			opacity: 0;
@@ -139,10 +139,10 @@ body {
 			}
 		}
 		@include respond-below(md) {
-			height: $topbar-height-mobile * .8;
+			height: $topbar-height-mobile * .6;
 			
 			img {
-				height: $topbar-height-mobile * .8;
+				height: $topbar-height-mobile * .6;
 				width: auto;
 			}
 		}
@@ -155,12 +155,14 @@ body {
 	}
 	
 	@include element('hamburger') {
+		display: none;
 		position: absolute;
 		right: $gutter;
 		top: 50%;
 		transform: translate(0, -50%);
 		
 		@include respond-below(md) {
+			display: block;
 			top: 55%;
 			
 			.hamburger-box {
@@ -194,5 +196,51 @@ body {
 			  }
 			}
 		//}
+	}
+	
+	//
+	// NAV MENU
+	//
+	@include element('nav') {
+		display: none;
+		
+		@include respond-above(md) {
+			display: block;
+			list-style-type: none;
+			position: absolute;
+			display: block;
+			margin: 0;
+			padding: 0;
+			top: 50%;
+			right: $gutter;
+			transform: translate(0, -50%);
+			
+			li {
+				position: relative;
+				display: inline-block;
+				margin: 0;
+				padding: 0;
+				
+				&:not(:last-of-type) {
+					margin-right: 1em;
+				}
+				
+				a {
+					position: relative;
+					display: block;
+					@include font-heading;
+					text-transform: uppercase;
+					text-decoration: none;
+					color: white;
+					@include animate;
+					opacity: .85;
+					
+					&:hover {
+						opacity: 1;
+						text-decoration: none;
+					}
+				}
+			}
+		}
 	}
 }

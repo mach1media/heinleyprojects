@@ -13,54 +13,106 @@
 		display: block;
 		line-height: 1em;
 		cursor: pointer;
-		margin: 0 0 $gutter 0;
+		margin: 0;
+		padding: $gutter/2;
 		@include animate;
-		color: theme-color('navy');
+		color: $color-body-text;
+		@include base-font-bold;
 		text-decoration: none;
-		text-transform: uppercase;
-		background-color: theme-color('silver');
+		//text-transform: uppercase;
+		//background-color: theme-color('silver');
+		border-top: 2px solid $color-gray;
+		border-bottom: 2px solid transparent;
 		
-		&:after {
-			content: "";
+		& > small {
 			position: relative;
-			display: inline-block;
-			width: 10px;
-			height: 10px;
-			border-top: 1px solid theme-color('navy');
-			border-right: 1px solid theme-color('navy');
-			transform: translate(10px, -50%) rotate(135deg);
+			display: block;
+			transform: translate(0, .2em);
+		}
+		
+		&:before {
+			content: "";
+			position: absolute;
+			display: block;
+			top: $gutter/2;
+			right: 100%;
+			bottom: $gutter/2;
+			left: 0;
+			transform: rotate(-.75deg);
+			transform-origin: center;
+			background-color: #f5ffac;
+			@include animate;
+			z-index: -1;
+		}
+		&:after {
+			content: "\f057";
+			position: absolute;
+			display: block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			font-smoothing: antialiased;
+			font-family: "Font Awesome 5 Pro";
+			font-weight: 300;
+			color: $color-body-text;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 30px;
+			text-align: center;
+			top: 50%;
+			right: $gutter/2;
+			transform: translate(0, -50%) rotate(0deg);
+			
+			border-radius: 100%;
+			line-height: 40px;
 			@include animate;
 		}
 		
 		&:hover {
-			opacity: .5;
+			//opacity: .5;
 			color: theme-color('navy');
 			text-decoration: none;
-		}
-		
-		&[aria-expanded='true'] {
-			&:after {
-				transform: translate(10px, -2px) rotate(45deg);
+			
+			&:before {
+				left: -$gutter/4;
+				right: -$gutter/4;
 			}
 		}
 		
-		@include respond-above(sm) {
-			padding: $gutter/2 $gutter*4;
+		&[aria-expanded='true'] {
+			&:before {
+				left: -$gutter/4;
+				right: -$gutter/4;
+			}
+			&:after {
+				transform: translate(0, -50%) rotate(-225deg);
+			}
 		}
+		
+		.c-accordion &:last-of-type {
+			border-bottom: 2px solid $color-gray;
+			
+			&[aria-expanded='true'] {
+				border-bottom: 2px solid transparent;
+			}
+		}
+		
 		@include respond-below(sm) {
 			font-size: 18px;
-			padding: $gutter/2 $gutter;
 		}
 	}
 	
 	@include element('content') {
-		margin: 0 0 $gutter 0;
+		margin: 0;
+		padding: 0 $gutter/2;
 		
-		@include respond-above(sm) {
-			padding: $gutter/2 $gutter*4;
+		.c-accordion .c-accordion__heading:last-of-type + & {
+			border-bottom: 2px solid transparent;
 		}
-		@include respond-below(sm) {
-			padding: $gutter/2 $gutter;
+		
+		.c-accordion .c-accordion__heading:last-of-type[aria-expanded='true'] + & {
+			border-bottom: 2px solid $color-gray;
 		}
 	}
 }

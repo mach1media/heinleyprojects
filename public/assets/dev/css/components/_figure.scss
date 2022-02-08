@@ -5,7 +5,7 @@
 	position: relative;
 	display: block;
 	width: 100%;
-	margin-bottom: $gutter*2;
+	margin-bottom: 0;//$gutter;
 	
 	img {
 		position: relative;
@@ -15,7 +15,7 @@
 	}
 	
 	figcaption {
-		@include base-font-light;
+		@include base-font;
 		font-size: 75%;
 		color: rgba($color-body-text, .5);
 	}
@@ -55,8 +55,11 @@
 	@include modifier('center') {
 		text-align: center;
 		width: 100%;
+		margin-bottom: $gutter;
 		
 		img {
+			width: auto;
+			max-width: 100%;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -64,6 +67,8 @@
 	
 	
 	@include modifier('full') {
+		margin-bottom: $gutter;
+		
 		.container > & {
 			@include respond-above(sm) {
 				margin-top: $gutter*2;

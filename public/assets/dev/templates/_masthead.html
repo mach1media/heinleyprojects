@@ -4,8 +4,19 @@
 		<div class="row">
 			<div class="col">
 				<a href="index.html" class="c-topbar__branding">
-					<img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="B Flat Dueling Pianos" />
+					<img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="Heinley Projects" />
 				</a>
+				
+				<ul class="c-topbar__nav">
+					<li><a href="work.html">Work</a></li>
+					<li><a href="approach.html">Approach</a></li>
+					<li><a href="about.html">About</a></li>
+					<li>
+						<a href="#search" class="js-search-toggle" onclick="openSearch()" aria-role="button" aria-label="search">
+							<span class="far fa-search" aria-hidden="true"></span>
+						</a>
+					</li>
+				</ul>
 				
 				<button class="hamburger hamburger--squeeze c-topbar__hamburger js-menu-toggle" type="button" id="hamburger-topbar" onclick="openHamburgerNav()" aria-label="open navigation menu" aria-expanded="false">
 					<span class="hamburger-box">
@@ -24,7 +35,7 @@
 			<div class="row">
 				<div class="col">
 					<a href="index.html" class="c-topbar__branding">
-						<img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="B Flat Dueling Pianos" />
+						<img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="Heinley Projects" />
 					</a>
 					
 					<button class="hamburger hamburger--squeeze c-navigation__hamburger js-menu-toggle" type="button" id="hamburger-navigation" onclick="closeHamburgerNav()" aria-label="close navigation menu" aria-expanded="false">
@@ -42,27 +53,54 @@
 			<div class="row">
 				<div class="col">
 					<ul class="c-navigation__menu d-flex flex-column justify-content-center align-items-center align-content-start">
-						<li><a href="index.html" class="btn">Home</a></li>
+						<li><a href="work.html" class="btn">Work</a></li>
+						<li><a href="approach.html" class="btn">Approach</a></li>
+						<li><a href="about.html" class="btn">About</a></li>
 						<li><a href="kitchen-sink.html" class="btn">Kitchen Sink</a></li>
-						<!-- <li><a href="contact.html" class="btn">Contact</a></li> -->
 					</ul>
+					
+					<form>
+						<div class="input-group mb-2">
+							<label for="search-input-mobile" class="sr-only">Search</label>
+							<input id="search-input-mobile" type="search" class="form-control" placeholder="search">
+							<div class="input-group-append">
+								<button type="submit" class="btn btn-default btn-block mb-2" aria-labelledby="button-label">
+									<span id="button-label" hidden>search</span>
+									<span class="far fa-search" aria-hidden="true" focusable="false"></span>
+								</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--
-	<div class="c-navigation__bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<ul class="list-inline">
-						<li class="list-inline-item"><a href="https://www.facebook.com/ShoeBoxBooksATX/" class="c-navigation__social" title="Shoe Box Books on Facebook" target="_blank" rel="noopener"><span class="fab fa-facebook-f" aria-hidden="true"></span></a></li>
-						<li class="list-inline-item"><a href="http://www.twitter.com/shoeboxbooks/" class="c-navigation__social" title="Shoe Box Books on Twitter" target="_blank" rel="noopener"><span class="fab fa-twitter" aria-hidden="true"></span></a></li>
-						<li class="list-inline-item"><a href="http://www.linkedin.com/in/ginalynd" class="c-navigation__social" title="Shoe Box Books on LinkedIn" target="_blank" rel="noopener"><span class="fab fa-linkedin-in" aria-hidden="true"></span></a></li>
-					</ul>
-				</div>
+</nav>
+
+<!-- SEARCH OVERLAY -->
+<nav id="search" class="c-search">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+				<form>
+					<div class="input-group mb-2">
+						<label for="search-input" class="sr-only">Search</label>
+						<input id="search-input" type="search" class="form-control" placeholder="search">
+						<div class="input-group-append">
+							<button type="submit" class="btn btn-default btn-block mb-2">
+								<span id="button-label" hidden>search</span>
+								<span class="far fa-search" aria-hidden="true" focusable="false"></span>
+							</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
-	-->
+	
+	<button class="hamburger hamburger--squeeze c-search__hamburger js-search-toggle" type="button" id="hamburger-navigation" onclick="closeSearch()" aria-label="close search overlay" aria-expanded="false">
+		<span class="hamburger-box">
+			<span class="hamburger-inner"></span>
+		</span>
+	</button>
 </nav>

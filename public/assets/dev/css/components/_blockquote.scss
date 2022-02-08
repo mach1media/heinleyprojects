@@ -3,11 +3,11 @@
  */
 
 .blockquote {
-	@include base-font-light-italic;
+	@include base-font-italic;
 	font-size: 1.5rem;
 }
 .blockquote-footer {
-	@include base-font-bold;
+	@include base-font;
 	font-size: .75rem;
 	text-transform: uppercase;
 	
@@ -38,7 +38,7 @@
 		
 		
 		blockquote {
-			@include base-font-light-italic;
+			@include base-font-italic;
 			line-height: 1.5em;
 			//margin: 0;
 			padding: $gutter;
@@ -56,7 +56,7 @@
 			
 			cite {
 				display: block;
-				@include base-font-light;
+				@include base-font;
 				text-transform: uppercase;
 				//letter-spacing: .2em;
 				line-height: 1.5em;
@@ -148,27 +148,27 @@
 			@include blockquoteColor(theme-color('secondary'), $color-white);
 		}
 	}
-	@include modifier('navy') {
+	@include modifier('pink') {
 		.c-blockquote__quote {
-			@include blockquoteColor($color-navy, $color-white);
+			@include blockquoteColor($color-pink, $color-white);
 			color: white;
 		}
 	}
-	@include modifier('blue') {
+	@include modifier('green') {
 		.c-blockquote__quote {
-			@include blockquoteColor($color-blue, $color-white);
+			@include blockquoteColor($color-green, $color-white);
 			color: white;
 		}
 	}
-	@include modifier('pewter') {
+	@include modifier('green-light') {
 		.c-blockquote__quote {
-			@include blockquoteColor($color-pewter, $color-white);
+			@include blockquoteColor($color-green-light, $color-white);
 			color: white;
 		}
 	}
-	@include modifier('midnight') {
+	@include modifier('peach') {
 		.c-blockquote__quote {
-			@include blockquoteColor($color-midnight, $color-navy);
+			@include blockquoteColor($color-peach, $color-white);
 		}
 	}
 }
