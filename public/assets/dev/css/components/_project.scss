@@ -1,0 +1,291 @@
+/**
+ * PROJECT
+ */
+@include component('project') {
+	position: relative;
+	
+	@include respond-above(lg) {
+		& > .container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			align-items: stretch;
+			
+			& > .row {
+				align-items: stretch;
+				
+				& > [class*='col'] {
+					align-items: center;
+				}
+			}
+		}
+	}
+	@include respond-below(lg) {
+		
+	}
+	
+	
+	//
+	// CONTENT
+	//
+	@include element('description') {
+		@extend %first-last-child;
+		
+		@include respond-above(lg) {
+			.c-project--img-right & {
+				padding-right: $gutter*2;
+			}
+			.c-project--img-left & {
+				padding-left: $gutter*2;
+			}
+		}
+		/*
+		@include respond-between(md, lg) {
+			.c-project--img-right & {
+				padding-right: $gutter;
+			}
+			.c-project--img-left & {
+				padding-left: $gutter;
+			}
+		}
+		*/
+		@include respond-between(sm, lg) {
+			padding-top: $gutter*2;
+			padding-bottom: $gutter*2;
+		}
+		@include respond-below(sm) {
+			padding-top: $gutter;
+			padding-bottom: $gutter;
+		}
+	}
+	
+	@include element('img-desktop') {
+		position: relative;
+		display: block;
+		
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		
+		@include respond-above(lg) {
+			width: 50%;
+			height: 100%;
+		}
+		@include respond-below(lg) {
+			display: none;
+		}
+	}
+	
+	@include element('img-mobile') {
+		position: relative;
+		display: block;
+		
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		
+		@include respond-above(lg) {
+			display: none;
+		}
+	}
+	
+	
+	
+	//
+	// LAYOUTS
+	//
+	@include modifier('img-right') {
+		.c-project__img-desktop {
+			margin-right: 0;
+			margin-left: auto;
+		}
+	}
+	@include modifier('img-left') {
+		.c-project__img-desktop {
+			margin-right: auto;
+			margin-left: 0;
+		}
+	}
+	@include modifier('inset') {
+		&.c-project--img-right .c-project__img-desktop {
+			@include respond-above(lg) {
+				padding-top: $gutter*2;
+				padding-right: $gutter*2;
+				padding-bottom: $gutter*2;
+			}
+		}
+		&.c-project--img-left .c-project__img-desktop {
+			@include respond-above(lg) {
+				padding-top: $gutter*2;
+				padding-left: $gutter*2;
+				padding-bottom: $gutter*2;
+			}
+		}
+	}
+	
+	//
+	// TEXT COLORS
+	//
+	@include modifier('text-white') {
+		color: white;
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: white;
+		}
+	}
+	@include modifier('text-blue') {
+		color: $color-blue;
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: $color-blue;
+		}
+	}
+	@include modifier('text-gray') {
+		color: theme-color('gray');
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: theme-color('gray');
+		}
+	}
+	@include modifier('text-gray-light') {
+		color: theme-color('gray-light');
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: theme-color('gray-light');
+		}
+	}
+	@include modifier('text-gray-dark') {
+		color: theme-color('gray-dark');
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: theme-color('gray-dark');
+		}
+	}
+	@include modifier('text-black') {
+		color: $color-black;
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: $color-black;
+		}
+	}
+	@include modifier('text-green') {
+		color: $color-green;
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: $color-green;
+		}
+	}
+	@include modifier('text-green-light') {
+		color: $color-green-light;
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: $color-green-light;
+		}
+	}
+	@include modifier('text-peach') {
+		color: $color-peach;
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: $color-peach;
+		}
+	}
+	@include modifier('text-pink') {
+		color: $color-pink;
+		
+		h1, h2, h3, h4, .u-section-heading {
+			color: $color-pink;
+		}
+	}
+	
+	
+	// BACKGROUND COLORS --------------------
+	@include modifier('bg-silver') {
+		background-color: $color-silver;
+	}
+	@include modifier('bg-gray') {
+		background-color: $color-gray;
+		color: $color-white;
+		
+		h1, h2, h3, h4, h5, p, li, blockquote, cite, 
+		.u-section-heading,
+		.blockquote-footer {
+			color: $color-white;
+		}
+	}
+	@include modifier('bg-gray-light') {
+		background-color: $color-gray-light;
+	}
+	@include modifier('bg-gray-dark') {
+		background-color: $color-gray-dark;
+	}
+	@include modifier('bg-black') {
+		background-color: $color-black;
+	}
+	
+	@include modifier('bg-primary') {
+		background-color: theme-color('primary');
+		color: $color-white;
+		
+		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
+		.u-section-heading,
+		.blockquote-footer {
+			color: $color-white;
+		}
+	}
+	@include modifier('bg-secondary') {
+		background-color: theme-color('secondary');
+		color: $color-white;
+		
+		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
+		.u-section-heading,
+		.blockquote-footer {
+			color: $color-white;
+		}
+	}
+	@include modifier('bg-green') {
+		background-color: $color-green;
+		color: $color-white;
+		
+		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
+		.u-section-heading,
+		.blockquote-footer {
+			color: $color-white;
+		}
+	}
+	@include modifier('bg-green-light') {
+		background-color: $color-green-light;
+		color: $color-white;
+		
+		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
+		.u-section-heading,
+		.blockquote-footer {
+			color: $color-white;
+		}
+	}
+	@include modifier('bg-peach') {
+		background-color: $color-peach;
+		color: $color-white;
+		
+		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
+		.u-section-heading,
+		.blockquote-footer {
+			color: $color-white;
+		}
+	}
+	@include modifier('bg-pink') {
+		background-color: $color-pink;
+		color: $color-white;
+		
+		h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
+		.u-section-heading,
+		.blockquote-footer {
+			color: $color-white;
+		}
+	}
+}
