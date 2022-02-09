@@ -120,7 +120,7 @@ jQuery(document).ready(function($) {
 		}
 	});
 	
-/*
+	/*
 	// TOGGLE MOBILE MENU
 	$('.js-menu-toggle').on('click', function(e){
 		e.preventDefault();
@@ -168,7 +168,10 @@ jQuery(document).ready(function($) {
 		$('.js-search-toggle').removeClass('is-active');
 		$('#search').removeClass('is-active');
 	});
-*/
+	*/
+	$('.js-search-toggle').on('click', function(e){
+		e.preventDefault();
+	});
 	
 	// SCROLL TO SAME PAGE ANCHORS ----------------------------
 	$('.js-scroll-to-section').click(function(e) {

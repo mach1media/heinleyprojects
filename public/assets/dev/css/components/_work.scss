@@ -9,10 +9,61 @@
 		position: relative;
 		display: block;
 		overflow: hidden;
+		margin-bottom: $gutter;
 		
-		a, img {
+		img {
 			position: relative;
 			display: block;
+			width: 100%;
+			height: auto;
+			@include animate;
+		}
+		
+		a {
+			position: relative;
+			display: block;
+			text-decoration: none;
+			
+			&:hover {
+				img {
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+	
+	@include element('heading') {
+		position: relative;
+		display: inline-block;
+		@include base-font;
+		
+		a {
+			position: relative;
+			text-decoration: none;
+			color: $color-body-text;
+		}
+		
+		
+		&:before {
+			content: "";
+			position: absolute;
+			display: block;
+			top: 0;
+			right: 100%;
+			bottom: .2em;
+			left: -.2em;
+			transform: rotate(-.75deg);
+			transform-origin: center;
+			background-color: $color-green-light;
+			@include animate;
+			opacity: 0;
+		}
+		
+		&:hover {
+			&:before {
+				right: -.2em;
+				opacity: 1;
+			}
 		}
 	}
 }
