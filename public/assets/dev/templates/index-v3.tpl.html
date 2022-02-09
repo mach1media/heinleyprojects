@@ -4,36 +4,24 @@
 
 <main class="c-main">
 
-<!-- HERO STATIC -->
-<header class="c-hero" style="background:url('/assets/uploads/images/AdobeStock_303970287.jpeg') center center no-repeat;background-size:cover;">
-	<div class="container c-hero__description">
-		<div class="row d-flex align-items-end">
-			<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
-				<h1 class="c-hero__heading">Page Title Here</h1>
-				<p>This is an example of a static photo hero.</p>
-				<p><a href="index-v2.html" class="btn btn-white btn-outline">Solid Color Example</a></p>
-			</div>
-		</div>
-	</div>
-</header>
-<!-- HOME HERO CAROUSEL 
-<header class="c-hero">
-	<div id="js-hero-carousel" class="c-hero__carousel">
-		<div class="c-hero__carousel-slide" style="background:url('/assets/uploads/images/AdobeStock_303970287.jpeg') center center no-repeat;background-size:cover;"></div>
-		<div class="c-hero__carousel-slide" style="background:url('/assets/uploads/images/AdobeStock_214255464.jpeg') center center no-repeat;background-size:cover;"></div>
-		<div class="c-hero__carousel-slide" style="background:url('/assets/uploads/images/AdobeStock_234327403.jpeg') center center no-repeat;background-size:cover;"></div>
-	</div>
+<!-- HERO: BACKGROUND VIDEO -->
+<!-- Initialized with JS below -->
+<header class="c-hero" style="background:url('/assets/img/video-poster.jpg') center center no-repeat; background-size:cover;">
+	<video id="vid" poster="/assets/video/video-poster.jpg" playsinline autoplay muted loop>
+		<source src="/assets/video/video.mp4" type="video/mp4">
+	</video>
 	
 	<div class="container c-hero__description">
 		<div class="row d-flex align-items-end">
 			<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
 				<h1 class="c-hero__heading">Page Title Here</h1>
-				<p>Optional lead text within page header would go here.</p>
+				<p>This is an example of a background video hero.</p>
+				<p><a href="index-v4.html" class="btn btn-white btn-outline">Carousel Example</a></p>
 			</div>
 		</div>
 	</div>
 </header>
--->
+
 
 
 <!-- LEAD BLOCK -->
@@ -275,16 +263,25 @@
 
 @@include('_blueimp-gallery-controls.html')
 
-<!-- INIT HERO CAROUSEL -->
+<!-- INIT VIDEO -->
 <script>
-jQuery(document).ready(function($) {
-	$('#js-hero-carousel').slick({
-		accessibility: true,
-		autoplay: true,
-		autoplaySpeed: 4000,
-		draggable: false
-	});
-});
+//
+// Google Chrome not autoplaying video
+// https://developers.google.com/web/updates/2017/06/play-request-was-interrupted
+//
+var playPromise = $('#vid')[0].play();
+
+if (playPromise !== undefined) {
+  playPromise.then(_ => {
+    // Automatic playback started!
+    // Show playing UI.
+  })
+  .catch(error => {
+    // Auto-play was prevented
+    // Show paused UI.
+    $('#vid')[0].play();
+  });
+};
 </script>
 
 </body>

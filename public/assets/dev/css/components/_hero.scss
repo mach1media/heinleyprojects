@@ -12,7 +12,9 @@ body.home {
 	
 	position: relative;
 	display: block;
+	overflow: hidden;
 	
+	/*
 	&:before {
 		content: "";
 		position: absolute;
@@ -23,6 +25,7 @@ body.home {
 		background-image: linear-gradient(rgba(black, .5) 0%, rgba(black, .2) 15%);
 		@include z-1;
 	}
+	*/
 	
 	&,
 	.container,
@@ -39,6 +42,30 @@ body.home {
 		}
 	}
 	
+	& > video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		transform: translateX(-50%) translateY(-50%);
+		transition: 1s opacity;
+	}
+	
+	@include element('codepen') {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		transform: translateX(-50%) translateY(-50%);
+		transition: 1s opacity;
+	}
+	
 	@include element('description') {
 		position: relative;
 		@include base-font;
@@ -46,12 +73,13 @@ body.home {
 		text-shadow: 0px 0px 6px rgba(black, .75);
 		
 		[class*='col-'] {
+			@extend %first-last-child;
 			margin-bottom: 3rem;
 		}
 		
 		p {
 			font-size: 150%;
-			margin-top: 1em;
+			margin-bottom: .5em;
 			line-height: 1.5em;
 		}
 	}
@@ -67,6 +95,10 @@ body.home {
 			font-size: 70px;
 			text-shadow: 0px 0px 10px rgba(black, .5);
 			//max-width: 80%;
+			
+			& + p {
+				margin-top: .5em;
+			}
 		}
 		@include respond-below(md) {
 			font-size: 48px;
@@ -152,5 +184,44 @@ body.home {
 		@media (max-height: 850px) {
 			height: 90vh;
 		}
+	}
+	
+	
+	// BACKGROUND COLORS --------------------
+	@include modifier('silver') {
+		background-color: $color-silver;
+	}
+	@include modifier('white') {
+		background-color: $color-white;
+	}
+	@include modifier('gray') {
+		background-color: $color-gray;
+	}
+	@include modifier('gray-light') {
+		background-color: $color-gray-light;
+	}
+	@include modifier('gray-dark') {
+		background-color: $color-gray-dark;
+	}
+	@include modifier('black') {
+		background-color: $color-black;
+	}
+	@include modifier('primary') {
+		background-color: theme-color('primary');
+	}
+	@include modifier('secondary') {
+		background-color: theme-color('secondary');
+	}
+	@include modifier('green') {
+		background-color: $color-green;
+	}
+	@include modifier('green-light') {
+		background-color: $color-green-light;
+	}
+	@include modifier('peach') {
+		background-color: $color-peach;
+	}
+	@include modifier('pink') {
+		background-color: $color-pink;
 	}
 }
