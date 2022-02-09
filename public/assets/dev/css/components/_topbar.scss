@@ -35,8 +35,12 @@ body {
 	}
 	*/
 	
-	//
+	// --------------------------
 	// FIXED/STICKY TOPBAR
+	// --------------------------
+	// hides after scrolling down
+	// appears when scrolling up
+	// shows at top of screen
 	//
 	position: fixed;
 	top:0;
@@ -83,11 +87,11 @@ body {
 	body.is-top:not(.has-page-header) & {
 		background-color: $color-green;
 	}
-/*
+	/*
 	body.is-scrolled & {
 		background-color: $color-green;
 	}
-*/
+	*/
 	
 	
 	& .container,
@@ -142,10 +146,10 @@ body {
 		*/
 		
 		@include respond-above(md) {
-			height: $topbar-height-desktop * .6;
+			height: $topbar-height-desktop * .4;
 			
 			img {
-				height: $topbar-height-desktop * .6;
+				height: $topbar-height-desktop * .4;
 				width: auto;
 			}
 		}
@@ -239,16 +243,38 @@ body {
 				a {
 					position: relative;
 					display: block;
-					@include font-heading;
-					text-transform: uppercase;
+					//@include font-heading;
+					//text-transform: uppercase;
+					@include base-font-bold;
 					text-decoration: none;
 					color: white;
 					@include animate;
 					opacity: .85;
 					
+					&:before {
+						content: "";
+						position: absolute;
+						display: block;
+						top: 0;
+						right: 100%;
+						bottom: .2em;
+						left: -.2em;
+						transform: rotate(-.75deg);
+						transform-origin: center;
+						background-color: $color-green-light;
+						@include animate;
+						opacity: 0;
+						z-index: -1;
+					}
+					
 					&:hover {
 						opacity: 1;
 						text-decoration: none;
+						
+						&:before {
+							right: -.2em;
+							opacity: 1;
+						}
 					}
 				}
 			}

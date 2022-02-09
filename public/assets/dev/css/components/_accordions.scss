@@ -40,7 +40,7 @@
 			left: 0;
 			transform: rotate(-.75deg);
 			transform-origin: center;
-			background-color: #f5ffac;
+			background-color: $color-green-light;
 			@include animate;
 			z-index: -1;
 		}
