@@ -113,6 +113,7 @@ body {
 	}
 	@include respond-below(md) {
 		height: $topbar-height-mobile;
+		background-color: $color-green;
 	}
 	
 	@include element('branding') {

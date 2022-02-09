@@ -4,7 +4,13 @@
 
 .blockquote {
 	@include base-font-italic;
-	font-size: 1.5rem;
+	
+	@include respond-above(sm) {
+		font-size: 1.5rem;
+	}
+	@include respond-below(sm) {
+		
+	}
 }
 .blockquote-footer {
 	@include base-font;

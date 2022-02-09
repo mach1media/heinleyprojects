@@ -1,0 +1,18 @@
+/**
+ * WORK CARDS
+ */
+@include component('work') {
+	position: relative;
+	display: block;
+	
+	@include element('thumb') {
+		position: relative;
+		display: block;
+		overflow: hidden;
+		
+		a, img {
+			position: relative;
+			display: block;
+		}
+	}
+}

@@ -26,7 +26,7 @@ body.is-scrolled .hamburger:not(.is-active) .hamburger-inner {
 	$menu-bar-height: $navbar-height-desktop;
 	$menu-height: $menu-bar-height * .8;
 	$color-submenu-labels: white;
-	$color-nav-dropdown: lighten(theme-color("blue"), 5%);
+	$color-nav-dropdown: lighten($color-green, 5%);
 	
 	//
 	// FIXED/STICKY TOPBAR on mobile
@@ -39,7 +39,7 @@ body.is-scrolled .hamburger:not(.is-active) .hamburger-inner {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba(theme-color("blue"), .975);
+	background: rgba($color-green, .975);
 	text-align: left;
 	@include z-very-top;
 	
