@@ -81,10 +81,12 @@
 		}
 		
 		&[aria-expanded='true'] {
+			/*
 			&:before {
 				left: -$gutter/4;
 				right: -$gutter/4;
 			}
+			*/
 			&:after {
 				transform: translate(0, -50%) rotate(-225deg);
 			}

@@ -8,29 +8,54 @@
 @include utility('color-white') {
 	color: white !important;
 }
-@include utility('color-blue') {
-	color: theme-color('blue') !important;
+@include utility('color-green') {
+	color: $color-green !important;
 }
-@include utility('color-blue-light') {
-	color: theme-color('blue-light') !important;
+@include utility('color-green-light') {
+	color: $color-green-light !important;
 }
-@include utility('color-navy') {
-	color: theme-color('navy') !important;
+@include utility('color-peach') {
+	color: $color-peach !important;
 }
-@include utility('color-sand') {
-	color: theme-color('sand') !important;
+@include utility('color-pink') {
+	color: $color-pink !important;
 }
-@include utility('color-taupe') {
-	color: theme-color('taupe') !important;
+@include utility('color-black') {
+	color: $color-black !important;
 }
 @include utility('color-silver') {
-	color: theme-color('silver') !important;
+	color: $color-silver !important;
 }
 @include utility('color-gray') {
-	color: theme-color('gray') !important;
+	color: $color-gray !important;
 }
 @include utility('color-gray-light') {
-	color: theme-color('gray-light') !important;
+	color: $color-gray-light !important;
+}
+@include utility('color-gray-dark') {
+	color: $color-gray-dark !important;
+}
+
+//
+// FONT UTILITIES
+//
+@include utility('base-font') {
+	@include base-font;
+}
+@include utility('base-font-bold') {
+	@include base-font-bold;
+}
+@include utility('base-font-italic') {
+	@include base-font-italic;
+}
+@include utility('base-font-bold-italic') {
+	@include base-font-bold-italic;
+}
+@include utility('font-heading') {
+	@include font-heading;
+}
+@include utility('font-heading-condensed') {
+	@include font-heading-condensed;
 }
 
 
