@@ -6,11 +6,18 @@
  * JAN 2022
  */
 
-var offsetTop = 0; // scroll offset when top bar should activate = height of main/top navigation
+var offsetTop      = 0; // scroll offset when top bar should activate = height of main/top navigation
+var scrollPosition = $(window).scrollTop();
 
 function toggleScrollState() {
-	var scrollPosition = $(window).scrollTop();
-	//console.log(top);
+	if ($(window).scrollTop() < scrollPosition) {
+		$('body').addClass('is-scrolled-up');
+	}
+	else {
+		$('body').removeClass('is-scrolled-up');
+	}
+	
+	scrollPosition = $(window).scrollTop();
 	
 	if (scrollPosition > offsetTop) {
 		$('body').removeClass('is-top');
@@ -20,10 +27,10 @@ function toggleScrollState() {
 	}
 	
 	if (scrollPosition <= 0) {
-		$('body').removeClass('is-scrolled');
+		$('body').removeClass('is-scrolled').addClass('is-scrolled-up');
 	}
 	else if ($('body').hasClass('is-scrolled') == false) {
-		$('body').addClass('is-scrolled');
+		$('body').addClass('is-scrolled').removeClass('is-scrolled-up');
 	}
 }
 
