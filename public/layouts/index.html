@@ -58,32 +58,56 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<a href="index.html" class="c-topbar__branding">
-					<img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="Heinley Projects" />
-				</a>
+				<div class="c-topbar__branding">
+					<a href="index.html"><img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="Heinley Projects" /></a>
+				</div>
 				
 				<ul class="c-topbar__nav">
 					<li><a href="work.html">Work</a></li>
 					<li><a href="approach.html">Approach</a></li>
 					<li><a href="about.html">About</a></li>
 					<li>
-						<a href="#search" class="js-search-toggle" onclick="openSearch()" aria-role="button" aria-label="search">
+						<a href="#search" class="js-search-open" aria-role="button" aria-label="search">
 							<span class="far fa-search" aria-hidden="true"></span>
 						</a>
 					</li>
 				</ul>
-				
+				<!--
 				<button class="hamburger hamburger--squeeze c-topbar__hamburger js-menu-toggle" type="button" id="hamburger-topbar" onclick="openHamburgerNav()" aria-label="open navigation menu" aria-expanded="false">
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>
 					</span>
 				</button>
+				-->
+			</div>
+		</div>
+	</div>
+	
+	<!-- SEARCH BAR -->
+	<div id="search" class="c-topbar__search">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<form>
+						<label for="search-input" class="sr-only">Search</label>
+						<input id="search-input" type="search" placeholder="search">
+						<button type="submit">
+							<span id="button-label" hidden>search</span>
+							<span class="far fa-search" aria-hidden="true" focusable="false"></span>
+						</button>
+					</form>
+					
+					<button class="c-topbar__search-close js-search-close" type="button" aria-label="close search bar" aria-expanded="false">
+						<span id="button-label" class="sr-only">search</span>
+						<span class="far fa-times" aria-hidden="true" focusable="false"></span>
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<!-- NAVIGATION MENU -->
+<!-- NAVIGATION MENU 
 <nav id="menu" class="c-navigation">
 	<div class="c-navigation__top">
 		<div class="container">
@@ -131,34 +155,7 @@
 		</div>
 	</div>
 </nav>
-
-<!-- SEARCH OVERLAY -->
-<nav id="search" class="c-search">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
-				<form>
-					<div class="input-group mb-2">
-						<label for="search-input" class="sr-only">Search</label>
-						<input id="search-input" type="search" class="form-control" placeholder="search">
-						<div class="input-group-append">
-							<button type="submit" class="btn btn-default btn-block mb-2">
-								<span id="button-label" hidden>search</span>
-								<span class="far fa-search" aria-hidden="true" focusable="false"></span>
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
-	<button class="hamburger hamburger--squeeze c-search__hamburger js-search-toggle" type="button" id="hamburger-navigation" onclick="closeSearch()" aria-label="close search overlay" aria-expanded="false">
-		<span class="hamburger-box">
-			<span class="hamburger-inner"></span>
-		</span>
-	</button>
-</nav>
+-->
 
 
 <main class="c-main">

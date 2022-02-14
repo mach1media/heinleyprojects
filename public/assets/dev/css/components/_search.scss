@@ -2,11 +2,32 @@
  * SEARCH
  */
 @include component('search') {
-	$menu-bar-height: $navbar-height-desktop;
-	$menu-height: $menu-bar-height * .8;
-	$color-submenu-labels: white;
-	$color-nav-dropdown: lighten(theme-color("blue"), 5%);
 	
+	
+	@include respond-above(md) {
+		position: relative;
+		display: block;
+		width: 100%;
+		color: white;
+		background-color: $color-green;
+		
+		body.has-page-header & {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			@include z-very-top;
+			background-color: transparent;
+		}
+	}
+	
+	@include respond-below(md) {
+		
+	}
+	
+	
+	
+	/*
 	//
 	// FIXED/STICKY TOPBAR on mobile
 	//
@@ -46,8 +67,6 @@
 		}
 		
 		@include respond-below(md) {
-			//top: 55%;
-			
 			.hamburger-box {
 				width: 30px;
 				height: 20px;
@@ -70,4 +89,5 @@
 			}
 		}
 	}
+	*/
 }
