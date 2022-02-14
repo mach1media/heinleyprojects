@@ -1,10 +1,6 @@
 /**
  * HOME HERO
  */
-body.home {
-	padding-top: 0;
-}
-
 @include component('hero') {
 	$hero-height-desktop: 650px;
 	$hero-height-mobile:  360px;
@@ -14,19 +10,14 @@ body.home {
 	display: block;
 	overflow: hidden;
 	
-	/*
-	&:before {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-image: linear-gradient(rgba(black, .5) 0%, rgba(black, .2) 15%);
-		@include z-1;
+	@include respond-above(md) {
+		padding-top: 200px;
 	}
-	*/
+	@include respond-below(md) {
+		padding-top: 160px;
+	}
 	
+/*
 	&,
 	.container,
 	.row {
@@ -41,6 +32,7 @@ body.home {
 			height: 80vh;
 		}
 	}
+*/
 	
 	& > video {
 		position: absolute;
@@ -70,7 +62,7 @@ body.home {
 		position: relative;
 		@include base-font;
 		color: white;
-		text-shadow: 0px 0px 6px rgba(black, .75);
+		//text-shadow: 0px 0px 6px rgba(black, .75);
 		
 		[class*='col-'] {
 			@extend %first-last-child;
@@ -87,13 +79,13 @@ body.home {
 	@include element('heading') {
 		color: white;
 		line-height: 1em;
-		letter-spacing: -.025em;
+		//letter-spacing: -.025em;
 		margin: 0;
 		padding: 0;
 		
 		@include respond-above(md) {
 			font-size: 70px;
-			text-shadow: 0px 0px 10px rgba(black, .5);
+			//text-shadow: 0px 0px 10px rgba(black, .5);
 			//max-width: 80%;
 			
 			& + p {
@@ -102,7 +94,7 @@ body.home {
 		}
 		@include respond-below(md) {
 			font-size: 48px;
-			text-shadow: 0px 0px 6px rgba(black, .5);
+			//text-shadow: 0px 0px 6px rgba(black, .5);
 		}
 	}
 	

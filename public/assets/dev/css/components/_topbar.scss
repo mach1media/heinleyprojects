@@ -55,6 +55,15 @@ body {
 	}
 	*/
 	
+	
+	body.has-page-header & {
+		position: absolute;
+		top:0;
+		left: 0;
+		right: 0;
+		@include z-very-top;
+		background-color: transparent;
+	}
 		
 	@include respond-above(md) {
 		position: relative;
@@ -66,15 +75,6 @@ body {
 		& > .container .col {
 			position: relative;
 			height: $topbar-height-desktop;
-		}
-		
-		body.has-page-header & {
-			position: absolute;
-			top:0;
-			left: 0;
-			right: 0;
-			@include z-very-top;
-			background-color: transparent;
 		}
 	}
 	@include respond-below(md) {
@@ -335,6 +335,7 @@ body {
 		text-align: center;
 		
 		.fa-times {
+			color: white;
 			transform: translate(0, .15em);
 		}
 	}
