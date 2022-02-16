@@ -1,6 +1,19 @@
 /**
  * WORK CARDS
  */
+
+body.work {
+	.nav-link {
+		padding: .5rem 0;
+	}
+	
+	.nav-justified > .nav-link,
+	.nav-justified .nav-item {
+		flex-basis: auto;
+	}
+}
+
+
 @include component('work') {
 	position: relative;
 	display: block;
@@ -82,6 +95,10 @@
 		}
 	}
 	
+	
+	//
+	// CATEGORY TABS
+	//
 	@include element('category-tab') {
 		position: relative;
 		
@@ -104,7 +121,7 @@
 				top: 50%;
 				right: 100%;
 				bottom: .2em;
-				left: -.2em;
+				left: 0; //left: -.2em;
 				transform: rotate(-.75deg);
 				transform-origin: center;
 				background-color: rgba($color-green-light, .5);
@@ -112,10 +129,17 @@
 				opacity: 0;
 			}
 			
-			&:hover span:before {
-				right: -.2em;
+			&:hover span:before,
+			&[aria-expanded="true"] span:before {
+				right: 0; //right: -.2em;
 				opacity: 1;
 			}
+		}
+	}
+	
+	@include element('category-list') {
+		.c-work__category-tab {
+			margin-bottom: .5em;
 		}
 	}
 	
