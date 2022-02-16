@@ -1,9 +1,9 @@
 /**
- * HEINLYE PROJECTS WEBSITE
+ * HEINLEY PROJECTS WEBSITE
  * 
  * Roger Glenn
  * roger@mach1media.com
- * Created: JAN 2022
+ * Created: FEB 2022
  *
  * Compiled using Gulp
  */
@@ -47,7 +47,8 @@
 
 // typography
 $font-stack-helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$base-font: "Poppins", $font-stack-helvetica;
+$font-stack-georgia: Georgia, Times, 'Times New Roman', serif;
+$base-font: "bookmania", $font-stack-georgia;
 $font-family-sans-serif: $base-font;
 
 // reset base border radius
@@ -120,7 +121,7 @@ $theme-colors: map-merge(
 //@import "vendor/bootstrap/scss/button-group";
 @import "vendor/bootstrap/scss/input-group";
 //@import "vendor/bootstrap/scss/custom-forms";
-//@import "vendor/bootstrap/scss/nav";
+@import "vendor/bootstrap/scss/nav";
 //@import "vendor/bootstrap/scss/navbar";
 //@import "vendor/bootstrap/scss/card";
 //@import "vendor/bootstrap/scss/breadcrumb";

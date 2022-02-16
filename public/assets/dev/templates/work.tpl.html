@@ -1,0 +1,26 @@
+@@include('_document-head.html')
+<body class="is-top">
+@@include('_masthead.html')
+
+<main class="c-main">
+
+
+@@include('_work-category-tabs.html')
+
+
+</main>
+
+@@include('_footer.html')
+
+@@include('_blueimp-gallery-controls.html')
+
+<!-- Collapse any open containers when clicking a category -->
+<script>
+var workCategories = $('#work');
+workCategories.on('show.bs.collapse','.collapse', function() {
+	workCategories.find('.collapse.show').collapse('hide');
+});
+</script>
+
+</body>
+</html>

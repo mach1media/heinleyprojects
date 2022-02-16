@@ -75,6 +75,57 @@
 		font-size: 40%;
 		letter-spacing: .5em;
 	}
+	
+	@include modifier('green') {
+		color: $color-green;
+		border-top: 2px solid $color-green;
+		border-bottom: 2px solid $color-green;
+	}
+	@include modifier('green-light') {
+		color: $color-green-light;
+		border-top: 2px solid $color-green-light;
+		border-bottom: 2px solid $color-green-light;
+	}
+	@include modifier('peach') {
+		color: $color-peach;
+		border-top: 2px solid $color-peach;
+		border-bottom: 2px solid $color-peach;
+	}
+	@include modifier('pink') {
+		color: $color-pink;
+		border-top: 2px solid $color-pink;
+		border-bottom: 2px solid $color-pink;
+	}
+	@include modifier('black') {
+		color: $color-black;
+		border-top: 2px solid $color-black;
+		border-bottom: 2px solid $color-black;
+	}
+	@include modifier('gray') {
+		color: $color-gray;
+		border-top: 2px solid $color-gray;
+		border-bottom: 2px solid $color-gray;
+	}
+	@include modifier('gray-light') {
+		color: $color-gray-light;
+		border-top: 2px solid $color-gray-light;
+		border-bottom: 2px solid $color-gray-light;
+	}
+	@include modifier('gray-dark') {
+		color: $color-gray-dark;
+		border-top: 2px solid $color-gray-dark;
+		border-bottom: 2px solid $color-gray-dark;
+	}
+	@include modifier('silver') {
+		color: $color-silver;
+		border-top: 2px solid $color-silver;
+		border-bottom: 2px solid $color-silver;
+	}
+	@include modifier('white') {
+		color: $color-white;
+		border-top: 2px solid $color-white;
+		border-bottom: 2px solid $color-white;
+	}
 }
 
 @include utility('hr') {

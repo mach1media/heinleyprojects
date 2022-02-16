@@ -1,0 +1,59 @@
+/**
+ * MASONRY
+ * CSS grid implementation
+ */
+@include component('masonry') {
+	
+	@include element('item') {
+		position: relative;
+		margin-bottom: $gutter;
+		
+		img {
+			width: 100%;
+			height: auto;
+		}
+		
+		@include respond-below(sm) {
+			position: relative;
+			display: block;
+			width: 100%;
+		}
+	}
+	
+/*
+	//
+	// LAYOUTS
+	//
+	@include modifier('2up') {
+		@include respond-above(sm) {
+			.c-masonry__item {
+				width: percentage(1/2);
+			}
+		}
+	}
+	
+	@include modifier('3up') {
+		@include respond-above(sm) {
+			.c-masonry__item {
+				width: percentage(1/3);
+			}
+		}
+	}
+	
+	@include modifier('4up') {
+		@include respond-above(sm) {
+			.c-masonry__item {
+				width: percentage(1/4);
+			}
+		}
+	}
+	
+	@include modifier('5up') {
+		@include respond-above(sm) {
+			.c-masonry__item {
+				width: percentage(1/5);
+			}
+		}
+	}
+*/
+}

@@ -21,34 +21,18 @@
 	}
 	
 	@include modifier('right') {
-		float: right;
-		width: 33%;
-		margin-left: $gutter;
-	}
-	
-	@include modifier('left') {
-		float: left;
-		width: 33%;
-		margin-right: $gutter;
-	}
-	
-	@include modifier('pull-right') {
-		float: right;
-		width: 40%;
-		margin-left: $gutter;
-		
-		@include respond-below(sm) {
+		@include respond-above(sm) {
+			float: right;
 			width: 33%;
+			margin-left: $gutter;
 		}
 	}
 	
-	@include modifier('pull-left') {
-		float: left;
-		width: 40%;
-		margin-right: $gutter;
-		
-		@include respond-below(sm) {
+	@include modifier('left') {
+		@include respond-above(sm) {
+			float: left;
 			width: 33%;
+			margin-right: $gutter;
 		}
 	}
 	

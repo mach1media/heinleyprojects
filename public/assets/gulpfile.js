@@ -96,11 +96,13 @@ gulp.task('compileJs', function() {
 		//path.join(paths.vendor, 'bootstrap/js/dist/alert.js'), 
 		//path.join(paths.vendor, 'bootstrap/js/dist/button.js'), 
 		//path.join(paths.vendor, 'bootstrap/js/dist/carousel.js'), 
+		path.join(paths.vendor, 'bootstrap/js/dist/collapse.js'), 
 		//path.join(paths.vendor, 'bootstrap/js/dist/dropdown.js'),
 		//path.join(paths.vendor, 'bootstrap/js/dist/modal.js'), 
 		//path.join(paths.vendor, 'bootstrap/js/dist/popover.js'), 
 		//path.join(paths.vendor, 'bootstrap/js/dist/scrollspy.js'), 
 		//path.join(paths.vendor, 'bootstrap/js/dist/tab.js'), 
+		//path.join(paths.vendor, 'bootstrap/js/dist/toast.js'), 
 		//path.join(paths.vendor, 'bootstrap/js/dist/tooltip.js'), 
 		// ------------------------------------------------------------
 		path.join(paths.vendor, 'blueimp-gallery/js/blueimp-gallery.js'), 
@@ -108,7 +110,9 @@ gulp.task('compileJs', function() {
 		//path.join(paths.vendor, 'blueimp-gallery/js/blueimp-gallery-vimeo.js'), 
 		//path.join(paths.vendor, 'blueimp-gallery/js/blueimp-gallery-youtube.js'), 
 		path.join(paths.vendor, 'blueimp-gallery/js/jquery.blueimp-gallery.js'), 
-		path.join(paths.vendor, 'modal-video/js/modal-video.js'), 
+		path.join(paths.vendor, 'modal-video/js/modal-video.js'),  
+		path.join(paths.vendor, 'masonry/masonry.min.js'),  
+		path.join(paths.vendor, 'images-loaded/images-loaded.min.js'), 
 		path.join('dev/' + paths.js, 'master.js')
 	])
 	.pipe(concat('master.min.js'))

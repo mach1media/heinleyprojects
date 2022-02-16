@@ -85,6 +85,10 @@ body {
 	font-feature-settings: "liga", "kern";
 	overflow-x: hidden;
 	color: $color-body-text;
+	
+	@include respond-below(sm) {
+		font-size: 1rem;
+	}
 }
 
 h1, .h1,
@@ -99,7 +103,7 @@ h1, .h1 {
 		font-size: 56px;
 	}
 	@include respond-below(sm) {
-		font-size: 48px;
+		font-size: 36px;
 	}
 }
 h2, .h2 {
@@ -107,7 +111,7 @@ h2, .h2 {
 		font-size: 48px;
 	}
 	@include respond-below(sm) {
-		font-size: 36px;
+		font-size: 28px;
 	}
 }
 h3, .h3 {
@@ -115,7 +119,7 @@ h3, .h3 {
 		font-size: 28px;
 	}
 	@include respond-below(sm) {
-		font-size: 24px;
+		font-size: 20px;
 	}
 }
 h4, .h4 {
@@ -123,7 +127,7 @@ h4, .h4 {
 		font-size: 24px;
 	}
 	@include respond-below(sm) {
-		font-size: 20px;
+		font-size: 18px;
 	}
 }
 

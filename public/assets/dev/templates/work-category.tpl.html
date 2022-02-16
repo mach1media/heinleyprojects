@@ -1,0 +1,105 @@
+@@include('_document-head.html')
+<body class="is-top">
+@@include('_masthead.html')
+
+<main class="c-main">
+
+
+@@include('_work-category-tabs.html')
+
+
+<!-- SEARCH RESULTS -->
+<section class="c-general c-general--no-padding-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 mb-5">
+				<h2 class="text-center u-font-heading">
+					Category or Client Name
+				</h2>
+			</div>
+			
+			<!-- WORK CARDS -->
+			<div class="col-12 mb-5 col-lg-6 mb-5">
+				<div class="c-work">
+					<div class="c-work__thumb">
+						<a href="project.html"><img class="img-fluid" src="https://via.placeholder.com/800x500?text=image" alt="placeholder" /></a>
+					</div>
+					
+					<div class="c-work__description">
+						<h3 class="c-work__heading">
+							<a href="project.html">Work Card Heading</a>
+						</h3>
+						
+						<p>Short summary of work. Pellentesque vulputate porttitor tellus, venenatis varius dolor sodales fringilla.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-12 col-lg-6 mb-5">
+				<div class="c-work">
+					<div class="c-work__thumb">
+						<a href="project.html"><img class="img-fluid" src="https://via.placeholder.com/800x500?text=image" alt="placeholder" /></a>
+					</div>
+					
+					<div class="c-work__description">
+						<h3 class="c-work__heading">
+							<a href="project.html">Work Card Heading</a>
+						</h3>
+						
+						<p>Short summary of work. Pellentesque vulputate porttitor tellus, venenatis varius dolor sodales fringilla.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-12 mb-5 col-lg-6 mb-5">
+				<div class="c-work">
+					<div class="c-work__thumb">
+						<a href="project.html"><img class="img-fluid" src="https://via.placeholder.com/800x500?text=image" alt="placeholder" /></a>
+					</div>
+					
+					<div class="c-work__description">
+						<h3 class="c-work__heading">
+							<a href="project.html">Work Card Heading</a>
+						</h3>
+						
+						<p>Short summary of work. Pellentesque vulputate porttitor tellus, venenatis varius dolor sodales fringilla.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-12 col-lg-6 mb-5">
+				<div class="c-work">
+					<div class="c-work__thumb">
+						<a href="project.html"><img class="img-fluid" src="https://via.placeholder.com/800x500?text=image" alt="placeholder" /></a>
+					</div>
+					
+					<div class="c-work__description">
+						<h3 class="c-work__heading">
+							<a href="project.html">Work Card Heading</a>
+						</h3>
+						
+						<p>Short summary of work. Pellentesque vulputate porttitor tellus, venenatis varius dolor sodales fringilla.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+</main>
+
+@@include('_footer.html')
+
+@@include('_blueimp-gallery-controls.html')
+
+<!-- Collapse any open containers when clicking a category -->
+<script>
+var workCategories = $('#work');
+workCategories.on('show.bs.collapse','.collapse', function() {
+	workCategories.find('.collapse.show').collapse('hide');
+});
+</script>
+
+</body>
+</html>

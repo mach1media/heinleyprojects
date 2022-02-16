@@ -4,6 +4,14 @@
 @include component('work') {
 	position: relative;
 	display: block;
+	color: $color-body-text;
+	text-decoration: none;
+	
+	&:hover {
+		color: $color-body-text;
+		text-decoration: none !important;
+	}
+	
 	
 	@include element('thumb') {
 		position: relative;
@@ -30,39 +38,127 @@
 				}
 			}
 		}
+		
+		a.c-work:hover & {
+			img {
+				transform: scale(1.2);
+			}
+		}
+	}
+	
+	@include element('description') {
+		a.c-work:hover & {
+			color: $color-body-text;
+			text-decoration: none !important;
+		}
 	}
 	
 	@include element('heading') {
 		position: relative;
 		display: inline-block;
 		@include base-font;
-		
-		a {
-			position: relative;
-			text-decoration: none;
-			color: $color-body-text;
-		}
+		color: $color-body-text;
+		text-decoration: none;
 		
 		
 		&:before {
 			content: "";
 			position: absolute;
 			display: block;
-			top: 0;
+			top: 50%;
 			right: 100%;
 			bottom: .2em;
 			left: -.2em;
 			transform: rotate(-.75deg);
 			transform-origin: center;
-			background-color: $color-green-light;
+			background-color: rgba($color-green-light, .5);
 			@include animate;
 			opacity: 0;
 		}
 		
-		&:hover {
-			&:before {
+		a.c-work:hover &:before {
+			right: -.2em;
+			opacity: 1;
+		}
+	}
+	
+	@include element('category-tab') {
+		position: relative;
+		
+		a {
+			position: relative;
+			text-decoration: none;
+			color: $color-body-text;
+			
+			span {
+				position: relative;
+				display: inline-block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			& span:before {
+				content: "";
+				position: absolute;
+				display: block;
+				top: 50%;
+				right: 100%;
+				bottom: .2em;
+				left: -.2em;
+				transform: rotate(-.75deg);
+				transform-origin: center;
+				background-color: rgba($color-green-light, .5);
+				@include animate;
+				opacity: 0;
+			}
+			
+			&:hover span:before {
 				right: -.2em;
 				opacity: 1;
+			}
+		}
+	}
+	
+	//
+	// WORK CATEGORY: CLIENT LOGOS
+	//
+	@include element('clients') {
+		position: relative;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		
+		li {
+			position: relative;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			height: 100px;
+			text-align: center;
+			@include vertically-centered;
+			
+			img {
+				width: 80%;
+				height: auto;
+				transform: scale(.75);
+			}
+			
+			@include respond-above(lg) {
+				flex: 0 0 percentage(1/8);
+			}
+			@include respond-between(md,lg) {
+				flex: 0 0 percentage(1/6);
+			}
+			@include respond-between(sm,md) {
+				flex: 0 0 percentage(1/4);
+			}
+			@include respond-below(sm) {
+				flex: 0 0 percentage(1/3);
 			}
 		}
 	}

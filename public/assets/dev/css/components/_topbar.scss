@@ -206,13 +206,13 @@ body {
 					content: "";
 					position: absolute;
 					display: block;
-					top: 0;
+					top: 50%;
 					right: 100%;
 					bottom: .2em;
 					left: -.2em;
 					transform: rotate(-.75deg);
 					transform-origin: center;
-					background-color: $color-green-light;
+					background-color: rgba($color-green-light, .5);
 					@include animate;
 					opacity: 0;
 					z-index: -1;
