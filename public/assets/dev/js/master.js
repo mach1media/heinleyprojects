@@ -166,14 +166,18 @@ jQuery(document).ready(function($) {
 	});
 	*/
 	
-	$('.js-search-open').on('click', function(e){
+	$('.js-toggle-search').on('click', function(e){
 		e.preventDefault();
-		$('#search').slideDown();
+		
+		if ($('#search').hasClass('is-open')) {
+			$('#search').removeClass('is-open').slideUp();
+		}
+		else {
+			$('#search').addClass('is-open').slideDown();
+			$('#search-input').focus();
+		}
 	});
-	$('.js-search-close').on('click', function(e){
-		e.preventDefault();
-		$('#search').slideUp();
-	});
+	
 	
 	// SCROLL TO SAME PAGE ANCHORS ----------------------------
 	$('.js-scroll-to-section').click(function(e) {

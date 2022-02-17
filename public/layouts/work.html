@@ -67,7 +67,7 @@
 					<li><a href="approach.html">Approach</a></li>
 					<li><a href="about.html">About</a></li>
 					<li>
-						<a href="#search" class="js-search-open" aria-role="button" aria-label="search">
+						<a href="#search" class="js-toggle-search" aria-role="button" aria-label="search">
 							<span class="far fa-search" aria-hidden="true"></span>
 						</a>
 					</li>
@@ -90,17 +90,18 @@
 				<div class="col-12">
 					<form>
 						<label for="search-input" class="sr-only">Search</label>
-						<input id="search-input" type="search" placeholder="search">
+						<input id="search-input" type="search" />
 						<button type="submit">
 							<span id="button-label" hidden>search</span>
 							<span class="far fa-search" aria-hidden="true" focusable="false"></span>
 						</button>
 					</form>
-					
+					<!--
 					<button class="c-topbar__search-close js-search-close" type="button" aria-label="close search bar" aria-expanded="false">
 						<span id="button-label" class="sr-only">search</span>
 						<span class="far fa-times" aria-hidden="true" focusable="false"></span>
 					</button>
+					-->
 				</div>
 			</div>
 		</div>
@@ -394,7 +395,7 @@
 
 
 <!-- Global Site JS -->
-<script src="/assets/js/master.min.js?v=20220215.2" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/master.min.js?v=20220216.1" type="text/javascript" charset="utf-8"></script>
 
 <!-- BLUEIMP GALLERY CONTROLS -->
 <div
