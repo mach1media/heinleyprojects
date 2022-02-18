@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="{{ currentSite.language }}" dir="{{ craft.app.i18n.getLocaleById(currentSite.id).getOrientation() }}"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="nxoJx06Opl_syBfmp7X12rziI-gEeB2lR45yRx_alz4" />
+
+<!-- Viewport params (for iOS) -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- Preload Web Fonts, CSS, and JS -->
+<link rel="preload" href="/assets/fonts/Verlag-Bold.woff" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Verlag-Book.woff" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Verlag-Light.woff" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/css/master.css" as="style">
+<link rel="preload" href="/assets/js/master.min.js" as="script">
+
+{# FAVICON #}
+{% include '_layout/_favicon.html' %}
+
+<!-- CSS Styles -->
+<link rel="stylesheet" href="/assets/css/master.css?v=20220217.1">
+{# {% if getenv('ENVIRONMENT') == 'production' %}{% endif %} #}
+</head>
+

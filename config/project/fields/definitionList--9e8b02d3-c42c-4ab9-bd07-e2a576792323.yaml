@@ -1,0 +1,49 @@
+columnSuffix: lhbegpya
+contentColumnType: text
+fieldGroup: 937fbfdd-6234-4c28-ada8-7effcfefb0b0 # Matrix Fields
+handle: definitionList
+instructions: ''
+name: 'Definition List'
+searchable: false
+settings:
+  addRowLabel: 'Add a term'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Term
+            -
+              - handle
+              - term
+            -
+              - width
+              - 30%
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Definition
+            -
+              - handle
+              - definition
+            -
+              - width
+              - 70%
+            -
+              - type
+              - multiline
+  maxRows: ''
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

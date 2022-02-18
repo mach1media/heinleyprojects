@@ -1,0 +1,79 @@
+field: e08d5489-5f32-423e-b815-1f3c915bba0a # Button
+fieldLayouts:
+  c8b193c9-049a-4496-a567-ba6aa253f7a9:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 89254b6b-a516-4069-b20e-2290e94781c4 # Button
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  89254b6b-a516-4069-b20e-2290e94781c4: # Button
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: button
+    instructions: ''
+    name: Button
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - b0763f50-c230-4f93-8865-c56a9bce7e43 # Label
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 848c5d29-5636-4cf5-a89b-cecb1eb70f0c # Link
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 6a3ebb54-8e8c-4668-8c73-945eeaf76caa # Color
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - fa6a3177-f8b1-4443-a619-ab6224d60b4a # Outline
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 6f6b4827-6b90-4758-a8c3-f06f217b5484 # New Tab
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_2_button}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: linkToAsset
+name: 'Link to Asset'
+sortOrder: 2

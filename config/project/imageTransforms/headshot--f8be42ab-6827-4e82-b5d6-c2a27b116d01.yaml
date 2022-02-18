@@ -1,0 +1,9 @@
+format: webp
+handle: headshot
+height: 200
+interlace: none
+mode: crop
+name: Headshot
+position: center-center
+quality: 100
+width: 200

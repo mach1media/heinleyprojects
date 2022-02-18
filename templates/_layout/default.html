@@ -1,0 +1,21 @@
+{#
+ # Layout template
+ # ---------------
+ #}
+{% include '_layout/_document-head.html' %}
+
+<body{% if bodyId is defined and bodyId != '' %} id="{{ bodyId }}"{% endif %} class="is-top{% if bodyClass is defined and bodyClass != '' %} {{ bodyClass }}{% endif %}">
+
+{% include '_layout/_masthead.html' %}
+
+<!-- BEGIN PAGE CONTENT -->
+{% block content %}{% endblock %}
+<!-- END PAGE CONTENT -->
+
+{% include '_layout/_footer.html' %}
+
+<!-- Global Site JS -->
+<script src="/assets/js/master.min.js?v=20220123.1" type="text/javascript" charset="utf-8"></script>
+{# {% if getenv('ENVIRONMENT') == 'production' %}{% endif %} #}
+</body>
+</html>

@@ -1,0 +1,32 @@
+columnSuffix: yolqmwqy
+contentColumnType: string
+fieldGroup: e3f6200d-59f1-4ccd-8047-5a643809c5b8 # Select Fields
+handle: imagePositionLR
+instructions: ''
+name: 'Image Position [L|R]'
+searchable: true
+settings:
+  default: ''
+  options:
+    __assoc__:
+      -
+        - left
+        - '1'
+      -
+        - center
+        - ''
+      -
+        - right
+        - '1'
+      -
+        - full
+        - ''
+      -
+        - drop-left
+        - ''
+      -
+        - drop-right
+        - ''
+translationKeyFormat: null
+translationMethod: none
+type: rias\positionfieldtype\fields\Position

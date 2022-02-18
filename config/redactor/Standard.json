@@ -1,0 +1,9 @@
+{
+  "buttons": ["html","formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "file", "image", "video"],
+  "plugins": ["fullscreen", "video", "fontcolor"],
+  "fontcolors": ["#fff","#9d1b30","#666","#333","#222","#ccc"],
+  "linkNewTab": true,
+  "toolbarFixed": true,
+  "imageResizable": true,
+  "imagePosition": true
+}

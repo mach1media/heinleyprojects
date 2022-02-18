@@ -1,0 +1,19 @@
+columnSuffix: zgpkvdey
+contentColumnType: text
+fieldGroup: 5e594575-1d3b-4fd7-92e1-13f3e1fc2856 # Text Fields
+handle: headingBasic
+instructions: ''
+name: 'Heading: Basic'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: 4
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

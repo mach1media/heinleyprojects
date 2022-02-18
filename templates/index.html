@@ -1,0 +1,20 @@
+{#
+ # Homepage template
+ #}
+{% extends "_layout/default" %}
+
+{# SET BODY CLASS #}
+{% if entry.pageHeader | length %}
+	{% set bodyClass = 'has-page-header' %}
+{% endif %}
+
+{% block content %}
+
+<!-- MAIN CONTENT WRAPPER -->
+<main class="c-main" role="main">
+{% include '_fields/pageHeader.html' %}
+{% include '_fields/pageBodyBlocks.html' %}
+</main>
+<!-- END MAIN CONTENT WRAPPER -->
+
+{% endblock %}

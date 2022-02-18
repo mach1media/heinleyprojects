@@ -1,0 +1,23 @@
+dateModified: 1645146720
+email:
+  fromEmail: roger@mach1media.com
+  fromName: 'Heinley Projects'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    7f1ff60f-cd42-4951-a46d-fe9386093bcb: 'Heinley Projects' # Heinley Projects
+    98f9c9ed-636a-496e-967e-f30f6f78a90c: 'Heinley Projects' # Heinley Projects
+    765e8335-4049-4594-b306-51e0cdf324f7: 'Public Schema' # Public Schema
+    a613ec06-8f41-47e6-9f04-f6c825f33373: Common # Common
+system:
+  edition: solo
+  live: true
+  name: 'Heinley Projects'
+  schemaVersion: 3.7.33
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

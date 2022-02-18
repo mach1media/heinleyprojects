@@ -1,0 +1,79 @@
+field: e08d5489-5f32-423e-b815-1f3c915bba0a # Button
+fieldLayouts:
+  f98cde7c-715d-4e26-b5ba-f8a61bff4fc2:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1c10c924-e9e5-4b46-8f43-c4a8e68735f5 # Button
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1c10c924-e9e5-4b46-8f43-c4a8e68735f5: # Button
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: button
+    instructions: ''
+    name: Button
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - d08c1960-1b09-4ddc-98c6-2e28a4c0a7b5 # Label
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 9f86b456-1db3-46cd-9e91-129743bdd204 # Link
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - aea7b460-1cef-49d7-be16-d4d22d047b6f # Color
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c9d65278-8dd1-449d-8c85-598f02642872 # Outline
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - efd497e2-66ce-474f-96ed-b912632b860a # New Tab
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_3_button}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: customLink
+name: 'Custom Link'
+sortOrder: 3

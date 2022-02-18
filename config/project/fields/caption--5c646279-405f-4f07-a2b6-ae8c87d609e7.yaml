@@ -1,0 +1,19 @@
+columnSuffix: zlhvlqxa
+contentColumnType: string
+fieldGroup: 5e594575-1d3b-4fd7-92e1-13f3e1fc2856 # Text Fields
+handle: caption
+instructions: ''
+name: Caption
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: string
+  initialRows: 4
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

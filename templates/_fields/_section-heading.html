@@ -1,0 +1,6 @@
+{% if block.caption != '' or block.headingBasic != '' %}
+<h2 class="u-section-heading{% if block.color is defined %} u-color-{{ block.color }}{% endif %}">
+	{% if block.caption != '' %}<small>{{ block.caption }}</small>{% endif %}
+	{{ block.headingBasic | raw }}
+</h2>
+{% endif %}

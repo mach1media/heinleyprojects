@@ -1,0 +1,106 @@
+<!--Navigation-->
+{% css %}
+.nav-brand img {
+	height: 20px;
+}
+{% endcss %}
+<nav id="navigation" class="navigation">
+	<div class="container position-relative"> 
+		<div class="nav-header">
+			<a class="nav-brand" href="{{ siteUrl }}"><img src="{{ siteUrl }}assets/img/logo-white.svg"></a>
+			<div class="nav-toggle"></div>
+		</div>
+
+		<div class="nav-menus-wrapper">
+			<ul class="nav-menu align-to-right">
+				{#
+				<li>
+					<a href="{{ siteUrl }}about-us">About Us</a>
+					<ul class="nav-dropdown">
+						<li><a href="{{siteUrl}}learn-more-about-us">Who We Are</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="{{ siteUrl }}products-and-services/pigging-systems">Pigging Systems</a>
+					<ul class="nav-dropdown">
+						<li>
+							<a href="{{ siteUrl }}products-and-services/surelaunch">SureLaunch&reg; Multi-Pig Launching Systems</a>
+						</li>
+						<li>
+							<a href="{{ siteUrl }}products-and-services/suretrap">SureTrap&reg; Launchers & Receivers</a>
+						</li>
+						<li>
+							<a href="{{ siteUrl }}products-and-services/sureseal">SureSeal&reg; Closures</a>
+						</li>
+					</ul>
+				</li>
+				#}
+				<li>
+					<a href="#">Resources</a>
+					<ul class="nav-dropdown">
+{#
+						<li>
+							<a href="{{ siteUrl }}resources#product-sheets">Flyers</a>
+							<ul class="nav-dropdown">
+#}
+								<li>
+									<a href="{{ siteUrl }}downloads/SureLaunch®-Product-Sheet.pdf">SURELAUNCH Flyer</a>
+								</li>
+								
+								<li>
+									<a href="{{ siteUrl }}downloads/SureTrap®-Product-Sheet.pdf">SURETRAP Flyer</a>
+								</li>
+								
+								<li>
+									<a href="{{ siteUrl }}downloads/SureTrap®-Product-Sheet.pdf">SURESEAL® Flyer</a>
+								</li>
+{#
+							</ul>
+						</li>
+						
+						<li>
+							<a href="{{ siteUrl }}resources#brochures">Brochure</a>
+							<ul class="nav-dropdown">
+#}
+								<li>
+									<a href="{{ siteUrl }}downloads/Pigging-Brochure.pdf">PIGGING TECHNOLOGIES Brochure</a>
+								</li>
+{#
+							</ul>
+						</li>
+						
+						<li>
+							<a href="{{ siteUrl }}resources#videos">Videos</a>
+							<ul class="nav-dropdown">
+#}
+								<li>
+									<a href="/sl2021/video">SURELAUNCH® Video</a>
+								</li>
+{#
+							</ul>
+						</li>
+						
+						<li>
+							<a href="{{ siteUrl }}resources#case-study">Case Study</a>
+							<ul class="nav-dropdown">
+#}
+								<li>
+									<a href="/sl2021/surelaunch-case-study">SURELAUNCH® Case Study</a>
+								</li>
+{#
+							</ul>
+						</li>
+#}
+					</ul>
+				</li>
+				
+				<li><a href="/sl2021/contact">Contact Us</a></li>
+				
+				<li><a href="tel:7134603700">713-460-3700</a></li>
+			</ul>
+		</div>
+	</div> 
+
+</nav>
+<!--END-->

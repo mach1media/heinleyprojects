@@ -1,0 +1,79 @@
+field: e08d5489-5f32-423e-b815-1f3c915bba0a # Button
+fieldLayouts:
+  d0f4432a-205a-46b9-bae6-1342b679dec8:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d61c5b5f-313d-4082-91ca-5f3a165ab830 # Button
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  d61c5b5f-313d-4082-91ca-5f3a165ab830: # Button
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: button
+    instructions: ''
+    name: Button
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - c57b33f1-e776-4977-8fd6-5d4d8e417c52 # Label
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c38fac81-ec4d-416d-85dc-4b7403d64317 # Link
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 2204286d-2556-42ce-94aa-db60b51980fe # Color
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - f7ce14c4-f536-4997-b2eb-178f0e61f930 # Outline
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - e44366d1-73ec-4842-b258-2cebe7cd92e4 # New Tab
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_1_button}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a button'
+      staticField: '1'
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: linkToPage
+name: 'Link to Page'
+sortOrder: 1

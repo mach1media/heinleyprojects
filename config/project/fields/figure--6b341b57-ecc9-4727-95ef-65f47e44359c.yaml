@@ -1,0 +1,36 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 937fbfdd-6234-4c28-ada8-7effcfefb0b0 # Matrix Fields
+handle: figure
+instructions: ''
+name: Figure
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 37225570-d37a-4978-8ceb-134c00e11a73 # Image
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - c9c03c09-7394-42d0-a448-12c9935a0402 # Position
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_figure}}'
+  fieldLayout: table
+  maxRows: ''
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: 'Add a figure'
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

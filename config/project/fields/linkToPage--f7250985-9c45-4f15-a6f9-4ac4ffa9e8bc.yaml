@@ -1,0 +1,21 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 995636a1-0afe-4190-bfc1-25fd9ab86bc0 # Element Fields
+handle: linkToPage
+instructions: ''
+name: 'Link to Page'
+searchable: true
+settings:
+  allowSelfRelations: false
+  limit: 1
+  localizeRelations: false
+  selectionLabel: 'Link to Page'
+  showSiteMenu: true
+  source: null
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

@@ -1,0 +1,14 @@
+columnSuffix: yrlmspka
+contentColumnType: boolean
+fieldGroup: 506eed52-ee59-417e-bef5-0cdf16ada11a # Block Settings
+handle: paddingSides
+instructions: ''
+name: 'Padding: Sides'
+searchable: true
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

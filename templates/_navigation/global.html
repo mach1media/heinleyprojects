@@ -1,0 +1,137 @@
+<!--Navigation-->
+{% css %}
+.nav-brand img {
+	height: 20px;
+}
+{% endcss %}
+<nav id="navigation" class="navigation">
+    <div class="container position-relative"> 
+        <div class="nav-header">
+            <a class="nav-brand" href="{{ siteUrl }}"><img src="{{ siteUrl }}assets/img/logo-white.svg"></a>
+            <div class="nav-toggle"></div>
+        </div>
+
+<div class="nav-menus-wrapper">
+            <ul class="nav-menu align-to-right">
+                
+                <li>
+                  <a href="{{ siteUrl }}about-us">About Us</a>
+                  <ul class="nav-dropdown">
+                    <li><a href="{{siteUrl}}learn-more-about-us">Who We Are</a></li>
+                  </ul>
+                </li>
+                
+                <li>
+                    <a href="{{ siteUrl }}products-and-services">Products &amp; Services</a>
+                    <ul class="nav-dropdown">
+                        <li>
+                          <a href="{{ siteUrl }}products-and-services/hot-tap-line-stop">Hot Tap / Line Stop</a>
+                          <ul class="nav-dropdown">
+                            <li><a href="{{ url('products-and-services/hot-tapping-plugging-services-weldfit') }}">Hot Tapping & Plugging Services</a></li>
+                          </ul>
+                        </li>
+                        <li>
+                            <a href="{{ siteUrl }}products-and-services/pigging-systems">Pigging Systems</a>
+                            <ul class="nav-dropdown">
+                                <li>
+                                    <a href="{{ siteUrl }}learn-more-1">Our Products</a>
+                                </li>
+                                <li>
+                                    <a href="{{ siteUrl }}products-and-services/surelaunch">SureLaunch&reg;</a>
+                                    <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="{{ siteUrl }}learn-more">Learn More</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ siteUrl }}products-and-services/suretrap">SureTrap&reg;</a>
+                                     <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="{{ siteUrl }}learn-more-suretrap">Learn More</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ siteUrl }}products-and-services/sureseal">SureSeal&reg;</a>
+                                </li>
+                                <li>
+                                    <a href="{{ siteUrl }}products-and-services/suresig">SureSig&reg;</a>
+                                </li>
+                                <li>
+                                    <a href="{{ siteUrl }}products-and-services/slug-catchers">Slug Catchers</a>
+                                     <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="{{ siteUrl }}learn-more-slug-catchers">Learn More</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ siteUrl }}/learn-more-flow-tees">Flow Tees</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ siteUrl }}/products-and-services/fittings">High Performance Pipeline Fittings</a>
+                            <ul class="nav-dropdown">
+                                 <li>
+                                    <a href="{{ siteUrl }}/products-and-services/high-performance-pipeline-fittings-weldfit">Pipeline Fittings</a>
+                                </li>
+                                {#
+                                <li>
+                                  <a href="{{ url('products-and-services/high-performance-pipeline-fittings-weldfit') }}">Hot Tap & Line Stop Fittings</a>
+                                </li>
+                                #}
+                                <li>
+                                    <a href="{{ siteUrl }}products-and-services/reinforcing-saddles">Reinforcing Saddles</a>
+                                     <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="{{ siteUrl }}learn-more-full-encirclement-saddles">Full-Encirclement Saddles</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ siteUrl }}/learn-more-flow-tees">Flow Tees</a>
+                                </li>
+                            </ul>    
+                        </li>
+                        <li>
+                            <a href="{{ siteUrl }}products-and-services/performance-products">Performance <br />Products</a>
+                            <ul class="nav-dropdown">
+                                <li>
+                                    <a href="{{ siteUrl }}products-and-services/headers-manifolds">Headers &amp; Manifolds</a>
+                                    <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="{{ siteUrl }}learn-more-extruded-headers">Learn More</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ siteUrl }}products-and-services/extrusion-vs-welding">Extrusion vs. Welding</a>
+                                </li>
+                                <li>
+                                    <a href="{{ siteUrl }}products-and-services/slug-catchers">Slug Catchers</a>
+                                    <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="{{ siteUrl }}learn-more-slug-catchers">Learn More</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                    </ul>
+                </li>
+                <li><a href="{{ siteUrl }}careers">Careers</a></li>
+                <li>
+                    <a href="{{ siteUrl }}resources">Resources</a>
+                </li>
+                <li {% if entry.slug == 'contact' %}class="active"{% endif %}><a href="{{ siteUrl }}contact">Contact</a></li>
+                <li {% if entry.slug == 'request-a-quote' %}class="active"{% endif %}><a href="{{ siteUrl }}request-a-quote">Request A Quote</a></li>
+                <li><a href="tel:7134603700">713-460-3700</a></li>
+            </ul>
+        </div>
+    </div> 
+
+</nav>
+<!--END-->

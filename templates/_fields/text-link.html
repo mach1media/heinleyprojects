@@ -1,0 +1,13 @@
+{% if link.linkToPage | length %}
+	{% set page = link.linkToPage.one() %}
+	{% set href = page.url() %}
+	{% set label = link.text ?: page.title %}
+{% elseif link.linkToAsset | length %}
+	{% set asset = link.linkToAsset.one() %}
+	{% set href = asset.url() %}
+	{% set label = link.text ?: asset.title %}
+{% else %}
+	{% set href = link.customLink %}
+	{% set label = link.text %}
+{% endif %}
+<a href="{{ href }}"{% if class is defined and class != '' %} class="{{ class }}"{% endif %}{% if link.newTab == '1' %} target="_blank" rel="noopener"{% endif %}{% if arialabel is defined and arialabel != '' %} aria-label="{{ arialabel }}"{% endif %}>{{ label }}</a>

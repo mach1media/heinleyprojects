@@ -1,0 +1,33 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 995636a1-0afe-4190-bfc1-25fd9ab86bc0 # Element Fields
+handle: linkToAsset
+instructions: ''
+name: 'Link to Asset'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:14f6eefd-8aba-4860-a4c6-f1b3265c5393' # Documents
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: ''
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: true
+  showUnpermittedVolumes: true
+  singleUploadLocationSource: 'volume:6a8678fb-3c02-4db5-a390-1b01c515f50e' # Photos
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:14f6eefd-8aba-4860-a4c6-f1b3265c5393' # Documents
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

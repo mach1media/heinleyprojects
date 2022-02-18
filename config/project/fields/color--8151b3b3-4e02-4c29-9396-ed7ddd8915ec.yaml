@@ -1,0 +1,13 @@
+columnSuffix: jfyhptyg
+contentColumnType: string
+fieldGroup: e3f6200d-59f1-4ccd-8047-5a643809c5b8 # Select Fields
+handle: color
+instructions: ''
+name: Color
+searchable: true
+settings:
+  dataSet: 'CSS Color Classes'
+  type: dropdown
+translationKeyFormat: null
+translationMethod: none
+type: statikbe\configvaluesfield\fields\ConfigValuesFieldField

@@ -57,14 +57,6 @@ body {
 	*/
 	
 	
-	body.has-page-header & {
-		position: absolute;
-		top:0;
-		left: 0;
-		right: 0;
-		@include z-very-top;
-		background-color: transparent;
-	}
 		
 	@include respond-above(md) {
 		position: relative;
@@ -77,13 +69,22 @@ body {
 			position: relative;
 			height: $topbar-height-desktop;
 		}
+		
+		body.has-page-header & {
+			position: absolute;
+			top:0;
+			left: 0;
+			right: 0;
+			@include z-very-top;
+			background-color: transparent;
+		}
 	}
 	@include respond-below(md) {
 		position: relative;
 		padding-top: $gutter/2;
 		//padding-bottom: $gutter/4;
 		text-align: center;
-		background-color: $color-pink;
+		background-color: $color-green;
 	}
 	
 	
@@ -201,7 +202,6 @@ body {
 				text-decoration: none;
 				color: white;
 				@include animate;
-				opacity: .85;
 				
 				&:before {
 					content: "";

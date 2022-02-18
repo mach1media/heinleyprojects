@@ -1,0 +1,46 @@
+columnSuffix: csncusyy
+contentColumnType: string
+fieldGroup: e3f6200d-59f1-4ccd-8047-5a643809c5b8 # Select Fields
+handle: displayAs
+instructions: ''
+name: 'Display As:'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Grid
+        -
+          - value
+          - grid
+        -
+          - default
+          - 1
+    -
+      __assoc__:
+        -
+          - label
+          - Carousel
+        -
+          - value
+          - carousel
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Cards
+        -
+          - value
+          - cards
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

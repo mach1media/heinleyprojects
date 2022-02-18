@@ -1,0 +1,138 @@
+field: 1c10c924-e9e5-4b46-8f43-c4a8e68735f5 # Button
+fieldLayouts:
+  1087ae06-8443-4961-9bb1-f05b65842326:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d08c1960-1b09-4ddc-98c6-2e28a4c0a7b5 # Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9f86b456-1db3-46cd-9e91-129743bdd204 # Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: aea7b460-1cef-49d7-be16-d4d22d047b6f # Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c9d65278-8dd1-449d-8c85-598f02642872 # Outline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: efd497e2-66ce-474f-96ed-b912632b860a # New Tab
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9f86b456-1db3-46cd-9e91-129743bdd204: # Link
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: btnLink
+    instructions: 'include https:// when linking to offsite resources'
+    name: Link
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  aea7b460-1cef-49d7-be16-d4d22d047b6f: # Color
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: color
+    instructions: ''
+    name: Color
+    searchable: true
+    settings:
+      dataSet: 'CSS Color Classes'
+      type: dropdown
+    translationKeyFormat: null
+    translationMethod: none
+    type: statikbe\configvaluesfield\fields\ConfigValuesFieldField
+  c9d65278-8dd1-449d-8c85-598f02642872: # Outline
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: outline
+    instructions: ''
+    name: Outline
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  d08c1960-1b09-4ddc-98c6-2e28a4c0a7b5: # Label
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: label
+    instructions: ''
+    name: Label
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  efd497e2-66ce-474f-96ed-b912632b860a: # New Tab
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: newTab
+    instructions: ''
+    name: 'New Tab'
+    searchable: true
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch

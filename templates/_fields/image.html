@@ -1,0 +1,33 @@
+{% if img is defined and img | length %}
+{% if img.kind == 'svg' %}
+<img src="{{ img.url() }}" class="img-fluid" alt="{{ img.imageAlt ?: img.caption }}" />
+{% elseif transform is defined and transform != '' %}
+<img src="{{ img.url(transform) }}" class="img-fluid" alt="{{ img.imageAlt ?: img.caption }}" />
+{% else %}
+{% set full   = (img.width > 1140) ? 1140 : img.width %}
+{% set half   = full / 2 | round %}
+{% set fourth = full / 4 | round %}
+<img class="img-fluid{% if class is defined and class != '' %} {{ class }}{% endif %}" 
+	src="{{ img.url({ width: half, format:'webp' }) }}" 
+	alt="{{ img.imageAlt ?: img.title }}"
+	srcset="{{ img.url({ width: fourth , format:'webp'}) }} {{ fourth }}w,
+		{{ img.url({ width: half, format:'webp' }) }} {{ half }}w,
+		{{ img.url({ width: full, format:'webp' }) }} {{ full }}w"
+	sizes="(min-width: {{ half + 1 }}px) {{ full }}px,
+		(min-width: {{ fourth + 1 }}px) {{ half }}px,
+		100vw"
+/>
+{#
+<img class="img-fluid" 
+	src="{{ img.url({ width: half, format:'jpg' }) }}" 
+	alt="{{ img.imageAlt ?: img.title }}"
+	srcset="{{ img.url({ width: fourth , format:'jpg'}) }} {{ fourth }}w,
+		{{ img.url({ width: half, format:'jpg' }) }} {{ half }}w,
+		{{ img.url({ width: full, format:'jpg' }) }} {{ full }}w"
+	sizes="(min-width: {{ half + 1 }}px) {{ full }}px,
+		(min-width: {{ fourth + 1 }}px) {{ half }}px,
+		100vw"
+/>
+#}
+{% endif %}
+{% endif %}

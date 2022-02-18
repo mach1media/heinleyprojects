@@ -1,0 +1,34 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 995636a1-0afe-4190-bfc1-25fd9ab86bc0 # Element Fields
+handle: backgroundPhoto
+instructions: ''
+name: 'Background Photo'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:6a8678fb-3c02-4db5-a390-1b01c515f50e' # Photos
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: 'Add an image'
+  showSiteMenu: true
+  showUnpermittedFiles: true
+  showUnpermittedVolumes: true
+  singleUploadLocationSource: 'volume:6a8678fb-3c02-4db5-a390-1b01c515f50e' # Photos
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:6a8678fb-3c02-4db5-a390-1b01c515f50e' # Photos
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

@@ -1,0 +1,19 @@
+{% if alert is defined and alert | length %}
+	{% if alert.alertLink | length %}
+		{% if block.type == 'linkToPage' %}
+			{% set linkToPage = block.linkToPage.one %}
+			{% set link %}<a href="{{ linkToPage.url }}">{{ block.label }}</a> <span class="far fa-arrow-right"></span>{% endset %}
+		{% elseif block.type == 'linkToAsset' %}
+			{% set linkToAsset = block.linkToAsset.one %}
+			{% set link %}<a href="{{ linkToAsset.url }}">{{ block.label }}</a> <span class="far fa-arrow-right"></span>{% endset %}
+		{% elseif block.type == 'customLink' %}
+			{% set link %}<a href="{{ block.customLink }}"{% if block.newTab == '1' %} target="_blank" rel="noopener"{% endif %}>{{ block.label }}</a> <span class="far fa-arrow-right"></span>{% endset %}
+		{% endif %}
+	{% else %}
+		{% set link = '' %}
+	{% endif %}
+<div class="c-hero__alert c-alert">
+	<p>{{ alert.text }}{% if link != '' %} {{ link }}{% endif %}</p>
+	<button class="c-hero__alert-close js-alert-close" aria-label="close alert"><span class="far fa-times"></span></button>
+</div>
+{% endif %}

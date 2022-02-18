@@ -1,0 +1,18 @@
+columnSuffix: otvslirf
+contentColumnType: string
+fieldGroup: 937fbfdd-6234-4c28-ada8-7effcfefb0b0 # Matrix Fields
+handle: pageHeader
+instructions: ''
+name: 'Page Header'
+searchable: false
+settings:
+  maxBlocks: '1'
+  maxLevels: ''
+  maxTopBlocks: ''
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+  wasModified: false
+translationKeyFormat: null
+translationMethod: site
+type: benf\neo\Field

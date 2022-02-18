@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimum-scale=1, width=device-width, height=device-height">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>{% if entry.title %}{{ entry.title }}{% endif %}</title>
+<meta name="keywords" content="{% if entry.metaKeywords %}{{ entry.metaKeywords }}{% endif %}">
+<meta name="description" content="{% if entry.metaDescription %}{{ entry.metaDescription }}{% endif %}">
+<meta name="google-site-verification" content="nxoJx06Opl_syBfmp7X12rziI-gEeB2lR45yRx_alz4" />
+<link rel="canonical" href="{{ craft.request.getUrl() }}">
+
+<link rel="stylesheet" href="{{ siteUrl }}css/styles.css">
+
+{# PULL IN NEW STYLESHEET IN NON-PRODUCTION ENVIRONMENTS #}
+{% if getenv('ENVIRONMENT') != 'production' %}
+<link rel="stylesheet" href="https://use.typekit.net/tjk0kmz.css">
+<link rel="stylesheet" href="/assets/css/master.css?v=20201001.1">
+{% endif %}
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WLFGR66');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Global site tag (gtag.js) - Google Ads: 974284665 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-974284665"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'AW-974284665');
+</script>
+
+<!-- Event snippet for Website lead conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-974284665/eF93CMiAjNwBEPnOydAD'});
+</script>
+</head>
+
+<body class="{{ entry.slug }} {{ entry.type }}">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLFGR66"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% if entry.type == 'landingPage' or entry.type == 'landingPageChild' %}
+	{% include '_navigation/landingPage' %}
+{% else %}
+	{% include('_navigation') %}
+{% endif %}
+
+<!--Page Content-->
+{% block content %}
+
+{% endblock %}
+<!--END-->
+
+{% include('_footer') %}
+
+<!--App.js-->
+<script src="{{ siteUrl }}js/App.js"></script>
+
+<script type="text/javascript">
+  piAId = '715393';
+  piCId = '3126';
+  piHostname = 'pi.pardot.com';
+  
+  (function() {
+    function async_load(){
+      var s = document.createElement('script'); s.type = 'text/javascript';
+      s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+      var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+    }
+    if(window.attachEvent) { window.attachEvent('onload', async_load); }
+    else { window.addEventListener('load', async_load, false); }
+  })();
+</script>
+
+</body>
+</html>
+<!-- live template -->

@@ -1,0 +1,5 @@
+{% if block.description != '' or block.leadText != '' %}
+<div class="u-lead">
+	{{ block.description ?: block.leadText }}
+</div>
+{% endif %}

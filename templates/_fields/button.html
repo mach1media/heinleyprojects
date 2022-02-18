@@ -1,0 +1,17 @@
+{% if button is defined and button | length %}
+{% for block in button.all() %}
+	{% if block.type == 'linkToPage' and block.button.btnLink | length %}
+		{% set page = block.button.btnLink.one() %}
+		{% set buttonLink = page.url() %}
+		{% set buttonLabel = block.button.label ?: page.title %}
+	{% elseif block.type == 'linkToAsset' and block.button.btnLink | length %}
+		{% set asset = block.button.btnLink.one() %}
+		{% set buttonLink = asset.url() %}
+		{% set buttonLabel = block.button.label ?: asset.title %}
+	{% else %}
+		{% set buttonLink = block.button.btnLink %}
+		{% set buttonLabel = block.button.label %}
+	{% endif %}
+<a href="{{ buttonLink }}" class="btn btn-{{ block.button.color }}{% if block.button.outline == 1 %} btn-outline{% endif %}{% if class is defined and class != '' %} {{ class }}{% endif %}{% if buttonLink == '#contact' %} js-scroll-to-anchor{% endif %}"{% if block.button.newTab == '1' %} target="_blank" rel="noopener"{% endif %}>{{ buttonLabel }}</a>
+{% endfor %}
+{% endif %}

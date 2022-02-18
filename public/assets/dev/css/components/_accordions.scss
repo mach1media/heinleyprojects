@@ -24,7 +24,12 @@
 		border-top: 2px solid $color-gray;
 		border-bottom: 2px solid transparent;
 		
-		& > small {
+		& > span {
+			position: relative;
+			display: block;
+		}
+		
+		& small {
 			position: relative;
 			display: block;
 			transform: translate(0, .2em);
@@ -42,10 +47,10 @@
 			transform-origin: center;
 			background-color: $color-green-light;
 			@include animate;
-			z-index: -1;
+			//z-index: -1;
 		}
 		&:after {
-			content: "\f057";
+			content: "\f078";//chevron down
 			position: absolute;
 			display: block;
 			font-style: normal;
@@ -70,7 +75,6 @@
 		}
 		
 		&:hover {
-			//opacity: .5;
 			color: theme-color('navy');
 			text-decoration: none;
 			
@@ -81,14 +85,9 @@
 		}
 		
 		&[aria-expanded='true'] {
-			/*
-			&:before {
-				left: -$gutter/4;
-				right: -$gutter/4;
-			}
-			*/
 			&:after {
-				transform: translate(0, -50%) rotate(-225deg);
+				content: "\f077";//chevron up
+				//transform: translate(0, -50%) rotate(-225deg);
 			}
 		}
 		

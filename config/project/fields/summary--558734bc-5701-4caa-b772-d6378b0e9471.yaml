@@ -1,0 +1,19 @@
+columnSuffix: kcwstxps
+contentColumnType: text
+fieldGroup: 5e594575-1d3b-4fd7-92e1-13f3e1fc2856 # Text Fields
+handle: summary
+instructions: ''
+name: Summary
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: 2
+  multiline: 1
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

@@ -1,0 +1,9 @@
+format: webp
+handle: responsiveSmall
+height: null
+interlace: none
+mode: fit
+name: 'Responsive: Small'
+position: center-center
+quality: 100
+width: 500

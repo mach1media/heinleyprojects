@@ -1,0 +1,107 @@
+{% if entry is defined and entry.type.handle in ['recapLandingPage','recapSpecs','recapVideoPage','recapRaqPage','recapDiagram','recapEsg'] %}
+
+{% if entry.type.handle == 'recapLandingPage' %}
+	{% set landingPage = entry %}
+{% elseif entry.parent.type == 'recapLandingPage' %}
+	{% set landingPage = entry.parent %}
+{% else %}
+	{% set landingPage = craft.entries.slug(craft.app.request.getSegments | first).one %}
+{% endif %}
+
+{% if landingPage is defined and landingPage.statCounter | length %}
+<div class="c-stat-counter">
+	<div class="container px-0">
+		<div class="row">
+			<div class="col">
+				{% for row in landingPage.statCounter %}
+					{% if row.label != '' %}<span class="c-stat-counter__label">{{ row.label }}</span>{% endif %}
+					{% if row.stat != '' %}<span class="c-stat-counter__stat" id="counter">{{ row.stat }}</span>{% endif %}
+					{% if row.units != '' %}<span class="c-stat-counter__units">{{ row.units }}</span>{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% js %}
+function numberWithCommas(x) {
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function animateValue(obj, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = numberWithCommas(Math.floor(progress * (end - start) + start));
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+const obj = document.getElementById("counter");
+const counterValue = obj.textContent;
+counterValueParsed = parseFloat(counterValue.replace(/,/g, ''));
+
+animateValue(obj, 0, counterValueParsed, 3000);
+{% endjs %}
+{% endif %}
+{% endif %}
+
+<!-- MASTHEAD: NAVIGATION MENU -->
+<div id="topbar" class="c-recap__navigation">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				{# RECAP NAVIGATION MENU #}
+				{% set recap = craft.entries.section('microsites').slug('recap').one %}
+				<nav class="c-recap__navigation-menu">
+					<ul class="d-flex list-unstyled">
+						<li class="c-recap__navigation-branding flex-fill">
+							<a href="{{ siteUrl }}" title="Weldfit homepage"><img src="/assets/img/logo.svg" alt="Weldfit" /></a>
+						</li>
+						
+						<li class="c-recap__navigation-esg flex-fill">
+							<a href="{{ url('recap/esg') }}"><img src="/assets/img/esg-nav-logo.svg" alt="Your trusted ESG solutions partner" /></a>
+						</li>
+						
+						{% for entry in recap.pages.all() %}
+							{% set label = entry.slug == 'applications-specifications' ? 'Applications<br />& Specs' : entry.title  %}
+						<li class="flex-fill">
+							<a href="{{ entry.url }}">{{ label | raw }}</a>
+						</li>
+						{% endfor %}
+						
+						{% if recap.moreInfoDropdownItems | length %}
+						<li class="flex-fill">
+							<a href="#">More<br />Info</a>
+							<ul>
+							{% for block in recap.moreInfoDropdownItems.all() %}
+								{% if block.type == 'linkToPage' %}
+									{% set page  = block.page.one %}
+									{% set label = block.linkLabel ?: page.title %}
+									<li><a href="{{ page.url }}">{{ label }}</a></li>
+									
+								{% elseif block.type == 'download' %}
+									{% set asset = block.download.one %}
+									{% set label = block.linkLabel ?: asset.title %}
+									<li><a href="{{ asset.url }}" target="_blank" rel="noopener">{{ label }}</a></li>
+									
+								{% elseif block.type == 'customLink' %}
+									{% set href  = block.customLink %}
+									{% set label = block.linkLabel ?: 'Undefined Label' %}
+									<li><a href="{{ href }}"{% if block.newTab == '1' %} target="_blank" rel="noopener"{% endif %}>{{ label }}</a></li>
+								{% endif %}
+							{% endfor %}
+							</ul>
+						</li>
+						{% endif %}
+					</ul>
+				</nav>
+				
+			</div>
+		</div>
+	</div>
+</div>

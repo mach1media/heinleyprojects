@@ -1,0 +1,14 @@
+{% if blocks | length %}
+{% for block in blocks %}
+
+{% if block.type == 'heading' %}
+	{% include '_fields/heading.html' with {'heading': block } %}
+	
+{% elseif block.type == 'textBlock' %}
+	<div class="u-body-text-{{ block.style }} u-text-{{ block.alignment }}">
+		{{ block.description }}
+	</div>
+
+{% endif %}
+{% endfor %}
+{% endif %}

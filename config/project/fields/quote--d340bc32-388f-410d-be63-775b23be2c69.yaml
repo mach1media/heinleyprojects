@@ -1,0 +1,28 @@
+columnSuffix: kqkrjjpv
+contentColumnType: text
+fieldGroup: 5e594575-1d3b-4fd7-92e1-13f3e1fc2856 # Text Fields
+handle: quote
+instructions: ''
+name: Quote
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: ''
+  redactorConfig: Standard.json
+  removeEmptyTags: 1
+  removeInlineStyles: 1
+  removeNbsp: ''
+  showHtmlButtonForNonAdmins: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

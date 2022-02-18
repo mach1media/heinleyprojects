@@ -1,0 +1,70 @@
+field: d750001c-1757-4202-b47a-f386339aa476 # Project Buttons
+fieldLayouts:
+  b3dae84b-ed81-4eb4-94c4-de1a1433664e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2dff8481-a7f0-4d81-8b90-dec269e4df3c # Button Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: aaf62ea1-7109-4e6d-a4d6-d2dd41b098fd # Download
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Content
+        sortOrder: 1
+fields:
+  2dff8481-a7f0-4d81-8b90-dec269e4df3c: # Button Label
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: label
+    instructions: ''
+    name: 'Button Label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  aaf62ea1-7109-4e6d-a4d6-d2dd41b098fd: # Download
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: download
+    instructions: ''
+    name: Download
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: download
+name: Download
+sortOrder: 2

@@ -1,0 +1,19 @@
+fieldLayouts:
+  6b7a04f2-e3c1-40da-8d9f-813d7774a4c4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 6c579f81-8112-47d0-9766-8e7da6d99b7a # Favicon File
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Globals
+        sortOrder: 1
+handle: global
+name: Global
+sortOrder: 1

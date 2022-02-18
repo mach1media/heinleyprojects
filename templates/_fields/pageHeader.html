@@ -1,0 +1,24 @@
+{% if entry.pageHeader | length %}
+
+{# Preparation for the eager-loaded Neo field #}
+{% for block in entry.pageHeader.all() %}
+	{% do block.useMemoized(entry.pageHeader) %}
+{% endfor %}
+
+{# LOOP THROUGH NEO BLOCKS #}
+{% for block in entry.pageHeader.all() if block.level == 1 %}
+{% set bgPhoto = block.backgroundPhoto.one %}
+<header class="c-hero"{% if bgPhoto | length %} style="background:url('{{ bgPhoto.url }}') center center no-repeat;background-size:cover;"{% endif %}>
+	<div class="container c-hero__description">
+		<div class="row d-flex align-items-center">
+			<div class="col-10 offset-1 col-lg-8 offset-lg-2">
+				<div class="c-hero__content">
+					{% if block.headingBasic != '' %}<h1 class="c-hero__heading c-hero__heading--divider">{{ block.headingBasic }}</h1>{% endif %}
+					{{ block.summary | nl2br }}
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+{% endfor %}
+{% endif %}

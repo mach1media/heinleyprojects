@@ -1,0 +1,9 @@
+format: webp
+handle: thumbnailWide
+height: 600
+interlace: none
+mode: crop
+name: 'Thumbnail: Wide'
+position: center-center
+quality: 100
+width: 800

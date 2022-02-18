@@ -1,0 +1,318 @@
+{% if formHandle is defined and formHandle != '' %}
+	{% set form = craft.freeform.form(formHandle) %}
+{% endif %}
+
+{% set errorClass = "" %}
+
+{% if form %}
+
+{{ form.renderTag({
+	class: 'c-form',
+	returnUrl: url(craft.app.request.url, 'form=success')
+}) }}
+
+{% if form.hasErrors %}
+	<div class="c-alert c-alert--error">
+		<p>{{ "Error! Please review the form and try submitting again."|t('freeform') }}</p>
+		{% if form.errors|length %}
+		<ul>
+			{% for error in form.errors %}
+			<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+{% endif %}
+
+{#
+{% if craft.app.request.segment(1) == 'calendar' and craft.app.request.getParam('form') == 'success' %}
+	<div class="c-alert c-alert--success">
+		<p>Form submitted successfully!</p>
+	</div>
+{% endif %}
+#}
+
+{% for row in form %}
+<div class="row {{ form.customAttributes.rowClass }}">
+	{% for field in row %}
+	{% set columnClass = "c-columns__col " ~ form.customAttributes.columnClass %}
+	{% if field.type == "submit" %}
+		{% set columnClass = columnClass ~ " freeform-column-content-align-" ~ field.position %}
+	{% endif %}
+	<div class="{{ columnClass }}"{{ field.rulesHtmlData }}>
+		<div class="c-form__group{{ field.hasErrors ? ' is-error'}}">
+			
+			{% if field.type == "checkbox_group" %}
+			
+				{{ field.renderLabel({
+						labelClass: "form-check-label" ~ (field.hasErrors ? " is-invalid") ~ (field.required ? " required"),
+						instructionsClass: "help-block",
+						errorClass: errorClass,
+				}) }}
+			
+				{{ field.oneLine ? "<div>"|raw }}
+			
+				{% for index, option in field.options %}
+					{#
+					<div class="form-check{{ field.oneLine ? " form-check-inline" }}">
+						<input type="checkbox"
+							 name="{{ field.handle }}[]"
+							 value="{{ option.value }}"
+							 id="{{ field.idAttribute }}-{{ index }}"
+							 class="form-check-input{{ field.hasErrors ? " is-invalid" }}"
+								{{ option.checked ? "checked" : "" }}
+						/>
+	
+						<label class="form-check-label" for="{{ field.idAttribute }}-{{ index }}">
+							{{ option.label|t|raw }}
+						</label>
+					</div>
+					#}
+					<div class="c-form__checkbox pretty p-icon">
+						<input type="checkbox"
+							name="{{ field.handle }}[]"
+							value="{{ option.value }}"
+							id="{{ field.idAttribute }}-{{ index }}"
+							class="form-check-input{{ field.hasErrors ? " is-invalid" }}"
+							{{ option.checked ? "checked" : "" }}
+						/>
+						<div class="state">
+							<span class="icon fal fa-times"></span>
+							<label for="{{ field.idAttribute }}-{{ index }}">{{ option.label|t|raw }}</label>
+						</div>
+					</div>
+				{% endfor %}
+			
+				{{ field.oneLine ? "</div>"|raw }}
+			
+				{{ field.renderInstructions({ instructionsClass: 'c-form__input-help' }) }}
+				{# {{ field.renderErrors({ errorClass: 'c-form__input-help' }) }} #}
+				{% if field.errors %}
+				<div class="c-form__input-help">
+				  {% for errorString in field.errors %}{{ errorString }}{% if not loop.last %}<br />{% endif %}{% endfor %}
+				</div>
+				{% endif %}
+			
+			{% elseif field.type == "radio_group" %}
+			
+				{{ field.renderLabel({
+						labelClass: labelClass,
+						instructionsClass: "help-block",
+						errorClass: errorClass,
+				}) }}
+			
+				{{ field.oneLine ? "<div>"|raw }}
+			
+				{% for index, option in field.options %}
+						<div class="form-check{{ field.oneLine ? " form-check-inline" }}">
+								<input type="radio"
+											 name="{{ field.handle }}"
+											 value="{{ option.value }}"
+											 id="{{ field.idAttribute }}-{{ index }}"
+											 class="form-check-input{{ field.hasErrors ? " is-invalid" }}"
+												{{ option.checked ? "checked" : "" }}
+								/>
+								<label class="form-check-label" for="{{ field.idAttribute }}-{{ index }}">
+										{{ option.label|t|raw }}
+								</label>
+						</div>
+				{% endfor %}
+			
+				{{ field.oneLine ? "</div>"|raw }}
+			
+				{{ field.renderInstructions({ instructionsClass: 'c-form__input-help' }) }}
+				{# {{ field.renderErrors({ errorClass: 'c-form__input-help' }) }} #}
+				{% if field.errors %}
+				<div class="c-form__input-help">
+				  {% for errorString in field.errors %}{{ errorString }}{% if not loop.last %}<br />{% endif %}{% endfor %}
+				</div>
+				{% endif %}
+			
+			{% elseif field.type == "dynamic_recipients" and (field.showAsRadio or field.showAsCheckboxes) %}
+			
+				{{ field.renderLabel({
+						labelClass: labelClass,
+						instructionsClass: "help-block",
+						errorClass: errorClass,
+				}) }}
+			
+				{{ field.oneLine ? "<div>"|raw }}
+			
+				{% for index, option in field.options %}
+						<div class="form-check{{ field.oneLine ? " form-check-inline" }}">
+								<input type="{{ field.showAsRadio ? "radio" : "checkbox" }}"
+											 name="{{ field.handle }}[]"
+											 value="{{ loop.index0 }}"
+											 class="form-check-input"
+											 id="{{ field.idAttribute }}-{{ index }}"
+												{{ option.checked ? "checked" : "" }}
+								/>
+			
+								<label class="form-check-label" for="{{ field.idAttribute }}-{{ index }}">
+										{{ option.label|t|raw }}
+								</label>
+						</div>
+				{% endfor %}
+			
+				{{ field.oneLine ? "</div>"|raw }}
+			
+				{{ field.renderInstructions({ instructionsClass: 'c-form__input-help' }) }}
+				{# {{ field.renderErrors({ errorClass: 'c-form__input-help' }) }} #}
+				{% if field.errors %}
+				<div class="c-form__input-help">
+				  {% for errorString in field.errors %}{{ errorString }}{% if not loop.last %}<br />{% endif %}{% endfor %}
+				</div>
+				{% endif %}
+			
+			{% elseif field.type in ["checkbox", "mailing_list"] %}
+			
+				<div class="form-check">
+					{{ field.renderInput({ class: "form-check-input" ~ (field.hasErrors ? " is-invalid") }) }}
+					{{ field.renderLabel({
+						labelClass: "form-check-label" ~ (field.hasErrors ? " is-invalid") ~ (field.required ? " required"),
+						useRequiredAttribute: true,
+						inputAttributes: { 
+							"aria-invalid": (field.errors ? "true" : "false")
+						}
+					}) }}
+					{# {{ field.renderErrors({ errorClass: 'c-form__input-help' }) }} #}
+					{% if field.errors %}
+					<div class="c-form__input-help">
+					  {% for errorString in field.errors %}{{ errorString }}{% if not loop.last %}<br />{% endif %}{% endfor %}
+					</div>
+					{% endif %}
+				</div>
+			
+			{% elseif field.type == "select" %}
+				
+				{{ field.renderLabel({
+						labelClass: (field.required ? " required" : ""),
+						instructionsClass: "help-block",
+						errorClass: "help-block",
+				}) }}
+				<div class="c-form__input-wrap c-form__input-wrap--select">
+					{{ field.renderInput({
+						useRequiredAttribute: true,
+						inputAttributes: { 
+							"aria-invalid": (field.errors ? "true" : "false")
+						}
+					}) }}
+					{{ field.renderInstructions({ class: 'c-form__input-help' }) }}
+				</div>
+			
+			{% elseif field.type == "textarea" %}
+				
+				{{ field.renderLabel({ labelClass: "shown freeform-label" ~ (field.inputOnly ? " freeform-input-only-label" : "") ~ (field.required ? " freeform-required" : "") }) }}
+				{{ field.renderInput({
+					useRequiredAttribute: true,
+					inputAttributes: { 
+						"aria-invalid": (field.errors ? "true" : "false")
+					}
+				}) }}
+				{{ field.renderInstructions({ instructionsClass: 'c-form__input-help' }) }}
+				{# {{ field.renderErrors({ errorClass: 'c-form__input-help' }) }} #}
+				{% if field.errors %}
+				<div class="c-form__input-help">
+				  {% for errorString in field.errors %}{{ errorString }}{% if not loop.last %}<br />{% endif %}{% endfor %}
+				</div>
+				{% endif %}
+				
+			{% elseif field.type == "submit" %}
+			
+				<div class="u-text-{{ field.position }}">
+					{{ field.render({ class: "c-btn c-btn--silver" }) }}
+				</div>
+			
+			
+			{% elseif field.type == "file" %}
+				{{ field.renderLabel({labelClass:'shown'}) }}
+				{{ field.renderInput({
+					useRequiredAttribute: true,
+					inputAttributes: { 
+						"aria-invalid": (field.errors ? "true" : "false")
+					}
+				}) }}
+				{{ field.renderInstructions({ instructionsClass: 'c-form__input-help' }) }}
+				{# {{ field.renderErrors({ errorClass: 'c-form__input-help' }) }} #}
+				{% if field.errors %}
+				<div class="c-form__input-help">
+				  {% for errorString in field.errors %}{{ errorString }}{% if not loop.last %}<br />{% endif %}{% endfor %}
+				</div>
+				{% endif %}
+			
+			{# - - - - - - - - - - - - FOR FREEFORM PAYMENTS - - - - - - - - - - - - #}
+			{% elseif field.type == "cc_details" %}
+			
+				{{ field.renderLabel({
+						labelClass: (field.required ? " required" : ""),
+						instructionsClass: "help-block",
+						errorClass: "help-block",
+				}) }}
+			
+				{% for layoutRow in field.layoutRows %}
+						<div class="row {{ form.customAttributes.rowClass }}">
+								{% for layoutField in layoutRow %}
+										{% set layoutWidth = (12 / (layoutRow|length)) %}
+										{% set columnClass = columnClass|replace(' col-sm-' ~ width) %}
+										{% set columnClass = columnClass ~ " col-sm-" ~ layoutWidth %}
+										<div class="{{ columnClass }}">
+												{{ layoutField.render({
+														class: isCheckbox ? "checkbox" : "form-control",
+														instructionsClass: "help-block",
+														instructionsBelowField: true,
+														labelClass: (layoutField.required ? " required" : ""),
+														errorClass: "help-block",
+												}) }}
+										</div>
+								{% endfor %}
+						</div>
+				{% endfor %}
+			
+				{{ field.renderInput({
+						instructionsClass: "help-block",
+						instructionsBelowField: true,
+						labelClass: (field.required ? " required" : ""),
+						errorClass: "help-block",
+				}) }}
+			
+				{{ field.renderInstructions({ instructionsClass: 'c-form__input-help' }) }}
+				{# {{ field.renderErrors({ errorClass: 'c-form__input-help' }) }} #}
+				{% if field.errors %}
+				<div class="c-form__input-help">
+				  {% for errorString in field.errors %}{{ errorString }}{% if not loop.last %}<br />{% endif %}{% endfor %}
+				</div>
+				{% endif %}
+			{# - - - - - - - - - - - - FOR FREEFORM PAYMENTS - - - - - - - - - - - - #}
+			
+			{% else %}
+				
+				{{ field.renderLabel() }}
+				{{ field.renderInput({
+					useRequiredAttribute: true,
+					inputAttributes: { 
+						"aria-invalid": (field.errors ? "true" : "false")
+					}
+				}) }}
+				{{ field.renderInstructions({ instructionsClass: 'c-form__input-help' }) }}
+				{# {{ field.renderErrors({ errorClass: 'c-form__input-help' }) }} #}
+				{% if field.errors %}
+				<div class="c-form__input-help">
+				  {% for errorString in field.errors %}{{ errorString }}{% if not loop.last %}<br />{% endif %}{% endfor %}
+				</div>
+				{% endif %}
+			
+			{% endif %}
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endfor %}
+
+{{ form.renderClosingTag }}
+
+{% else %}
+<div class="c-alert c-alert--error" role="alert">
+	<p>Form with the handle '{{ formHandle }}' does not exist.</p>
+</div>
+{% endif %}
+

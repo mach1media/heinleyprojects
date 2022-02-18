@@ -1,0 +1,152 @@
+field: 89254b6b-a516-4069-b20e-2290e94781c4 # Button
+fieldLayouts:
+  41a96b52-1991-4bc4-be8f-0f5684063c07:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b0763f50-c230-4f93-8865-c56a9bce7e43 # Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 848c5d29-5636-4cf5-a89b-cecb1eb70f0c # Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6a3ebb54-8e8c-4668-8c73-945eeaf76caa # Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fa6a3177-f8b1-4443-a619-ab6224d60b4a # Outline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6f6b4827-6b90-4758-a8c3-f06f217b5484 # New Tab
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  6a3ebb54-8e8c-4668-8c73-945eeaf76caa: # Color
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: color
+    instructions: ''
+    name: Color
+    searchable: true
+    settings:
+      dataSet: 'CSS Color Classes'
+      type: dropdown
+    translationKeyFormat: null
+    translationMethod: none
+    type: statikbe\configvaluesfield\fields\ConfigValuesFieldField
+  6f6b4827-6b90-4758-a8c3-f06f217b5484: # New Tab
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: newTab
+    instructions: 'open link in new tab'
+    name: 'New Tab'
+    searchable: true
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  848c5d29-5636-4cf5-a89b-cecb1eb70f0c: # Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: btnLink
+    instructions: ''
+    name: Link
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:14f6eefd-8aba-4860-a4c6-f1b3265c5393' # Documents
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: true
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:6a8678fb-3c02-4db5-a390-1b01c515f50e' # Photos
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:14f6eefd-8aba-4860-a4c6-f1b3265c5393' # Documents
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  b0763f50-c230-4f93-8865-c56a9bce7e43: # Label
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: label
+    instructions: ''
+    name: Label
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  fa6a3177-f8b1-4443-a619-ab6224d60b4a: # Outline
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: outline
+    instructions: ''
+    name: Outline
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch

@@ -1,0 +1,18 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 937fbfdd-6234-4c28-ada8-7effcfefb0b0 # Matrix Fields
+handle: pageBodyBlocks
+instructions: ''
+name: 'Page Body Blocks'
+searchable: false
+settings:
+  maxBlocks: ''
+  maxLevels: ''
+  maxTopBlocks: ''
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+  wasModified: true
+translationKeyFormat: null
+translationMethod: site
+type: benf\neo\Field

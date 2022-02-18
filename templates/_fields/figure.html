@@ -1,0 +1,21 @@
+{% if figure is defined and figure | length and figure.image | length %}
+	{% set img    = figure.image.one %}
+	{% set full   = (img.width > 2000) ? 2000 : img.width %}
+	{% set half   = full / 2 | round %}
+	{% set fourth = full / 4 | round %}
+<figure class="c-figure c-figure--{{ figure.position }}">
+	<img class="img-fluid"
+		src="{{ img.url({ width: half, format:'webp' }) }}" 
+		alt="{{ img.imageAlt ?: img.title }}"
+		srcset="{{ img.url({ width: fourth, format:'webp' }) }} {{ fourth }}w,
+			{{ img.url({ width: half, format:'webp' }) }} {{ half }}w,
+			{{ img.url({ width: full, format:'webp' }) }} {{ full }}w"
+		sizes="(min-width: {{ half + 1 }}px) {{ full }}px,
+			(min-width: {{ fourth + 1 }}px) {{ half }}px,
+			100vw"
+	/>
+	{% if img.caption != '' %}
+	<figcaption>{{ img.caption }}</figcaption>
+	{% endif %}
+</figure>
+{% endif %}

@@ -1,0 +1,12 @@
+{% extends "_layout/default" %}
+
+{# SET BODY CLASS #}
+{% if entry.pageHeader | length %}
+	{% set bodyClass = 'has-page-header' %}
+{% endif %}
+
+{% block content %}
+
+{% include '_entryTypes/' ~ entry.type ~ '.html' %}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% spaceless %}
+{# EXAMPLE USAGE
+ # <a href="{% include '_fields/image-link-href.html' with {'link': block.imageLink.one } %}">
+ #}
+{% if link.linkToPage | length %}
+	{% set href = link.linkToPage.one.url %}
+{% elseif link.linkToAsset | length %}
+	{% set href = link.linkToAsset.one.url %}
+{% elseif link.customLink != '' %}
+	{% set href = link.customLink %}
+{% endif %}
+{{ href }}{% if link.newTab == '1' %}" target="_blank" rel="noopener{% endif %}
+{% endspaceless %}

@@ -1,0 +1,46 @@
+columnSuffix: uogmywns
+contentColumnType: string
+fieldGroup: 506eed52-ee59-417e-bef5-0cdf16ada11a # Block Settings
+handle: textAlignment
+instructions: ''
+name: 'Text Alignment'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Left
+        -
+          - value
+          - left
+        -
+          - default
+          - 1
+    -
+      __assoc__:
+        -
+          - label
+          - Center
+        -
+          - value
+          - center
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Right
+        -
+          - value
+          - right
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

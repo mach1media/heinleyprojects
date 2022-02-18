@@ -1,0 +1,13 @@
+columnSuffix: qjlgnxdl
+contentColumnType: string
+fieldGroup: 506eed52-ee59-417e-bef5-0cdf16ada11a # Block Settings
+handle: backgroundColor
+instructions: ''
+name: 'Background Color'
+searchable: true
+settings:
+  dataSet: 'CSS Color Classes'
+  type: dropdown
+translationKeyFormat: null
+translationMethod: none
+type: statikbe\configvaluesfield\fields\ConfigValuesFieldField
