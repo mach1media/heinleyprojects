@@ -1,6 +1,8 @@
 # Craft runtime and backups folders
 # ----------------------------------------------------------------------
 /.env
+/.env.production
+/.env.staging
 /.idea
 /vendor
 .DS_Store
