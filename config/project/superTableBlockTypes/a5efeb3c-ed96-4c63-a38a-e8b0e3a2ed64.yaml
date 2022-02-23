@@ -1,0 +1,140 @@
+field: d61c5b5f-313d-4082-91ca-5f3a165ab830 # Button
+fieldLayouts:
+  df7f4633-e9a6-46de-9cc1-a45dc3a498b5:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e3aaa9fb-8db4-4298-b072-81955f6459c5 # Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b2d44570-8139-4190-afd4-1db2035be921 # Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c60de8b5-0e28-4ef9-8465-fbb2f6666fd8 # Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2ad91579-2e28-4ab7-9607-9b7ba99101bd # Outline
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 41df0d40-d2d8-4fcb-a04b-434a40322ffa # New Tab
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2ad91579-2e28-4ab7-9607-9b7ba99101bd: # Outline
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: outline
+    instructions: ''
+    name: Outline
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  41df0d40-d2d8-4fcb-a04b-434a40322ffa: # New Tab
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: newTab
+    instructions: ''
+    name: 'New Tab'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  b2d44570-8139-4190-afd4-1db2035be921: # Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: btnLink
+    instructions: ''
+    name: Link
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  c60de8b5-0e28-4ef9-8465-fbb2f6666fd8: # Color
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: color
+    instructions: ''
+    name: Color
+    searchable: false
+    settings:
+      dataSet: 'CSS Color Classes'
+      type: dropdown
+    translationKeyFormat: null
+    translationMethod: none
+    type: statikbe\configvaluesfield\fields\ConfigValuesFieldField
+  e3aaa9fb-8db4-4298-b072-81955f6459c5: # Label
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: label
+    instructions: ''
+    name: Label
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

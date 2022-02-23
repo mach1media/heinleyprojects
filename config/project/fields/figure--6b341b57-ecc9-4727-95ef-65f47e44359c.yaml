@@ -9,14 +9,14 @@ settings:
   columns:
     __assoc__:
       -
-        - 37225570-d37a-4978-8ceb-134c00e11a73 # Image
+        - fea64eec-cc78-43c2-9a09-476834e5281d # Image
         -
           __assoc__:
             -
               - width
               - ''
       -
-        - c9c03c09-7394-42d0-a448-12c9935a0402 # Position
+        - a3a4f256-a876-418b-8dc0-f3bd6ba40e18 # Position
         -
           __assoc__:
             -
@@ -24,13 +24,13 @@ settings:
               - ''
   contentTable: '{{%stc_figure}}'
   fieldLayout: table
-  maxRows: ''
+  maxRows: '1'
   minRows: ''
   placeholderKey: null
   propagationKeyFormat: null
   propagationMethod: all
   selectionLabel: 'Add a figure'
-  staticField: '1'
+  staticField: ''
 translationKeyFormat: null
 translationMethod: site
 type: verbb\supertable\fields\SuperTableField

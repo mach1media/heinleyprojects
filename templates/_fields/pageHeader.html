@@ -7,18 +7,95 @@
 
 {# LOOP THROUGH NEO BLOCKS #}
 {% for block in entry.pageHeader.all() if block.level == 1 %}
-{% set bgPhoto = block.backgroundPhoto.one %}
-<header class="c-hero"{% if bgPhoto | length %} style="background:url('{{ bgPhoto.url }}') center center no-repeat;background-size:cover;"{% endif %}>
+
+{% if block.type == 'solidColor' %}
+<header class="c-hero c-hero--{{ block.backgroundColor }}">
 	<div class="container c-hero__description">
-		<div class="row d-flex align-items-center">
-			<div class="col-10 offset-1 col-lg-8 offset-lg-2">
-				<div class="c-hero__content">
-					{% if block.headingBasic != '' %}<h1 class="c-hero__heading c-hero__heading--divider">{{ block.headingBasic }}</h1>{% endif %}
-					{{ block.summary | nl2br }}
-				</div>
+		<div class="row d-flex align-items-end">
+			<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+				{% if block.headingBasic != '' %}<h1 class="c-hero__heading">{{ block.headingBasic }}</h1>{% endif %}
+				{% if block.summary != '' %}<p>{{ block.summary | nl2br }}</p>{% endif %}
 			</div>
 		</div>
 	</div>
 </header>
+
+{% elseif block.type == 'photo' %}
+{% set bgPhoto = block.backgroundPhoto.one %}
+<header class="c-hero" style="background:url('{{ bgPhoto.url('responsiveLarge') }}') center center no-repeat;background-size:cover;">
+	<div class="container c-hero__description">
+		<div class="row d-flex align-items-end">
+			<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+				{% if block.headingBasic != '' %}<h1 class="c-hero__heading">{{ block.headingBasic }}</h1>{% endif %}
+				{% if block.summary != '' %}<p>{{ block.summary | nl2br }}</p>{% endif %}
+			</div>
+		</div>
+	</div>
+</header>
+
+{% elseif block.type == 'video' %}
+<header class="c-hero" style="background:url('/assets/img/video-poster.jpg') center center no-repeat; background-size:cover;">
+	<video id="vid" poster="/assets/video/video-poster.jpg" playsinline autoplay muted loop>
+		<source src="/assets/video/video.mp4" type="video/mp4">
+	</video>
+	
+	<div class="container c-hero__description">
+		<div class="row d-flex align-items-end">
+			<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+				{% if block.headingBasic != '' %}<h1 class="c-hero__heading">{{ block.headingBasic }}</h1>{% endif %}
+				{% if block.summary != '' %}<p>{{ block.summary | nl2br }}</p>{% endif %}
+			</div>
+		</div>
+	</div>
+</header>
+{% js %}
+//
+// Google Chrome not autoplaying video
+// https://developers.google.com/web/updates/2017/06/play-request-was-interrupted
+//
+var playPromise = $('#vid')[0].play();
+
+if (playPromise !== undefined) {
+  playPromise.then(_ => {
+    // Automatic playback started!
+    // Show playing UI.
+  })
+  .catch(error => {
+    // Auto-play was prevented
+    // Show paused UI.
+    $('#vid')[0].play();
+  });
+};
+{% endjs %}
+
+{% elseif block.type == 'carousel' %}
+<header class="c-hero">
+	<div id="js-hero-carousel" class="c-hero__carousel">
+		{% for img in block.images.all %}
+		<div class="c-hero__carousel-slide" style="background:url('{{ img.url('responsiveLarge') }}') center center no-repeat;background-size:cover;"></div>
+		{% endfor %}
+	</div>
+	
+	<div class="container c-hero__description">
+		<div class="row d-flex align-items-end">
+			<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+				{% if block.headingBasic != '' %}<h1 class="c-hero__heading">{{ block.headingBasic }}</h1>{% endif %}
+				{% if block.summary != '' %}<p>{{ block.summary | nl2br }}</p>{% endif %}
+			</div>
+		</div>
+	</div>
+</header>
+{% js %}
+jQuery(document).ready(function($) {
+	$('#js-hero-carousel').slick({
+		accessibility: true,
+		autoplay: true,
+		autoplaySpeed: 4000,
+		draggable: false
+	});
+});
+{% endjs %}
+
+{% endif %}
 {% endfor %}
 {% endif %}

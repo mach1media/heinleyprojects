@@ -8,7 +8,10 @@ return [
 		
 		'CSS Color Classes' => [
 			'default'         => 'Default',
-			'red'             => 'Red',
+			'pink'            => 'Pink',
+			'peach'           => 'Peach',
+			'green'           => 'Green',
+			'green-light'     => 'Green: Light',
 			'white'           => 'White',
 			'silver'          => 'Silver',
 			'gray'            => 'Gray',

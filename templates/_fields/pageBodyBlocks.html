@@ -38,31 +38,47 @@
 {% endif %}
 #}
 {% if block.backgroundPhoto is defined and block.backgroundPhoto | length %}
-	{% if block.backgroundImageAnchor is defined %}
-		{% set backgroundPhoto %} style="background-image:url('{{ block.backgroundPhoto.one.url('responsiveLarge') }}');background-position:{{ block.backgroundImageAnchor }};background-repeat:no-repeat;background-size:cover;"{% endset %}
-	{% else %}
-		{% set backgroundPhoto %} style="background-image:url('{{ block.backgroundPhoto.one.url('responsiveLarge') }}');background-position:center centerbackground-repeat:no-repeat;background-size:cover;"{% endset %}
-	{% endif %}
+	{% set backgroundPhoto %} style="background-image:url('{{ block.backgroundPhoto.one.url('responsiveLarge') }}');background-position:center centerbackground-repeat:no-repeat;background-size:cover;"{% endset %}
 {% else %}
 	{% set backgroundPhoto = '' %}
 {% endif %}
 
 {% endspaceless %}
+
+{# -------------- LEAD BLOCK --------------- #}
+{% if block.type == 'leadBlock' %}
+<section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
+	<div class="container">
+		<div class="row">
+			<div class="c-lead col-12 {% if block.paddingSides == '1' %}col-lg-8 offset-lg-2{% endif %} text-{{ block.textAlignment }} u-color-{{ block.textColor }}">
+				{% include '_fields/heading.html' with {'heading': block.heading} %}
+				{% if block.description != '' %}<div class="wysiwyg">{{ block.description }}</div>{% endif %}
+				{% if block.button | length %}
+				<p>{% include '_fields/button.html' with {'button': block.button} %}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
 {# -------------- GENERAL BLOCK --------------- #}
-{% if block.type == 'general' %}
+{% elseif block.type == 'general' %}
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
 		{% include '_fields/_section-heading.html' with {'block': block} %}
 		
 		<div class="row">
-			<div class="col-12{% if block.paddingSides == '1' %} col-md-8 offset-md-2{% endif %} text-{{ block.textAlignment }}">
+			<div class="col-12{% if block.paddingSides == '1' %} col-md-10 offset-md-1 col-lg-8 offset-lg-2{% endif %} text-{{ block.textAlignment }} u-color-{{ block.textColor }}">
 				{% include '_fields/heading.html' with {'heading': block.heading} %}
 				<div class="wysiwyg">
 				{% include '_fields/figure.html' with {'figure': block.figure} %}
 				{{ block.description }}
 				</div>
 				{% if block.button | length %}
-				<p class="mt-3">{% include '_fields/button.html' with {'button': block.button} %}</p>
+				<p>{% include '_fields/button.html' with {'button': block.button} %}</p>
 				{% endif %}
 			</div>
 		</div>
@@ -75,31 +91,101 @@
 {% elseif block.type == 'sectionHeading' %}
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
-		<h2 class="u-section-heading mb-0">
-			{% if block.caption != '' %}<small>{{ block.caption }}</small>{% endif %}
-			{{ block.headingBasic | raw }}
-		</h2>
+		<div class="row">
+			<div class="col-12{% if block.paddingSides == '1' %} col-md-8 offset-md-2{% endif %} text-{{ block.textAlignment }}">
+				<h2 class="u-section-heading u-section-heading--{{ block.textColor }}">
+					{% if block.caption != '' %}<small>{{ block.caption }}</small>{% endif %}
+					{{ block.headingBasic | raw }}
+				</h2>
+			</div>
+		</div>
 	</div>
 </section>
 
 
 
-{# -------------- DEFINITION BLOCK --------------- #}
-{% elseif block.type == 'definitionBlock' %}
+{# -------------- IMG+TEXT BLOCK --------------- #}
+{% elseif block.type == 'imgTextBlock' %}
+{% set img    = block.image.one() %}
+{% set imgSrc = img.url('responsiveMedium') %}
+{% set imgAlt = img.imageAlt ?: img.title %}
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
-		{% include '_fields/_section-heading.html' with {'block': block} %}
-		
-		<div class="row">
-			<div class="col-12 col-md-5">
-				<div class="c-definition__term">
-					<div>{{ block.quote }}</div>
-				</div>
+		<div class="row align-items-center">
+			<div class="col-12 col-sm-5{% if block.imagePositionLR == 'right' %} order-sm-2 offset-sm-1{% endif %}">
+				<p>
+					<img class="img-fluid" src="{{ imgSrc }}" alt="{{ imgAlt }}" />
+				</p>
 			</div>
 			
-			<div class="col-12 col-md-7">
-				<div class="c-definition__description">
-					{{ block.description }}
+			<div class="col-12 col-sm-6 {%  if block.imagePositionLR == 'right' %}order-sm-1{% else %}offset-sm-1{% endif %} u-color-{{ block.textColor }}">
+				{% include '_fields/heading.html' with {'heading': block.heading} %}
+				{% if block.description != '' %}<div class="wysiwyg">{{ block.description }}</div>{% endif %}
+				{% if block.button | length %}
+				<p>{% include '_fields/button.html' with {'button': block.button} %}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+{# -------------- HEADSHOT+QUOTE BLOCK --------------- #}
+{% elseif block.type == 'headshotQuote' %}
+<section class="c-general c-blockquote c-blockquote--{{ block.color }} {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-6 col-md-7 c-blockquote__description">
+				{% include '_fields/heading.html' with {'heading': block.heading} %}
+				{% if block.description != '' %}<div class="wysiwyg">{{ block.description }}</div>{% endif %}
+				{% if block.button | length %}
+				<p>{% include '_fields/button.html' with {'button': block.button} %}</p>
+				{% endif %}
+			</div>
+			
+			<div class="col-12 offset-sm-1 col-sm-5 col-md-4 c-blockquote__quote">
+				{% if block.image | length %}
+					{% set img    = block.image.one() %}
+					{% set imgSrc = img.url('square600') %}
+					{% set imgAlt = img.imageAlt ?: img.title %}
+				<div class="c-blockquote__photo">
+					<img class="img-fluid" src="{{ imgSrc }}" alt="{{ imgAlt }}" />
+				</div>
+				{% endif %}
+				<blockquote>
+					{{ block.quote }}
+					{% if block.citation != '' %}<cite>{{ block.citation | raw }}</cite>{% endif %}
+				</blockquote>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+{# -------------- PROJECT SPOTLIGHT BLOCK --------------- #}
+{% elseif block.type == 'projectSpotlight' %}
+{% set imageDesktop  = block.imageDesktop.one() %}
+{% set imgDesktopSrc = imageDesktop.url('responsiveMedium') %}
+{% set imgDesktopAlt = imageDesktop.imageAlt ?: imageDesktop.title %}
+{% set imageMobile   = block.imageMobile | length ? block.imageMobile.one : imageDesktop %}
+{% set imgMobileSrc  = imageMobile.url('responsiveMedium') %}
+{% set imgMobileAlt  = imageMobile.imageAlt ?: imageMobile.title %}
+<section class="c-project {{ blockStyleClasses | join(' ') }} c-project--bg-{{ block.backgroundColor }} c-project--img-{{ block.imagePositionLR }}{% if block.inset == 1 %} c-project--inset{% endif %}"{{ backgroundPhoto }}>
+	<div class="c-project__img-desktop">
+		<img class="img-fluid" src="{{ imgDesktopSrc }}" alt="{{ imgDesktopAlt }}" />
+	</div>
+	<div class="c-project__img-mobile">
+		<img class="img-fluid" src="{{ imgMobileSrc }}" alt="{{ imgMobileAlt }}" />
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-6{% if block.imagePositionLR == 'left' %} offset-lg-6{% endif %}">
+				<div class="c-project__description">
+					{% include '_fields/heading.html' with {'heading': block.heading} %}
+					{% if block.description != '' %}<div class="wysiwyg">{{ block.description }}</div>{% endif %}
 					{% if block.button | length %}
 					<p>{% include '_fields/button.html' with {'button': block.button} %}</p>
 					{% endif %}
@@ -111,89 +197,35 @@
 
 
 
-{# -------------- ICON+TEXT BLOCK --------------- #}
-{% elseif block.type == 'iconTextBlock' %}
-{% if block.image | length %}
-	{% set img    = block.image.one %}
-	{% set imgSrc = img.url %}
-	{% set imgAlt = img.imageAlt ?: img.title %}
-{% else %}
-	{% set imgSrc = '/assets/uploads/photos/icon-magnifier.png' %}
-	{% set imgAlt = 'magnifier' %}
-{% endif %}
-<section class="c-img-text c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
+{# -------------- WORK CARDS --------------- #}
+{% elseif block.type == 'workCards' %}
+<section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
-		{% include '_fields/_section-heading.html' with {'block': block} %}
+		{% include '_fields/heading.html' with {'heading': block.heading} %}
+		{% if block.description != '' %}<div class="wysiwyg text-{{ block.textAlignment }} u-color-{{ block.textColor }}">{{ block.description }}</div>{% endif %}
 		
 		<div class="row">
-			<div class="col-12 col-md-10 offset-md-1 col-xl-8 offset-xl-2">
-				<div class="row align-items-center">
-					<div class="c-img-text__img col-3 {% if block.imagePositionLR == 'right' %}order-sm-2 {% endif %}text-center">
-						<p>
-							<img class="img-fluid" src="{{ imgSrc }}" alt="{{ imgAlt }}" />
-						</p>
+			{% for workEntry in block.workEntries.all() %}
+			<div class="col-12 col-lg-6{% if not loop.last %} mb-5 mb-lg-0{% endif %}">
+				<a href="{{ workEntry.url() }}" class="c-work">
+					<div class="c-work__thumb">
+						{% if workEntry.thumbnail | length %}
+						{% set img    = workEntry.thumbnail.one() %}
+						{% set imgSrc = img.url('thumbnailWide') %}
+						{% set imgAlt = img.imageAlt ?: img.title %}
+						<img class="img-fluid" src="{{ imgSrc }}" alt="{{ imgAlt }}" />
+						{% else %}
+						<img class="img-fluid" src="https://via.placeholder.com/800x500?text=image" alt="placeholder" />
+						{% endif %}
 					</div>
 					
-					<div class="c-img-text__description col-9{% if block.imagePositionLR == 'right' %} order-sm-1{% endif %}">
-						{{ block.description }}
+					<div class="c-work__description u-color-{{ block.textColor }}">
+						<h3 class="c-work__heading">{{ workEntry.title }}</h3>
+						{% if workEntry.summary != '' %}<p>{{ workEntry.summary | raw }}</p>{% endif %}
 					</div>
-				</div>
+				</a>
 			</div>
-		</div>
-	</div>
-</section>
-
-
-
-{# -------------- PROJECT PANEL --------------- #}
-{% elseif block.type == 'projectPanel' %}
-{% if block.image | length %}
-	{% set img    = block.image.one %}
-	{% set imgSrc = img.url('responsiveMedium') %}
-	{% set imgAlt = img.imageAlt ?: img.title %}
-{% else %}
-	{% set imgSrc = 'https://via.placeholder.com/800x500?text=placeholder' %}
-	{% set imgAlt = 'placeholder' %}
-{% endif %}
-<section class="c-img-text c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="c-img-text__img col-12 col-sm-5{% if block.imagePositionLR == 'right' %} offset-sm-1 order-sm-2{% endif %}">
-				<p>
-					<img class="img-fluid" src="{{ imgSrc }}" alt="{{ imgAlt }}" />
-				</p>
-			</div>
-			
-			<div class="c-img-text__description col-12 col-sm-6{% if block.imagePositionLR == 'right' %} order-sm-1{% else %} offset-sm-1{% endif %}">
-				{% if block.headingBasic != '' %}<h3>{{ block.headingBasic | raw }}</h3>{% endif %}
-				{{ block.description }}
-				{% if block.definitionList | length or block.projectButtons | length %}
-				<dl>
-					{% for row in block.definitionList %}
-					<dt>{{ row.term }}</dt>
-					<dd>{{ row.definition }}</dd>
-					{% endfor %}
-					{% if block.projectButtons | length %}
-					<dt>
-						{% for btn in block.projectButtons.all() %}
-							{% if btn.type == 'image' %}
-							<a href="{{ btn.image.one.url('responsiveLarge') }}" data-gallery="gallery-{{ block.id }}" class="btn btn-red btn-outline">{{ btn.label }}</a>
-							{% elseif btn.type == 'download' %}
-							<a href="{{ btn.download.one.url }}" class="btn btn-red btn-outline">{{ btn.label }}</a>
-							{% elseif btn.type == 'customLink' %}
-							<a href="{{ btn.customLink }}"{% if btn.newTab == '1' %} target="_blank" rel="noopener"{% endif %} class="btn btn-red btn-outline">{{ btn.label }}</a>
-							{% elseif btn.type == 'video' %}
-								{% set embeddedAsset = craft.embeddedAssets.get(btn.video.one) %}
-								{% set videoId = embeddedAsset.getVideoId() %}
-							<a href="#video-{{ videoId }}" class="btn btn-red btn-outline js-modal-{{ btn.provider }}" data-video-id="{{ videoId }}">{{ btn.label }}</a>
-							{% endif %}
-							{% if not loop.last %}&nbsp;{% endif %}
-						{% endfor %}
-					</dt>
-					{% endif %}
-				</dl>
-				{% endif %}
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </section>
@@ -211,36 +243,37 @@
 {% endif %}
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
-		{% include '_fields/_section-heading.html' with {'block': block} %}
+		{% include '_fields/heading.html' with {'heading': block.heading} %}
+		{% if block.description != '' %}<div class="wysiwyg text-{{ block.textAlignment }} u-color-{{ block.textColor }}">{{ block.description }}</div>{% endif %}
 		
+		{% if block.children | length %}
 		<div class="row">
-			<div class="col-12{% if block.paddingSides == '1' %} col-md-8 offset-md-2{% endif %} text-{{ block.textAlignment }}">
+			{% for col in block.children.all() %}
+				{% if block.children | length == '1' %}
+			<div class="col-12{% if block.paddingSides == '1' %} col-md-10 offset-md-1 col-lg-8 offset-lg-3{% endif %} text-{{ col.textAlignment }} u-color-{{ col.textColor }}">
+				{% elseif block.children | length == '2' %}
+			<div class="col-12{% if block.paddingSides == '1' %} col-lg-5 offset-lg-1{% endif %} text-{{ col.textAlignment }} u-color-{{ col.textColor }}{% if not loop.last %} mb-5 mb-lg-0{% endif %}">
+				{% elseif block.children | length == '3' %}
+			<div class="col-12 col-md-4 text-{{ col.textAlignment }} u-color-{{ col.textColor }}{% if not loop.last %} mb-5 mb-md-0{% endif %}">
+				{% endif %}
+				{% if col.image | length %}
+				<figure>
+					{% set img = col.image.one() %}
+					{% include '_fields/image.html' with {'img': img,'class':'img-fluid'} %}
+					{% if img.caption != '' %}
+					<figcaption>{{ img.caption }}</figcaption>
+					{% endif %}
+				</figure>
+				{% endif %}
 				{% include '_fields/heading.html' with {'heading': block.heading} %}
-				{% if block.description != '' %}<div class="wysiwyg">{{ block.description }}</div>{% endif %}
-				{% if block.children | length %}
-				<div class="row">
-					{% for col in block.children.all() %}
-					<div class="col-md-{{ columnWidth }} text-{{ col.textAlignment }}">
-						{% if col.image | length %}
-						<figure>
-							{% set img = col.image.one() %}
-							{% include '_fields/image.html' with {'img': img} %}
-							{% if img.caption != '' %}
-							<figcaption>{{ img.caption }}</figcaption>
-							{% endif %}
-						</figure>
-						{% endif %}
-						{% if col.headingBasic != '' %}<h3>{{ col.headingBasic | raw }}</h3>{% endif %}
-						{% if col.description != '' %}<div class="wysiwyg">{{ col.description }}</div>{% endif %}
-						{% if col.button | length %}
-						<p>{% include '_fields/button.html' with {'button': col.button } %}</p>
-						{% endif %}
-					</div>
-					{% endfor %}
-				</div>
+				{% if col.description != '' %}<div class="wysiwyg">{{ col.description }}</div>{% endif %}
+				{% if col.button | length %}
+				<p>{% include '_fields/button.html' with {'button': col.button } %}</p>
 				{% endif %}
 			</div>
+			{% endfor %}
 		</div>
+		{% endif %}
 	</div>
 </section>
 
@@ -250,10 +283,10 @@
 {% elseif block.type == 'embedCode' %}
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
-		{% include '_fields/_section-heading.html' with {'block': block} %}
-		
 		<div class="row">
 			<div class="col-12{% if block.paddingSides == '1' %} col-md-8 offset-md-2{% endif %}">
+				{% include '_fields/heading.html' with {'heading': block.heading} %}
+				{% if block.description != '' %}<div class="wysiwyg text-{{ block.textAlignment }} u-color-{{ block.textColor }}">{{ block.description }}</div>{% endif %}
 				<div class="js-fitvids">{{ block.embedCode | raw }}</div>
 			</div>
 		</div>
@@ -266,10 +299,9 @@
 {% elseif block.type == 'image' %}
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
-		{% include '_fields/_section-heading.html' with {'block': block} %}
-		
 		<div class="row">
 			<div class="col-12{% if block.paddingSides == '1' %} col-md-8 offset-md-2{% endif %}">
+				{% include '_fields/_section-heading.html' with {'block': block} %}
 				<figure>
 					{% if block.imageDesktop | length and block.imageMobile | length %}
 						<div class="d-none d-md-block">
@@ -305,10 +337,8 @@
 {% elseif block.type == 'imageCarousel' %}
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
-		{% include '_fields/_section-heading.html' with {'block': block} %}
-		
 		<div class="row">
-			<div class="col-12{% if block.paddingSides == '1' %} col-md-8 offset-md-2{% endif %}">
+			<div class="col-10 offset-1{% if block.paddingSides == '1' %} col-lg-8 offset-lg-2{% endif %}">
 				{% include '_fields/heading.html' with {'heading': block.heading} %}
 				
 				<div id="carousel-{{ block.id }}" class="carousel--images">
@@ -342,14 +372,14 @@ jQuery(document).ready(function($) {
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8 offset-lg-2">
+			<div class="col-10 offset-1{% if block.paddingSides == '1' %} col-lg-8 offset-lg-2{% endif %}">
 				{% include '_fields/heading.html' with {'heading': block.heading, 'class':'mb-5'} %}
 				
 				<div id="carousel-{{ block.id }}">
 					{% for blockquote in block.children.all() %}
-					<blockquote class="blockquote">
+					<blockquote class="blockquote u-color-{{ blockquote.textColor }}">
 						{{ blockquote.quote }}
-						{% if blockquote.citation != '' %}<footer class="blockquote-footer">{{ blockquote.citation | nl2br }}</footer>{% endif %}
+						{% if blockquote.citation != '' %}<footer class="blockquote-footer u-color-{{ blockquote.textColor }} ">{{ blockquote.citation | nl2br }}</footer>{% endif %}
 					</blockquote>
 					{% endfor %}
 				</div>
@@ -376,14 +406,41 @@ jQuery(document).ready(function($) {
 {% elseif block.type == 'blockquote' %}
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
-		{% include '_fields/_section-heading.html' with {'block': block} %}
-		
 		<div class="row">
 			<div class="col-12{% if block.paddingSides == '1' %} col-md-8 offset-md-2{% endif %}">
-				<blockquote class="blockquote text-{{ block.textAlignment }}">
+				<blockquote class="blockquote text-{{ block.textAlignment }} u-color-{{ block.textColor }}">
 					{{ block.quote }}
-					{% if block.citation != '' %}<footer class="blockquote-footer text-{{ block.textAlignment }}">{{ block.citation }}</footer>{% endif %}
+					{% if block.citation != '' %}
+					<footer class="blockquote-footer text-{{ block.textAlignment }} u-color-{{ block.textColor }}">{{ block.citation }}</footer>
+					{% endif %}
 				</blockquote>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+{# -------------- SNAPSHOTS --------------- #}
+{% elseif block.type == 'blockquote' %}
+{% set colSize = '' %}
+{% if block.itemsPerRow == '3' %}
+	{% set colSize = 'col-sm-4' %}
+{% elseif block.itemsPerRow == '4' %}
+	{% set colSize = 'col-sm-3' %}
+{% endif %}
+<section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="c-masonry js-masonry">
+					<div class="c-masonry__sizer col-6 {{ colSize }}"></div>
+					{% for img in block.images.all() %}
+					<div class="c-masonry__item col-6 {{ colSize }}">
+						<img src="{{ img.url('responsiveSmall') }}" alt="{{ img.imageAlt ?: img.title }}" />
+					</div>
+					{% endfor %}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -393,23 +450,14 @@ jQuery(document).ready(function($) {
 
 {# -------------- LOGOS GRID --------------- #}
 {% elseif block.type == 'logos' %}
-{% if block.itemsPerRow == '2' %}
-	{% set columnWidth = '6' %}
-{% elseif block.itemsPerRow == '3' %}
-	{% set columnWidth = '4' %}
-{% elseif block.itemsPerRow == '4' %}
-	{% set columnWidth = '3' %}
-{% elseif block.itemsPerRow == '6' %}
-	{% set columnWidth = '2' %}
-{% endif %}
 <section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
 	<div class="container">
-		{% include '_fields/_section-heading.html' with {'block': block} %}
+		{% include '_fields/heading.html' with {'heading': block.heading,'class':'mb-5'} %}
 		
 		<div class="row">
 			{% for logo in block.children.all() %}
 				{% set img = logo.image.one %}
-			<div class="col-6 col-md-{{ columnWidth }} d-flex align-items-center justify-content-center">
+			<div class="col-6 col-md-3 d-flex align-items-center justify-content-center pr-2 pr-sm-3">
 				{% if logo.imageLink | length %}
 				<p><a href="{% include '_fields/image-link-href.html' with {'link': logo.imageLink} %}"><img class="img-fluid" src="{{ img.url }}" alt="{{ img.imageAlt ?: img.title }}" /></a></p>
 				{% else %}
@@ -421,6 +469,57 @@ jQuery(document).ready(function($) {
 	</div>
 </section>
 
+
+
+{# -------------- ACCORDION --------------- #}
+{% elseif block.type == 'accordion' %}
+<section class="c-general {{ blockStyleClasses | join(' ') }}"{{ backgroundPhoto }}>
+	<div class="container">
+		<div class="row">
+			<div class="col-12{% if block.paddingSides == '1' %} col-md-8 offset-md-2{% endif %}">
+				{% if block.description != '' %}
+					{% include '_fields/heading.html' with {'heading': block.heading} %}
+					<div class="wysiwyg text-{{ block.textAlignment }} u-color-{{ block.textColor }}">{{ block.description }}</div>
+				{% else %}
+					{% include '_fields/heading.html' with {'heading': block.heading,'class':'mb-5'} %}
+				{% endif %}
+				
+				<div class="c-accordion">
+					{% for accordion in block.children.all() %}
+					<a href="#accordion-pane-{{ accordion.id }}" 
+					   class="c-accordion__heading js-toggle-accordion" 
+					   id="accordion-label-{{ accordion.id }}" 
+					   aria-expanded="false" 
+					   aria-controls="accordion-pane-{{ accordion.id }}">
+						<span>{{ accordion.headingBasic | raw }}</span>
+						{% if accordion.caption != '' %}<small>{{ accordion.caption | raw }}</small>{% endif %}
+					</a>
+					<div class="c-accordion__content" id="accordion-pane-{{ accordion.id }}" style="display:none;" aria-labeled-by="accordion-label-{{ accordion.id }}">
+						{% if accordion.image | length %}
+							{% set img = accordion.image.one() %}
+						<div class="row">
+							<div class="col-12 col-md-4{% if accordion.imagePositionLR == 'right' %} order-md-2{% endif %}">
+								<p>
+									<img class="img-fluid" src="{{ img.url('responsiveMedium') }}" alt="{{ img.imageAlt ?: img.title }}" />
+								</p>
+							</div>
+							
+							<div class="col-12 col-md-8{% if accordion.imagePositionLR == 'right' %} order-md-1{% endif %}">
+								{% include '_fields/heading.html' with {'heading': accordion.heading} %}
+								<div class="wysiwyg u-color-{{ accordion.textColor }}">{{ accordion.description }}</div>
+							</div>
+						</div>
+						{% else %}
+							{% include '_fields/heading.html' with {'heading': accordion.heading} %}
+							<div class="wysiwyg u-color-{{ accordion.textColor }}">{{ accordion.description }}</div>
+						{% endif %}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 
 {% endif %}

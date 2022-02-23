@@ -1,59 +1,44 @@
-{% set pages = craft.entries.section('pages').all() %}
+{% set pages = craft.entries.section('pages') %}
+{% set work  = craft.entries.section('work') %}
 <!-- TOP BAR -->
 <div class="c-topbar">
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<a href="{{ siteUrl }}" class="c-topbar__branding">
-					<img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="M Group Agency" />
-				</a>
-				{% if pages | length %}
-				<button class="hamburger hamburger--squeeze c-topbar__hamburger js-menu-toggle" type="button" id="hamburger-topbar" onclick="openHamburgerNav()" aria-label="open navigation menu" aria-expanded="false">
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-				</button>
-				{% endif %}
+				<div class="c-topbar__branding">
+					<a href="{{ siteUrl }}"><img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="Heinley Projects" /></a>
+				</div>
+				
+				<ul class="c-topbar__nav">
+					{% if work | length %}<li><a href="{{ url('work') }}">Work</a></li>{% endif %}
+					{% for page in pages.all() %}
+					<li><a href="{{ page.url }}">{{ page.title }}</a></li>
+					{% endfor %}
+					<li>
+						<a href="#search" class="js-toggle-search" aria-role="button" aria-label="search">
+							<span class="far fa-search" aria-hidden="true"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!-- SEARCH BAR -->
+	<div id="search" class="c-topbar__search">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<form>
+						<label for="search-input" class="sr-only">Search</label>
+						<input id="search-input" type="search" />
+						<button type="submit">
+							<span id="button-label" hidden>search</span>
+							<span class="far fa-search" aria-hidden="true" focusable="false"></span>
+						</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-
-<!-- NAVIGATION MENU -->
-<nav id="menu" class="c-navigation">
-	<div class="c-navigation__top">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<a href="{{ siteUrl }}" class="c-topbar__branding">
-						<img class="c-topbar__logo" src="/assets/img/logo-white.svg" alt="M Group Agency" />
-					</a>
-					{% if pages | length %}
-					<button class="hamburger hamburger--squeeze c-navigation__hamburger js-menu-toggle" type="button" id="hamburger-navigation" onclick="closeHamburgerNav()" aria-label="close navigation menu" aria-expanded="false">
-						<span class="hamburger-box">
-							<span class="hamburger-inner"></span>
-						</span>
-					</button>
-					{% endif %}
-				</div>
-			</div>
-		</div>
-	</div>
-	{% if pages | length %}
-	<div class="c-navigation__inner">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<ul class="c-navigation__menu d-flex flex-column justify-content-center align-items-center align-content-start">
-						<li><a href="{{ siteUrl }}" class="btn">Home</a></li>
-						{% for page in pages if page.level == 1 %}
-						<li><a href="{{ page.url }}" class="btn">{{ page.title }}</a></li>
-						{% endfor %}
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	{% endif %}
-</nav>

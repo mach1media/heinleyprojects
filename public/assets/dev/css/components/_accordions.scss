@@ -24,6 +24,13 @@
 		border-top: 2px solid $color-gray;
 		border-bottom: 2px solid transparent;
 		
+		.c-general--pink &,
+		.c-general--peach &,
+		.c-general--green &,
+		.c-general--green-light & {
+			border-top: 2px solid white;
+		}
+		
 		& > span {
 			position: relative;
 			display: block;
@@ -72,10 +79,17 @@
 			border-radius: 100%;
 			line-height: 40px;
 			@include animate;
+			
+			.c-general--pink &,
+			.c-general--peach &,
+			.c-general--green &,
+			.c-general--green-light & {
+				color: white;
+			}
 		}
 		
 		&:hover {
-			color: theme-color('navy');
+			//color: theme-color('navy');
 			text-decoration: none;
 			
 			&:before {
@@ -93,6 +107,13 @@
 		
 		.c-accordion &:last-of-type {
 			border-bottom: 2px solid $color-gray;
+			
+			.c-general--pink &,
+			.c-general--peach &,
+			.c-general--green &,
+			.c-general--green-light & {
+				border-bottom: 2px solid rgba(white, .75);
+			}
 			
 			&[aria-expanded='true'] {
 				border-bottom: 2px solid transparent;
@@ -114,6 +135,28 @@
 		
 		.c-accordion .c-accordion__heading:last-of-type[aria-expanded='true'] + & {
 			border-bottom: 2px solid $color-gray;
+			
+			.c-general--pink &,
+			.c-general--peach &,
+			.c-general--green &,
+			.c-general--green-light & {
+				border-bottom: 2px solid rgba(white, .75) !important;
+			}
+		}
+	}
+	
+	
+	//
+	// SECTION BACKGROUND COLORS
+	//
+	.c-general--pink,
+	.c-general--peach,
+	.c-general--green,
+	.c-general--green-light {
+		.c-accordion__heading {
+			&:hover {
+				color: white;
+			}
 		}
 	}
 }

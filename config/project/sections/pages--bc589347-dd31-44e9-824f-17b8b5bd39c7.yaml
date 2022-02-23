@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: pages
+name: Pages
+propagationMethod: all
+siteSettings:
+  7f1ff60f-cd42-4951-a46d-fe9386093bcb: # Heinley Projects
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/page.html
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 718835e7-dc5e-4b66-b05c-c920c373b8f2
+type: structure

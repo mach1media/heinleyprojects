@@ -1,0 +1,34 @@
+childBlocks: null
+field: 20318ea5-ac91-4972-8c4e-74158975017d # Page Header
+fieldLayouts:
+  b5f9ee29-a1b5-40fc-9696-831e887fe292:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f9e16de3-208f-444b-9217-83a666e1e86f # Heading: Basic
+            instructions: ''
+            label: Heading
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 558734bc-5701-4caa-b772-d6378b0e9471 # Summary
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: video
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Video
+sortOrder: 4
+topLevel: true

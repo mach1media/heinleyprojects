@@ -62,6 +62,6 @@ settings:
   path: '@assetBasePath/photos/'
 sortOrder: 1
 titleTranslationKeyFormat: null
-titleTranslationMethod: null
+titleTranslationMethod: site
 type: craft\volumes\Local
 url: '@assetBaseUrl/photos/'

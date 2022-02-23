@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: homepage
+name: Homepage
+propagationMethod: all
+siteSettings:
+  7f1ff60f-cd42-4951-a46d-fe9386093bcb: # Heinley Projects
+    enabledByDefault: true
+    hasUrls: true
+    template: index.html
+    uriFormat: __home__
+type: single

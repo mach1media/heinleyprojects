@@ -1,0 +1,22 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 995636a1-0afe-4190-bfc1-25fd9ab86bc0 # Element Fields
+handle: workEntries
+instructions: ''
+name: 'Work Entries'
+searchable: true
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:f02620c0-a7e8-4078-9914-50ec1436db7b' # Work
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

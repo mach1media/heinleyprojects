@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: work
+name: Work
+propagationMethod: all
+siteSettings:
+  7f1ff60f-cd42-4951-a46d-fe9386093bcb: # Heinley Projects
+    enabledByDefault: true
+    hasUrls: true
+    template: work/_entry
+    uriFormat: 'work/{slug}'
+type: channel

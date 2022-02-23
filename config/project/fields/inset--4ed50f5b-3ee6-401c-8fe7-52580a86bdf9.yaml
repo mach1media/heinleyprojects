@@ -1,0 +1,14 @@
+columnSuffix: lkgrhedz
+contentColumnType: boolean
+fieldGroup: e3f6200d-59f1-4ccd-8047-5a643809c5b8 # Select Fields
+handle: inset
+instructions: ''
+name: Inset
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

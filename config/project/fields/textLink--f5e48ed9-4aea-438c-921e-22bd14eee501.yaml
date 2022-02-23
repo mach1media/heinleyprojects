@@ -6,46 +6,9 @@ instructions: ''
 name: 'Text Link'
 searchable: true
 settings:
-  columns:
-    __assoc__:
-      -
-        - b62013ef-bc1f-458c-a81b-f867a84f5e3a
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - ba123af8-5399-4c52-a5d0-261abbf05e38
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - 9ee4ab23-3a6a-45e6-9404-24b48d2508ef
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - 4ddc1836-6472-4076-85cd-05b7e3d2500d
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - cd52e0e5-9450-4fdb-a253-ab26f570420c
-        -
-          __assoc__:
-            -
-              - width
-              - ''
   contentTable: '{{%stc_textlink}}'
   fieldLayout: table
-  maxRows: 1
+  maxRows: '1'
   minRows: ''
   placeholderKey: null
   propagationKeyFormat: null

@@ -28,41 +28,41 @@ fields:
       columns:
         __assoc__:
           -
-            - d08c1960-1b09-4ddc-98c6-2e28a4c0a7b5 # Label
+            - a8e6bff5-3c4e-47da-8bfa-f03179d9a372 # Label
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 9f86b456-1db3-46cd-9e91-129743bdd204 # Link
+            - 6cee9642-f677-4f79-9027-eab0f5c64112 # Link
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - aea7b460-1cef-49d7-be16-d4d22d047b6f # Color
+            - 39c07810-5e4b-49a3-b885-002ae031ae1e # Color
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - c9d65278-8dd1-449d-8c85-598f02642872 # Outline
+            - 2741e591-f4d3-457f-b3a1-82d24fa6a46e # Outline
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - efd497e2-66ce-474f-96ed-b912632b860a # New Tab
+            - 39782143-cf87-4e23-b74e-06459a71bc84 # New Tab
             -
               __assoc__:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_3_button}}'
+      contentTable: '{{%stc_4_button}}'
       fieldLayout: table
       maxRows: ''
       minRows: ''

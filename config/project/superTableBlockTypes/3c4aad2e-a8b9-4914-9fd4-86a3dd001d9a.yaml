@@ -1,0 +1,195 @@
+field: e43e9c45-be3d-4b2c-9622-4ba3c65d45a3 # Heading: Block
+fieldLayouts:
+  c92df3bb-bf27-4887-a226-a482e67806d4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fdfbb288-ac36-430f-95b2-3a14256051b0 # Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b0c19a28-1384-4077-a01d-e5ad82d6eebd # Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c1549a67-90ee-4120-bb66-5c254d1abb39 # Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5f2af9d1-69b1-4768-962b-78357018cf13 # Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5f2af9d1-69b1-4768-962b-78357018cf13: # Alignment
+    columnSuffix: wyssnmql
+    contentColumnType: string
+    fieldGroup: null
+    handle: alignment
+    instructions: ''
+    name: Alignment
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  b0c19a28-1384-4077-a01d-e5ad82d6eebd: # Size
+    columnSuffix: gtifrywy
+    contentColumnType: string
+    fieldGroup: null
+    handle: size
+    instructions: ''
+    name: Size
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'H1 (Largest)'
+            -
+              - value
+              - h1
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'H2 (Large)'
+            -
+              - value
+              - h2
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'H3 (Medium)'
+            -
+              - value
+              - h3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'H4 (Small)'
+            -
+              - value
+              - h4
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'H5 (Smallest)'
+            -
+              - value
+              - h5
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  c1549a67-90ee-4120-bb66-5c254d1abb39: # Color
+    columnSuffix: mvzuxgzr
+    contentColumnType: string
+    fieldGroup: null
+    handle: color
+    instructions: ''
+    name: Color
+    searchable: false
+    settings:
+      dataSet: 'CSS Color Classes'
+      type: dropdown
+    translationKeyFormat: null
+    translationMethod: none
+    type: statikbe\configvaluesfield\fields\ConfigValuesFieldField
+  fdfbb288-ac36-430f-95b2-3a14256051b0: # Heading
+    columnSuffix: jtiwprlo
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

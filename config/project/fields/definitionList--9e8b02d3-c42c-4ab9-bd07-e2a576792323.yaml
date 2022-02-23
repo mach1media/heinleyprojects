@@ -4,7 +4,7 @@ fieldGroup: 937fbfdd-6234-4c28-ada8-7effcfefb0b0 # Matrix Fields
 handle: definitionList
 instructions: ''
 name: 'Definition List'
-searchable: false
+searchable: true
 settings:
   addRowLabel: 'Add a term'
   columnType: text

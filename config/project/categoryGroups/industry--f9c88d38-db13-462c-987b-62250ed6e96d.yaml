@@ -1,0 +1,41 @@
+defaultPlacement: end
+fieldLayouts:
+  d0f2c002-f167-4049-a14b-72dd5afc2c26:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: industry
+name: Industries
+siteSettings:
+  7f1ff60f-cd42-4951-a46d-fe9386093bcb: # Heinley Projects
+    hasUrls: true
+    template: work/category
+    uriFormat: 'work/industry/{slug}'
+structure:
+  maxLevels: 1
+  uid: f7cd83aa-c302-4447-a044-05923c704dcb

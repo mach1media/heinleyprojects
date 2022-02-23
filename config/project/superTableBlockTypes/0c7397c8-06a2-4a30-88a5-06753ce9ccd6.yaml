@@ -1,0 +1,164 @@
+field: f5e48ed9-4aea-438c-921e-22bd14eee501 # Text Link
+fieldLayouts:
+  bb7da930-a9a2-47e0-8e8a-027d7f5d65d1:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 9e8bfadc-9934-4ed8-8c34-05ce6ecc4fab # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 24d65167-0bff-43d1-824a-31c437f89eb1 # Link to Page
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8055f377-7d07-46dd-bdcf-6782648a8081 # Link to Asset
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c3a0b4b5-d357-45d3-8b4e-45c3ce75a009 # Custom Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cfe73384-bc81-4b1d-b999-3868db12c2ba # New Tab
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9e8bfadc-9934-4ed8-8c34-05ce6ecc4fab: # Text
+    columnSuffix: lnowferg
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  24d65167-0bff-43d1-824a-31c437f89eb1: # Link to Page
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkToPage
+    instructions: ''
+    name: 'Link to Page'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: false
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  8055f377-7d07-46dd-bdcf-6782648a8081: # Link to Asset
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkToAsset
+    instructions: ''
+    name: 'Link to Asset'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:6a8678fb-3c02-4db5-a390-1b01c515f50e' # Photos
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: false
+      showUnpermittedFiles: true
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:6a8678fb-3c02-4db5-a390-1b01c515f50e' # Photos
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  c3a0b4b5-d357-45d3-8b4e-45c3ce75a009: # Custom Link
+    columnSuffix: zmebjonm
+    contentColumnType: text
+    fieldGroup: null
+    handle: customLink
+    instructions: 'include https:// when linking to offsite resources'
+    name: 'Custom Link'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cfe73384-bc81-4b1d-b999-3868db12c2ba: # New Tab
+    columnSuffix: vrjkredd
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: newTab
+    instructions: ''
+    name: 'New Tab'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch

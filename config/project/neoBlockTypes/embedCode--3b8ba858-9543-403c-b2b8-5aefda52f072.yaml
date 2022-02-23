@@ -1,0 +1,110 @@
+childBlocks: null
+field: e7fd2fec-63f4-45f4-8e16-be48c05290c2 # Page Body Blocks
+fieldLayouts:
+  87bc3bb2-8b8e-4200-8163-520d1b95ba4a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e43e9c45-be3d-4b2c-9622-4ba3c65d45a3 # Heading: Block
+            instructions: ''
+            label: Heading
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7523a3ff-5e73-4eeb-897f-c7b8eff35112 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d4fa8bc7-01dd-45de-b15c-d81b4c8ab407 # Embed Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 84c12fb7-8668-4f9a-a0e6-15358ff60a18 # Background Photo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 0b7f01f8-e48c-475c-ac9f-946a662edcfa # Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 3e5fcd52-1f19-44d2-a8d5-d06fc1ddf8dc # Padding: Top
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: b0f02fc7-d7bf-452b-83f6-3d660934f29a # Padding: Bottom
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 7a3f3b69-ae91-44fa-8af4-8a7d7b75a669 # Padding: Sides
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 127517aa-4d26-4947-ac5d-43053dc00724 # Text Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 492246bd-0682-4e55-9862-e7880b62e9ad # Text Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: 'Section Settings'
+        sortOrder: 2
+handle: embedCode
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Embed Code'
+sortOrder: 10
+topLevel: true

@@ -1,0 +1,132 @@
+childBlocks: null
+field: e7fd2fec-63f4-45f4-8e16-be48c05290c2 # Page Body Blocks
+fieldLayouts:
+  08689960-90ae-4ff6-a974-682831052818:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e43e9c45-be3d-4b2c-9622-4ba3c65d45a3 # Heading: Block
+            instructions: ''
+            label: Heading
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7523a3ff-5e73-4eeb-897f-c7b8eff35112 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e08d5489-5f32-423e-b815-1f3c915bba0a # Button
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: ad8dce71-499e-4992-b946-89dbc49e35ff # Image
+            instructions: ''
+            label: 'Headshot Image'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d340bc32-388f-410d-be63-775b23be2c69 # Quote
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ab1cfa5c-020c-46af-baa1-453427f2e717 # Citation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8151b3b3-4e02-4c29-9396-ed7ddd8915ec # Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Quote Box'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 84c12fb7-8668-4f9a-a0e6-15358ff60a18 # Background Photo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 0b7f01f8-e48c-475c-ac9f-946a662edcfa # Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 3e5fcd52-1f19-44d2-a8d5-d06fc1ddf8dc # Padding: Top
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: b0f02fc7-d7bf-452b-83f6-3d660934f29a # Padding: Bottom
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 492246bd-0682-4e55-9862-e7880b62e9ad # Text Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: 'Section Settings'
+        sortOrder: 3
+handle: headshotQuote
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Headshot+Quote
+sortOrder: 5
+topLevel: true

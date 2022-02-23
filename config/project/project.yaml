@@ -1,20 +1,217 @@
-dateModified: 1645146720
+dateModified: 1645562325
 email:
   fromEmail: roger@mach1media.com
   fromName: 'Heinley Projects'
+  replyToEmail: roger@mach1media.com
+  template: null
+  transportSettings:
+    command: '/usr/sbin/sendmail -bs'
   transportType: craft\mail\transportadapters\Sendmail
 meta:
   __names__:
+    0aaabdbe-664b-4783-a64d-f34e68646962: SEO # SEO
+    0b7f01f8-e48c-475c-ac9f-946a662edcfa: 'Background Color' # Background Color
+    0e5c7f65-029f-4fe1-9e6c-5cda8508b274: Logo # Logo
+    0f7a16e9-8454-4ca2-aef3-e3043744ee82: 'Items Per Row' # Items Per Row
+    1c10c924-e9e5-4b46-8f43-c4a8e68735f5: Button # Button
+    1ef19bb7-1836-44bf-b54a-c5b2e80c03e6: 'Project Spotlight' # Project Spotlight
+    1fda8ee5-f1bd-45c6-975d-16001c08c9e9: Attribution # Attribution
+    2ad91579-2e28-4ab7-9607-9b7ba99101bd: Outline # Outline
+    2d58dfa0-4c26-4b8d-9043-bb7d596a6348: Link # Link
+    2dff8481-a7f0-4d81-8b90-dec269e4df3c: 'Button Label' # Button Label
+    2f998fed-9904-4ce4-90b3-035abc14a557: SEO # SEO
+    3a0ca394-c660-44db-b8a2-6dcc250d994f: Columns # Columns
+    3af9b4c7-3e9d-4044-99ce-f80dc1ac80d8: 'Display As:' # Display As:
+    3b8ba858-9543-403c-b2b8-5aefda52f072: 'Embed Code' # Embed Code
+    3e5fcd52-1f19-44d2-a8d5-d06fc1ddf8dc: 'Padding: Top' # Padding: Top
+    4ed50f5b-3ee6-401c-8fe7-52580a86bdf9: Inset # Inset
+    4f7cfc53-0bc9-46b4-83c9-71ed2feaed7d: Industries # Industries
+    4f795dd8-f70f-4f4a-a4f5-e7f54f5465ee: 'Work Cards' # Work Cards
+    5b7b8b97-57f2-4691-94f1-d9331f2b97ed: Testimonial # Testimonial
+    5c646279-405f-4f07-a2b6-ae8c87d609e7: Caption # Caption
+    5e594575-1d3b-4fd7-92e1-13f3e1fc2856: 'Text Fields' # Text Fields
+    5f2af9d1-69b1-4768-962b-78357018cf13: Alignment # Alignment
+    6a8678fb-3c02-4db5-a390-1b01c515f50e: Photos # Photos
+    6b341b57-ecc9-4727-95ef-65f47e44359c: Figure # Figure
+    6b7011e2-4cc1-4ac8-864f-09b863e625a5: 'Responsive: Large' # Responsive: Large
+    6c579f81-8112-47d0-9766-8e7da6d99b7a: 'Favicon File' # Favicon File
+    6cee9642-f677-4f79-9027-eab0f5c64112: Link # Link
+    7a3f3b69-ae91-44fa-8af4-8a7d7b75a669: 'Padding: Sides' # Padding: Sides
     7f1ff60f-cd42-4951-a46d-fe9386093bcb: 'Heinley Projects' # Heinley Projects
+    9a09ff48-0e98-452d-a971-4c0c69dbd409: Images # Images
+    9b2d6375-c0b5-4f04-8b46-32ddc0914c41: Logos # Logos
+    9c16b92e-12bc-4984-8870-9907910c47c3: 'Work Entries' # Work Entries
+    9d19b4a3-4640-4fa9-9fd9-cbc5089dee6a: 'Button Label' # Button Label
+    9e8b02d3-c42c-4ab9-bd07-e2a576792323: 'Definition List' # Definition List
+    9e8bfadc-9934-4ed8-8c34-05ce6ecc4fab: Text # Text
+    11eb084f-7e73-4639-b78a-860c08284e72: 'Custom Link' # Custom Link
+    14f6eefd-8aba-4860-a4c6-f1b3265c5393: Documents # Documents
+    21ea7e59-c3b9-452b-939b-685380b03f9f: 'Button Label' # Button Label
+    24d65167-0bff-43d1-824a-31c437f89eb1: 'Link to Page' # Link to Page
+    34b216d5-ff92-40a5-aaa7-d5a3fa24ff02: Global # Global
+    36c9724a-3379-405a-8b69-34f51aea8735: Carousel # Carousel
+    36ef9a2c-6a81-4f29-906e-7a26dfec972d: 'Button Label' # Button Label
+    37e485ae-f8b0-4b74-a855-c8bdd03acfab: Homepage # Homepage
+    39c07810-5e4b-49a3-b885-002ae031ae1e: Color # Color
+    41df0d40-d2d8-4fcb-a04b-434a40322ffa: 'New Tab' # New Tab
+    48f7cdcb-b760-4d8c-a623-6f35f42b11fd: Phone # Phone
+    61af7dff-605c-441b-be94-5cc5b902aa8c: Logo # Logo
+    62f682ec-a034-489e-ae90-af640fc2c291: 'Responsive: Medium' # Responsive: Medium
+    067f50e9-5df4-44e9-b2f2-9973b0841473: Categories # Categories
+    81c31ad7-3023-456d-9403-f39b95fa76c9: Clients # Clients
+    83bda72f-eb4b-4f32-85e0-5f515c2607d1: 'Image Alt' # Image Alt
+    84c12fb7-8668-4f9a-a0e6-15358ff60a18: 'Background Photo' # Background Photo
+    86ef18ee-cb5b-4337-89aa-f3020f34283a: 'Image: Desktop' # Image: Desktop
+    88bcbf67-1f4c-428c-a36e-f36be8154323: 'New Tab' # New Tab
+    89a349f9-0c48-4181-9bc4-e98a98b7f042: Video # Video
+    92cc90a8-7ba4-4638-9b02-9db86ba60e18: Label # Label
     98f9c9ed-636a-496e-967e-f30f6f78a90c: 'Heinley Projects' # Heinley Projects
+    210ebf34-4c03-4012-948b-762415495817: Email # Email
+    271e7818-da66-49a8-839f-a8fed8d12022: 'Accordion Item' # Accordion Item
+    343f01eb-8b9b-4be6-9f49-2364b0fa706e: Color # Color
+    506eed52-ee59-417e-bef5-0cdf16ada11a: 'Block Settings' # Block Settings
+    553c701f-068f-4acd-b763-a4d3a59f40d2: 'Responsive: Small' # Responsive: Small
+    703c90d2-cd29-4903-97e1-211928bdd8a2: 'Img+Text Block' # Img+Text Block
+    740b1bef-9975-401a-b919-4dea63488efb: 'Image: Mobile' # Image: Mobile
     765e8335-4049-4594-b306-51e0cdf324f7: 'Public Schema' # Public Schema
+    819a94fc-d30a-467d-894e-c1d41b7beadb: Accordion # Accordion
+    937fbfdd-6234-4c28-ada8-7effcfefb0b0: 'Matrix Fields' # Matrix Fields
+    1812ea8b-245e-49bf-9fd4-eeb825047b89: Image # Image
+    02029fbd-9e02-4fa5-b640-c6b33a2b7daa: 'Square: 600' # Square: 600
+    2741e591-f4d3-457f-b3a1-82d24fa6a46e: Outline # Outline
+    3367c36c-f6bc-495f-9338-55a5841e39d2: 'Section Heading' # Section Heading
+    6312d72e-14d3-40ca-9f8a-979e0a09459e: Provider # Provider
+    06522def-759c-474f-8ddd-0a907b5b4558: Image # Image
+    7523a3ff-5e73-4eeb-897f-c7b8eff35112: Description # Description
+    8055f377-7d07-46dd-bdcf-6782648a8081: 'Link to Asset' # Link to Asset
+    8151b3b3-4e02-4c29-9396-ed7ddd8915ec: Color # Color
+    20318ea5-ac91-4972-8c4e-74158975017d: 'Page Header' # Page Header
+    30781a8f-d45b-40c8-9e1c-1efa8b3aab80: Categories # Categories
+    41857cc7-e0e4-4a6b-a21a-359e2f16b8dc: 'Solid Color' # Solid Color
+    89254b6b-a516-4069-b20e-2290e94781c4: Button # Button
+    95809d3f-350a-4cf7-b822-4647c05a41fe: Asset # Asset
+    124872f0-b7c2-4fbc-8e30-1b663cf11d31: 'Lead Block' # Lead Block
+    127517aa-4d26-4947-ac5d-43053dc00724: 'Text Alignment' # Text Alignment
+    492246bd-0682-4e55-9862-e7880b62e9ad: 'Text Color' # Text Color
+    529166dc-539f-4424-9d17-11330debfc0d: 'City, State' # City, State
+    558734bc-5701-4caa-b772-d6378b0e9471: Summary # Summary
+    995636a1-0afe-4190-bfc1-25fd9ab86bc0: 'Element Fields' # Element Fields
+    39782143-cf87-4e23-b74e-06459a71bc84: 'New Tab' # New Tab
+    a2d44b52-ff74-4f8d-ac38-d288089c3ad0: 'Thumbnail: Wide' # Thumbnail: Wide
+    a3a4f256-a876-418b-8dc0-f3bd6ba40e18: Position # Position
+    a8e6bff5-3c4e-47da-8bfa-f03179d9a372: Label # Label
+    a95e588f-5884-455d-a2ea-d10d4b2d2bcf: 'Square: 200' # Square: 200
     a613ec06-8f41-47e6-9f04-f6c825f33373: Common # Common
+    a4161a5d-96be-4483-9cd6-60ca6e54a758: Blockquote # Blockquote
+    a8285f9b-29c2-48a7-a5a2-f801bffd36f4: General # General
+    a952313e-f21c-4095-8fd5-1c6d1f81ee55: 'Link to Asset' # Link to Asset
+    aaf62ea1-7109-4e6d-a4d6-d2dd41b098fd: Download # Download
+    ab1cfa5c-020c-46af-baa1-453427f2e717: Citation # Citation
+    ace36172-34f0-4cf8-a445-bb51e06d0201: Thumbnail # Thumbnail
+    ad8dce71-499e-4992-b946-89dbc49e35ff: Image # Image
+    aecf171b-f77f-40f1-939d-8cc6e2c748fa: 'Custom Link' # Custom Link
+    b0c19a28-1384-4077-a01d-e5ad82d6eebd: Size # Size
+    b0f02fc7-d7bf-452b-83f6-3d660934f29a: 'Padding: Bottom' # Padding: Bottom
+    b2d44570-8139-4190-afd4-1db2035be921: Link # Link
+    b47b6242-ffdd-4605-95eb-74396b9a8947: Website # Website
+    bc589347-dd31-44e9-824f-17b8b5bd39c7: Pages # Pages
+    c0da0bdb-0b70-4939-8863-4a6f5b30f87d: Headshot+Quote # Headshot+Quote
+    c1a3a19a-0685-4961-a6a2-beeee26e64ee: 'Link to Asset' # Link to Asset
+    c3a0b4b5-d357-45d3-8b4e-45c3ce75a009: 'Custom Link' # Custom Link
+    c5a79e1d-7309-4dbe-8ba5-8cabb588e4b8: 'Custom Link' # Custom Link
+    c6bc972f-7c71-4bca-9267-85072c79b764: 'New Tab' # New Tab
+    c7bb0042-6505-48fc-aa5d-4243b06db4ec: Custom # Custom
+    c7d98e23-df09-4d41-aebc-5bfbc17bbf99: 'Testimonial Carousel' # Testimonial Carousel
+    c60de8b5-0e28-4ef9-8465-fbb2f6666fd8: Color # Color
+    c83d0b79-f0a6-4a6f-9a9f-176c1c88e0cc: Page # Page
+    c93dc16e-db03-4dc3-8f6b-4aeaa487d9fe: 'Link to Page' # Link to Page
+    c1549a67-90ee-4120-bb66-5c254d1abb39: Color # Color
+    c6899c47-98ae-40c6-89d6-20ba6e4b9dea: 'Image Position [L|R]' # Image Position [L|R]
+    c18967fe-2610-452d-b2ee-2a94955d91f2: Work # Work
+    cfe73384-bc81-4b1d-b999-3868db12c2ba: 'New Tab' # New Tab
+    d3f5a3e1-3f7b-42dc-a45b-ceaa89fe4963: Video # Video
+    d4fa8bc7-01dd-45de-b15c-d81b4c8ab407: 'Embed Code' # Embed Code
+    d61c5b5f-313d-4082-91ca-5f3a165ab830: Button # Button
+    d64a7c8a-cf8f-4c07-8ec0-8d25f01018d5: Homepage # Homepage
+    d340bc32-388f-410d-be63-775b23be2c69: Quote # Quote
+    e08d5489-5f32-423e-b815-1f3c915bba0a: Button # Button
+    e3aaa9fb-8db4-4298-b072-81955f6459c5: Label # Label
+    e3ab12ed-0fc2-408c-a2cc-38638f67ec42: Pages # Pages
+    e3f6200d-59f1-4ccd-8047-5a643809c5b8: 'Select Fields' # Select Fields
+    e7fd2fec-63f4-45f4-8e16-be48c05290c2: 'Page Body Blocks' # Page Body Blocks
+    e43e9c45-be3d-4b2c-9622-4ba3c65d45a3: 'Heading: Block' # Heading: Block
+    e87b6de1-fbb6-403b-910c-7e326d7e1d7c: Common # Common
+    e6528746-7329-43ed-a590-fabf829973bb: Snapshots # Snapshots
+    eaded9b6-1964-4b73-bf0a-0e8c971a9caa: Photo # Photo
+    f02620c0-a7e8-4078-9914-50ec1436db7b: Work # Work
+    f5e48ed9-4aea-438c-921e-22bd14eee501: 'Text Link' # Text Link
+    f6cd235b-8200-4194-872f-94995dd9c1f7: Outline # Outline
+    f6d03f55-5d27-47dc-9bc9-b8d6b58044fc: 'Image Position' # Image Position
+    f9c88d38-db13-462c-987b-62250ed6e96d: Industries # Industries
+    f9e2ea6d-e992-4d60-8ade-b9bb6c4122dd: General # General
+    f9e16de3-208f-444b-9217-83a666e1e86f: 'Heading: Basic' # Heading: Basic
+    f53ef9e0-3dd9-469e-a904-d25f6d3a3ef8: Blockquote # Blockquote
+    f73a49ea-e49a-4e5c-9a21-65ea14a55577: Clients # Clients
+    f618f9bf-396a-49e0-a944-6aec61d8f3f7: 'Image Carousel' # Image Carousel
+    f30475bd-b8d8-4f24-9df7-e43128f03d0a: 'Image Link' # Image Link
+    f182233c-849d-4259-bb30-01619cb2afc5: Column # Column
+    f998514c-fedb-4c6b-9bbb-a68225497a5a: 'New Tab' # New Tab
+    f7250985-9c45-4f15-a6f9-4ac4ffa9e8bc: 'Link to Page' # Link to Page
+    fdfbb288-ac36-430f-95b2-3a14256051b0: Heading # Heading
+    fea64eec-cc78-43c2-9a09-476834e5281d: Image # Image
+plugins:
+  config-values-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  embeddedassets:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  field-manager:
+    edition: standard
+    enabled: false
+    schemaVersion: 1.0.0
+  image-resizer:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  mailgun:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: UDSSAO5JIA6IYIQ4F3ERFEJC
+    schemaVersion: 2.11.6
+  position-fieldtype:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  redactor-tweaks:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.2.0
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
 system:
   edition: solo
   live: true
   name: 'Heinley Projects'
+  retryDuration: null
   schemaVersion: 3.7.33
-  timeZone: America/Los_Angeles
+  timeZone: America/Chicago
 users:
   allowPublicRegistration: false
   defaultGroup: null

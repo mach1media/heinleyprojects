@@ -4,7 +4,7 @@ fieldGroup: 2f998fed-9904-4ce4-90b3-035abc14a557 # SEO
 handle: seo
 instructions: ''
 name: SEO
-searchable: false
+searchable: true
 settings:
   description: ''
   hideSocial: ''
@@ -15,8 +15,7 @@ settings:
     - ''
     - ''
     - ''
-  socialImage:
-    - '15'
+  socialImage: ''
   suffixAsPrefix: null
   title:
     -

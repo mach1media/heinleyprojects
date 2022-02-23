@@ -6,36 +6,6 @@ instructions: ''
 name: 'Heading: Block'
 searchable: true
 settings:
-  columns:
-    __assoc__:
-      -
-        - 7907170a-ea1a-4de1-9c4d-e1abc46fbccb
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - ade45a53-b3d4-48cf-b3f3-f5837d56b4bc
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - d3f9be88-67d5-4390-8fe3-89fa1f344457
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - d7a8d849-0c17-4784-8e7c-a442bad2465f
-        -
-          __assoc__:
-            -
-              - width
-              - ''
   contentTable: '{{%stc_heading}}'
   fieldLayout: table
   maxRows: ''
@@ -44,7 +14,7 @@ settings:
   propagationKeyFormat: null
   propagationMethod: all
   selectionLabel: 'Add a heading'
-  staticField: 1
+  staticField: '1'
 translationKeyFormat: null
 translationMethod: site
 type: verbb\supertable\fields\SuperTableField

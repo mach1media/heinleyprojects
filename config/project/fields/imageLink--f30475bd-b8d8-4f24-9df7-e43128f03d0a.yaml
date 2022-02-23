@@ -6,36 +6,6 @@ instructions: ''
 name: 'Image Link'
 searchable: true
 settings:
-  columns:
-    __assoc__:
-      -
-        - 2df7b0e9-5ba9-4c73-9c31-438603592040 # Page
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - 24e8198b-0847-4223-927f-670c875194cc # Asset
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - 7826679d-7421-470b-b72a-df131474b0b3 # Custom
-        -
-          __assoc__:
-            -
-              - width
-              - ''
-      -
-        - e75f1d26-5381-4184-bb97-518b364f962d # New Tab
-        -
-          __assoc__:
-            -
-              - width
-              - ''
   contentTable: '{{%stc_imagelink}}'
   fieldLayout: table
   maxRows: '1'

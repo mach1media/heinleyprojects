@@ -1,0 +1,24 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 995636a1-0afe-4190-bfc1-25fd9ab86bc0 # Element Fields
+handle: clients
+instructions: ''
+name: Clients
+searchable: true
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: 'Add a Client'
+  showSiteMenu: true
+  source: 'group:f73a49ea-e49a-4e5c-9a21-65ea14a55577' # Clients
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories
